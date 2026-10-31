@@ -9,24 +9,36 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
-  language: pt-BR
+  language: pt
+  font: false
   features:
+    - navigation.instant
+    - navigation.tracking
     - navigation.sections
-    - navigation.indexes
-    - navigation.footer
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.annotate
     - content.code.copy
+    - content.tabs.link
+    - content.tooltips
     - toc.follow
   palette:
-    - scheme: default
-      primary: teal
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/brightness-7
-        name: Modo escuro
-    - scheme: slate
-      primary: teal
+        icon: material/weather-sunny
+        name: Alternar para modo escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/brightness-4
-        name: Modo claro
+        icon: material/weather-night
+        name: Alternar para modo claro
 
 plugins:
   - search:
@@ -37,21 +49,28 @@ plugins:
       ignore_h1_titles: true
 
 markdown_extensions:
-  - admonition
   - attr_list
-  - tables
-  - toc:
-      permalink: true
-  - pymdownx.superfences
+  - admonition
   - pymdownx.details
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
+  - tables
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/lambdageo.css
 
 extra_javascript:
   - javascripts/mathjax.js
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
   - Início: index.md
