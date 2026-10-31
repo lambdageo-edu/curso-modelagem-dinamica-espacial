@@ -2,6 +2,10 @@ site_name: Modelagem Dinâmica Espacial
 site_description: Proposta de disciplina de pós-graduação (LambdaGeo/UFMA) — de autômatos celulares a modelos de mudança de uso da terra, com DisSModel, DisSCube e DisSLUCC.
 site_author: Sérgio Souza Costa
 copyright: LambdaGeo · UFMA
+site_url: https://lambdageo-edu.github.io/curso-modelagem-dinamica-espacial/
+repo_url: https://github.com/lambdageo-edu/curso-modelagem-dinamica-espacial
+repo_name: lambdageo-edu/curso-modelagem-dinamica-espacial
+edit_uri: edit/main/docs/
 
 theme:
   name: material
