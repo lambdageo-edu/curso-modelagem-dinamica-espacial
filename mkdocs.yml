@@ -104,3 +104,6 @@ nav:
           - Roteiro: encontros/08-modelos-mudanca-terra.md
           - Notas de aula: encontros/08-notas.md
           - Ficha de leitura: encontros/08-ficha.md
+      - "9. LUCC com o DisSLUCC":
+          - Roteiro: encontros/09-disslucc.md
+          - Notebook: notebooks/encontro09_disslucc.ipynb
