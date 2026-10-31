@@ -101,7 +101,7 @@ O notebook traz uma função `simular(Modelo, passos, variaveis, **parâmetros)`
 | 2. Taxa de 2% para 1%: novo equilíbrio e tempo | 5 / 0,01 = 500 km². Partindo de 1.000 km², chega a 5% do equilíbrio em cerca de 300 anos (com 2%, cerca de 200). Taxa menor, equilíbrio maior e mais lento |
 | 3. O que o distanciamento muda além do pico? | O total de infectados: os que nunca se infectam passam de 249 (6 contatos) para 4.005 (3 contatos). Com menos contágio, a epidemia perde força antes de esgotar os suscetíveis; é o laço de equilíbrio agindo mais cedo |
 | 4. Começar fora do equilíbrio, no predador-presa | As populações não voltam ao equilíbrio: ficam num ciclo cujo tamanho depende do ponto de partida. Uma previsão depende do estado inicial, que nunca se conhece com precisão |
-| 5. Igual ao TerraME prova que o SIR está certo? | Não. Prova que as duas implementações fazem as mesmas contas (verificação). Se o modelo representa uma epidemia real é outra pergunta (validação), que pede dados observados. Assunto do encontro 13 |
+| 5. Igual ao TerraME prova que o SIR está certo? | Não. Prova que as duas implementações fazem as mesmas contas (verificação). Se o modelo representa uma epidemia real é outra pergunta (validação), que pede dados observados. A verificação volta no encontro 9; a validação, no projeto (encontro 13) |
 
 Para casa, exercício 2: com `duration=4` o pico sobe para 6.233 infectados e vem antes (dia 11), e ninguém escapa. A doença fica mais tempo transmitindo, o que reforça o laço de contágio.
 

@@ -205,7 +205,7 @@ print("células diferentes, somando todos os passos:", sum(diferentes.values()))
 mostrar({t: terrame[t] for t in (0, 50, 100)})
 plt.suptitle("TerraME", y=1.05);"""))
 
-cells.append(md("""Zero células diferentes em 100 passos. Mas atenção: isso só é possível porque o Jogo da Vida é **determinístico**. Modelos com sorteio a cada passo (como o incêndio da próxima seção, no TerraME) não podem ser comparados célula a célula, porque o TerraME e o Python sorteiam números diferentes. Para eles, compara-se a **distribuição** de muitas rodadas (encontro 13)."""))
+cells.append(md("""Zero células diferentes em 100 passos. Mas atenção: isso só é possível porque o Jogo da Vida é **determinístico**. Modelos com sorteio a cada passo (como o incêndio da próxima seção, no TerraME) não podem ser comparados célula a célula, porque o TerraME e o Python sorteiam números diferentes. Para eles, compara-se a **distribuição** de muitas rodadas (encontro 7)."""))
 
 cells.append(md("""## 6. Um processo espacial: incêndio e conectividade da floresta
 

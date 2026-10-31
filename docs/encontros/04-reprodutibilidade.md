@@ -110,7 +110,7 @@ O aluno não escreve código: roda as células, troca um número e responde quat
 | 3. Modelo com sorteio é reprodutível? | Sim, se a semente for registrada. Mas uma rodada é uma amostra: conclusões pedem várias sementes e a distribuição dos resultados |
 | 4. Por que `model_commit` diz `local-cli`? | O executor é um arquivo solto, não um pacote instalado com versão. Num pacote (por exemplo, `disslucc==0.5.0`) o campo traz o nome e a versão, e o código fica identificado |
 
-Alunos costumam perguntar se o hash "garante que o resultado está certo". Não garante: comprova que é o mesmo arquivo. Um modelo errado gera hashes perfeitamente repetíveis; isso é assunto do encontro 13 (verificação e validação).
+Alunos costumam perguntar se o hash "garante que o resultado está certo". Não garante: comprova que é o mesmo arquivo. Um modelo errado gera hashes perfeitamente repetíveis; verificar é assunto do encontro 9 (DisSLUCC contra o LuccME), e validar, do projeto (encontro 13).
 
 ## Achados ao testar
 

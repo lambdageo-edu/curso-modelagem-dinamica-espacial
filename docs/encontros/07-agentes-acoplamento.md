@@ -87,7 +87,7 @@ O notebook tem uma função de apoio, `rodar(passos, criar, anotar)`, que cria o
 | --- | --- |
 | 1. Por que preferência 5 termina menos segregada que 4? | Há só 32 células livres e um agente se move por passo, para uma célula livre sorteada (não para uma que o satisfaça). Com exigência alta, quase toda mudança gera nova insatisfação e o arranjo não se estabiliza em 500 passos; um quarto continua insatisfeito. Segregação precisa de espaço para se reorganizar |
 | 2. Corrigir a peculiaridade do original? | Depende da pergunta. Para comparar com o TerraME ou reproduzir um estudo, mantém-se o original e documenta-se. Uma versão corrigida é outro modelo: roda-se como experimento à parte, com nome próprio, e o método descreve a diferença e mostra o efeito nos resultados |
-| 3. O que a taxa e o peso mudaram? | A taxa muda a quantidade (área desmatada por ano); o peso dos vizinhos muda a forma (faixa contínua ou pontos espalhados). A taxa se confere com uma série anual de área, como a do PRODES; a forma só com mapas, comparando padrões espaciais (encontro 13) |
+| 3. O que a taxa e o peso mudaram? | A taxa muda a quantidade (área desmatada por ano); o peso dos vizinhos muda a forma (faixa contínua ou pontos espalhados). A taxa se confere com uma série anual de área, como a do PRODES; a forma só com mapas, comparando padrões espaciais (oficina de projeto, encontro 13) |
 
 **Para casa, com os números do teste**
 
