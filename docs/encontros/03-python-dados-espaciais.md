@@ -22,7 +22,7 @@ O aluno sai do encontro tendo usado as quatro bibliotecas que carregam os dados 
 
 ## Antes da aula
 
-- [ ] Instalar `geopandas`, `rasterio` e `matplotlib` (no Colab, só o `rasterio` falta; a primeira célula tem o `pip install` comentado).
+- [ ] Instalar `geopandas`, `rasterio` e `matplotlib` (no Colab, só o `rasterio` falta, e a primeira célula o instala sozinha quando o notebook roda no Colab; o selo **Abrir no Colab** fica no topo do notebook).
 - [ ] Conferir que a rede do laboratório acessa `raw.githubusercontent.com` (Partes 2 e 3) e `storage.googleapis.com` (Parte 4, MapBiomas).
 - [ ] **Gerar antes os recortes do MapBiomas** rodando a Parte 4 em casa, com `ANO = 2024` e `ANO = 1985`, e distribuir `mapbiomas_ilha_2024.tif` e `mapbiomas_ilha_1985.tif`. Se a rede da aula falhar, os alunos abrem o arquivo local (a última célula mostra como).
 - [ ] Rodar a Parte 4 completa uma vez e anotar a tabela de classes: ela não pôde ser testada ao preparar o material (ver Achados), e as respostas da pergunta 4 dependem dela.

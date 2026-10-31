@@ -24,7 +24,7 @@ O aluno sai do encontro sabendo rodar e editar um notebook, guardar valores em v
 
 ## Antes da aula
 
-- [ ] Decidir o ambiente: Jupyter no laboratório ou Colab (só precisa de conta Google). O notebook não instala nada além do que o Colab já tem.
+- [ ] Decidir o ambiente: Jupyter no laboratório ou Colab (só precisa de conta Google). O notebook não instala nada além do que o Colab já tem. O selo **Abrir no Colab**, no topo do notebook, abre direto do GitHub; lembrar a turma de salvar uma cópia no Drive antes de mexer.
 - [ ] Rodar o notebook uma vez no ambiente escolhido. As quatro células da Parte 8 dão erro **de propósito**; as demais não podem dar.
 - [ ] Imprimir ou projetar a tabela de erros da Parte 8 como folha de consulta, para os próximos encontros.
 - [ ] Combinar com a turma como pedir ajuda: primeiro ler a última linha do erro, depois perguntar ao colega, depois ao professor.

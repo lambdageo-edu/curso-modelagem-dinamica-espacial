@@ -1,6 +1,7 @@
 """Gera o notebook do encontro 3 (Python II: NumPy, pandas, vetor e raster)."""
 import sys
 import nbformat as nbf
+from colab import selo
 
 md = nbf.v4.new_markdown_cell
 code = nbf.v4.new_code_cell
@@ -24,6 +25,8 @@ cells.append(md("""# Encontro 3 — Python II: grades, tabelas, mapas vetoriais 
 
 **Modelagem Dinâmica Espacial · LambdaGeo/UFMA**
 
+""" + selo("encontro03_python_dados_espaciais") + """
+
 No encontro 2 os dados eram números soltos e listas. Hoje usamos as quatro bibliotecas que carregam os dados de qualquer modelo espacial:
 
 | Biblioteca | Guarda | Exemplo de hoje |
@@ -37,7 +40,10 @@ No encontro 2 os dados eram números soltos e listas. Hoje usamos as quatro bibl
 
 cells.append(md("## 0. Preparação"))
 
-cells.append(code("""# !pip install -q geopandas rasterio matplotlib
+cells.append(code("""import sys
+if "google.colab" in sys.modules:    # no Colab, instala o que falta; no laboratório já está instalado
+    %pip install -q rasterio
+
 import numpy as np
 import pandas as pd
 import geopandas as gpd
