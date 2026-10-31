@@ -22,7 +22,7 @@ O aluno sai do encontro sabendo o que precisa guardar de uma execução para out
 
 ## Antes da aula
 
-- [ ] Instalar nas máquinas do laboratório: `pip install "dissmodel==0.6.6" "dissmodel-ca @ git+https://github.com/DisSModel/dissmodel-ca.git@v0.2.0"`, mais `jupyter` e `matplotlib`. No Colab, a primeira célula do notebook faz isso (cerca de 1 min).
+- [ ] Instalar nas máquinas do laboratório: `pip install "dissmodel==0.6.6" "dissmodel-ca @ git+https://github.com/DisSModel/dissmodel-ca.git@v0.2.0"`, mais `jupyter` e `matplotlib`. No Colab, a primeira célula do notebook faz isso sozinha (cerca de 1 min); o selo **Abrir no Colab** fica no topo do notebook.
 - [ ] Rodar o notebook inteiro numa máquina do laboratório e conferir que não há erro. Os identificadores e hashes mudam a cada execução; os números de células queimadas (575 e 443) não.
 - [ ] Deixar o notebook **sem saídas** no repositório da turma, para o aluno ver o resultado aparecer.
 - [ ] Preparar 6 a 8 slides para a exposição (seção seguinte).
