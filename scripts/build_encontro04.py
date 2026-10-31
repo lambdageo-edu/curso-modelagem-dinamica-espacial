@@ -1,6 +1,7 @@
 """Gera o notebook do encontro 4 (reprodutibilidade e DisSModel)."""
 import sys
 import nbformat as nbf
+from colab import selo
 
 md = nbf.v4.new_markdown_cell
 code = nbf.v4.new_code_cell
@@ -9,6 +10,8 @@ cells = []
 cells.append(md("""# Encontro 4 — Reprodutibilidade e o DisSModel
 
 **Modelagem Dinâmica Espacial · LambdaGeo/UFMA**
+
+""" + selo("encontro04_reprodutibilidade") + """
 
 Neste notebook você **não precisa escrever código**: rode as células na ordem (Shift+Enter), leia as saídas e responda às perguntas marcadas com ✏️. Em alguns lugares você vai trocar um número e rodar de novo.
 
@@ -21,9 +24,12 @@ Ao final, você deve saber responder:
 
 cells.append(md("""## 0. Preparação
 
-Se estiver no Colab, descomente a primeira linha e rode. No laboratório o ambiente já está instalado."""))
+No Colab, a célula abaixo instala o DisSModel e o pacote de autômatos celulares (cerca de 1 minuto). No laboratório o ambiente já está instalado e ela não instala nada."""))
 
-cells.append(code("""# !pip install -q "dissmodel==0.6.6" "dissmodel-ca @ git+https://github.com/DisSModel/dissmodel-ca.git@v0.2.0"
+cells.append(code("""import sys
+if "google.colab" in sys.modules:
+    %pip install -q "dissmodel==0.6.6" "dissmodel-ca @ git+https://github.com/DisSModel/dissmodel-ca.git@v0.2.0"
+
 import hashlib, json, sqlite3, glob, os
 import geopandas as gpd
 import warnings
