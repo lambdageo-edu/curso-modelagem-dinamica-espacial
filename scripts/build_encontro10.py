@@ -1,6 +1,7 @@
 """Gera o notebook do encontro 10 (dados com o DisSCube: da camada à grade)."""
 import sys
 import nbformat as nbf
+from colab import selo
 
 md = nbf.v4.new_markdown_cell
 code = nbf.v4.new_code_cell
@@ -9,6 +10,8 @@ cells = []
 cells.append(md("""# Encontro 10 — Dados para o modelo: do mapa à grade com o DisSCube
 
 **Modelagem Dinâmica Espacial · LambdaGeo/UFMA**
+
+""" + selo("encontro10_disscube") + """
 
 No encontro 9 o espaço celular do Acre veio pronto: cada célula já tinha a fração desmatada, a distância às rodovias, a fração em terra indígena. Hoje fazemos o caminho que veio antes: partir de camadas comuns (um raster de desmatamento, linhas de rodovias, pontos de portos, polígonos de terras indígenas) e chegar a uma **grade** em que cada célula tem um valor de cada variável.
 
@@ -24,9 +27,14 @@ O roteiro da aula:
 
 🔧 = troque um valor e rode de novo; ✏️ = responda."""))
 
-cells.append(md("## 0. Preparação"))
+cells.append(md("""## 0. Preparação
 
-cells.append(code("""# !pip install -q "disscube[dissmodel]==0.6.0"
+No Colab, a célula abaixo instala o DisSCube e o DisSModel (cerca de 1 minuto). No laboratório o ambiente já está instalado e ela não instala nada."""))
+
+cells.append(code("""import sys
+if "google.colab" in sys.modules:
+    %pip install -q "disscube[dissmodel]==0.6.0" "dissmodel==0.6.6"
+
 import contextlib, hashlib, io, json, logging, time, tomllib, urllib.request
 from pathlib import Path
 import numpy as np
@@ -239,7 +247,7 @@ cells.append(md("""O encontro 11 transforma essa nuvem de pontos em coeficientes
 
 ## Para casa: a grade do seu projeto
 
-1. Copie o modelo abaixo para um arquivo `projeto.toml`, troque o retângulo pela sua área (longitude e latitude: oeste, sul, leste, norte) e escolha o tamanho da célula. Rode `disscube validate projeto.toml` e, se passar, `disscube run projeto.toml --workspace cubo_projeto`. Ele lê o MapBiomas (coleção 11, 30 m) pela internet; uma área de município, com células de 500 m, leva de segundos a poucos minutos.
+1. Copie o modelo abaixo para um arquivo `projeto.toml`, troque o retângulo pela sua área (longitude e latitude: oeste, sul, leste, norte) e escolha o tamanho da célula. Rode `disscube validate projeto.toml` e, se passar, `disscube run projeto.toml --workspace cubo_projeto` (no terminal; num notebook, inclusive no Colab, use a função da Parte 0: `disscube(\"validate\", \"projeto.toml\")`). Ele lê o MapBiomas (coleção 11, 30 m) pela internet; uma área de município, com células de 500 m, leva de segundos a poucos minutos.
 
 ```toml
 schema = 1

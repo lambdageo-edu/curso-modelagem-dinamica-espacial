@@ -25,7 +25,7 @@ O aluno sai do encontro sabendo de onde vêm as variáveis de um espaço celular
 
 ## Antes da aula
 
-- [ ] Instalar o DisSCube: `pip install "disscube[dissmodel]==0.6.0"`.
+- [ ] Instalar o DisSCube: `pip install "disscube[dissmodel]==0.6.0"`. No Colab, a primeira célula do notebook instala tudo sozinha; o selo **Abrir no Colab** fica no topo do notebook.
 - [ ] Conferir acesso a `raw.githubusercontent.com` (fontes do TerraME, TOML do benchmark e referência do `luccme-goldens`).
 - [ ] Rodar o notebook do professor. Números que não mudam: grade de 72 × 52 = 3.744 células de 50 km; 2.174 células com dado do PRODES; diferença contra o TerraME menor que 10⁻¹⁰ nas frações do PRODES, até 0,004 em `protected`, menos de 1 mm em `distports`; em `distroads`, média de 300 m, máximo de 18 km e 79,2% das células a até 100 m; fração em corte raso de 28% (até 25 km da rodovia) a 0,7% (200 a 400 km).
 - [ ] **Rodar o modelo do "para casa" com uma área de teste**, ao menos uma vez, na rede da sala. Ele lê o MapBiomas no Google Cloud Storage, o que não pôde ser testado ao preparar este material (ver Achados). Se não funcionar, avisar a turma e indicar um caso pronto.
