@@ -23,7 +23,7 @@ O aluno sai do encontro tendo lido e rodado um modelo de agentes (Schelling), co
 
 ## Antes da aula
 
-- [ ] Instalar o `dissmodel-abm` pela tag: `pip install "dissmodel-abm @ git+https://github.com/DisSModel/dissmodel-abm.git@v0.2.0"`. Ele ainda não está no PyPI.
+- [ ] Instalar o `dissmodel-abm` pela tag: `pip install "dissmodel-abm @ git+https://github.com/DisSModel/dissmodel-abm.git@v0.2.0"`. Ele ainda não está no PyPI. No Colab, a primeira célula do notebook instala tudo sozinha; o selo **Abrir no Colab** fica no topo do notebook.
 - [ ] Conferir acesso a `raw.githubusercontent.com` (Parte 2). Sem rede, copiar `goldens/logo/schelling.csv.gz` do `terrame-goldens` v0.1.0 para a pasta da turma.
 - [ ] Rodar o notebook do professor. Números que não mudam: vizinhos do mesmo grupo de 52% para 65% (preferência 3, semente 1); médias de insatisfeitos de 18,0% (TerraME) e 18,2% (DisSModel) no passo 0; floresta de 9.900 para 5.402 células em 30 anos.
 - [ ] Levar a folha do esboço do projeto (seção 4 do notebook) impressa ou num formulário; ela é devolvida no encontro 8.

@@ -1,6 +1,7 @@
 """Gera o notebook do encontro 7 (agentes e acoplamento)."""
 import sys
 import nbformat as nbf
+from colab import selo
 
 md = nbf.v4.new_markdown_cell
 code = nbf.v4.new_code_cell
@@ -10,6 +11,8 @@ cells.append(md("""# Encontro 7 — Agentes e acoplamento
 
 **Modelagem Dinâmica Espacial · LambdaGeo/UFMA**
 
+""" + selo("encontro07_agentes_acoplamento") + """
+
 Duas ideias neste encontro:
 
 1. **Agentes.** Em vez de células que mudam de estado, indivíduos que **decidem e se movem** (pessoas, animais, produtores rurais). Vamos rodar e ler um modelo pronto, o de segregação de Schelling.
@@ -17,9 +20,14 @@ Duas ideias neste encontro:
 
 Rode as células na ordem. 🔧 = troque um número e rode de novo; ✏️ = responda."""))
 
-cells.append(md("## 0. Preparação"))
+cells.append(md("""## 0. Preparação
 
-cells.append(code("""# !pip install -q "dissmodel==0.6.6" "dissmodel-abm @ git+https://github.com/DisSModel/dissmodel-abm.git@v0.2.0"
+No Colab, a célula abaixo instala o DisSModel e o pacote de agentes (cerca de 1 minuto). No laboratório o ambiente já está instalado e ela não instala nada."""))
+
+cells.append(code("""import sys
+if "google.colab" in sys.modules:
+    %pip install -q "dissmodel==0.6.6" "dissmodel-abm @ git+https://github.com/DisSModel/dissmodel-abm.git@v0.2.0"
+
 import contextlib, io
 import numpy as np
 import pandas as pd
