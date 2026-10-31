@@ -36,6 +36,6 @@ jupyter lab
 | disscube | 0.6.0 | PyPI (a partir do encontro 10) |
 | disslucc | 0.5.0 | PyPI (a partir do encontro 9) |
 
-No Colab, a primeira célula de cada notebook tem o `pip install` comentado: basta descomentar e rodar.
+Os notebooks dos encontros 2 e 3 têm um selo **Abrir no Colab** no topo, que abre o notebook no Google Colab direto do GitHub; o do encontro 3 instala sozinho o que falta no Colab (`rasterio`). Nos demais encontros, por enquanto, a primeira célula tem o `pip install` comentado: no Colab, basta descomentar e rodar.
 
 Os encontros 5, 6 e 7 leem as saídas de referência do TerraME direto do repositório [`terrame-goldens`](https://github.com/LambdaGeo/terrame-goldens) (versão 0.1.0), e por isso precisam de acesso a `raw.githubusercontent.com`.

@@ -1,6 +1,7 @@
 """Gera o notebook do encontro 2 (Python I: notebook, variáveis, listas, laços, funções)."""
 import sys
 import nbformat as nbf
+from colab import selo
 
 md = nbf.v4.new_markdown_cell
 code = nbf.v4.new_code_cell
@@ -18,6 +19,8 @@ cells = []
 cells.append(md("""# Encontro 2 — Python I: notebook, variáveis, listas, laços e funções
 
 **Modelagem Dinâmica Espacial · LambdaGeo/UFMA**
+
+""" + selo("encontro02_python_basico") + """
 
 Este é o primeiro contato com Python. Ninguém precisa saber programar: o objetivo de hoje é **ler, rodar e alterar** pequenos pedaços de código. Ao final, você terá escrito um modelo de crescimento populacional que é, sem o nome, o primeiro modelo de dinâmica de sistemas da disciplina.
 
