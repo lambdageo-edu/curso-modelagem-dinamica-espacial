@@ -10,5 +10,6 @@ Cada encontro tem duas páginas: o **roteiro**, para o professor (tempo de cada 
 | [5](05-dinamica-sistemas.md) | Dinâmica de sistemas | cerca de 6 s |
 | [6](06-automatos-celulares.md) | Autômatos celulares | cerca de 20 s |
 | [7](07-agentes-acoplamento.md) | Agentes e acoplamento | cerca de 11 s |
+| [8](08-modelos-mudanca-terra.md) | Modelos de mudança de uso e cobertura da terra | sem notebook: [notas de aula](08-notas.md) e [ficha de leitura](08-ficha.md) |
 
 Os notebooks foram testados em 31 out 2026 com Python 3.13 e as versões listadas em [Metodologia e ambiente](../metodologia.md).

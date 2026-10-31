@@ -81,3 +81,7 @@ nav:
       - "7. Agentes e acoplamento":
           - Roteiro: encontros/07-agentes-acoplamento.md
           - Notebook: notebooks/encontro07_agentes_acoplamento.ipynb
+      - "8. Modelos de mudança da terra":
+          - Roteiro: encontros/08-modelos-mudanca-terra.md
+          - Notas de aula: encontros/08-notas.md
+          - Ficha de leitura: encontros/08-ficha.md
