@@ -1,0 +1,11 @@
+# Ambiente dos notebooks: versões fixadas para todo o semestre
+dissmodel==0.6.6
+dissmodel-ca @ git+https://github.com/DisSModel/dissmodel-ca.git@v0.2.0
+dissmodel-sysdyn @ git+https://github.com/DisSModel/dissmodel-sysdyn.git@v0.2.0
+dissmodel-abm @ git+https://github.com/DisSModel/dissmodel-abm.git@v0.2.0
+matplotlib
+jupyterlab
+# para reexecutar os notebooks pelo script
+nbformat
+nbclient
+ipykernel

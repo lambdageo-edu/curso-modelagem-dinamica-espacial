@@ -1,0 +1,4 @@
+# Para gerar o site (os notebooks já vão executados; o site não roda modelos)
+mkdocs==1.6.1
+mkdocs-material==9.8.0
+mkdocs-jupyter==0.27.0

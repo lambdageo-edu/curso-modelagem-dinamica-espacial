@@ -1,0 +1,73 @@
+site_name: Modelagem Dinâmica Espacial
+site_description: Disciplina de pós-graduação (PPGC&TAmb/UFMA) — de autômatos celulares a modelos de mudança de uso da terra, com DisSModel, DisSCube e DisSLUCC.
+site_author: Sérgio Souza Costa
+copyright: LambdaGeo · UFMA
+
+theme:
+  name: material
+  language: pt-BR
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.footer
+    - content.code.copy
+    - toc.follow
+  palette:
+    - scheme: default
+      primary: teal
+      toggle:
+        icon: material/brightness-7
+        name: Modo escuro
+    - scheme: slate
+      primary: teal
+      toggle:
+        icon: material/brightness-4
+        name: Modo claro
+
+plugins:
+  - search:
+      lang: pt
+  - mkdocs-jupyter:
+      execute: false
+      include_source: true
+      ignore_h1_titles: true
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Início: index.md
+  - A disciplina:
+      - Cronograma: cronograma.md
+      - Metodologia e ambiente: metodologia.md
+      - Avaliação e projeto: avaliacao.md
+      - Bibliografia: bibliografia.md
+      - Preparação e riscos: preparacao.md
+  - Encontros:
+      - encontros/index.md
+      - "4. Reprodutibilidade e o DisSModel":
+          - Roteiro: encontros/04-reprodutibilidade.md
+          - Notebook: notebooks/encontro04_reprodutibilidade.ipynb
+      - "5. Dinâmica de sistemas":
+          - Roteiro: encontros/05-dinamica-sistemas.md
+          - Notebook: notebooks/encontro05_dinamica_sistemas.ipynb
+      - "6. Autômatos celulares":
+          - Roteiro: encontros/06-automatos-celulares.md
+          - Notebook: notebooks/encontro06_automatos_celulares.ipynb
+      - "7. Agentes e acoplamento":
+          - Roteiro: encontros/07-agentes-acoplamento.md
+          - Notebook: notebooks/encontro07_agentes_acoplamento.ipynb

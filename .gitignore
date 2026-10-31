@@ -1,0 +1,11 @@
+site/
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+# arquivos criados ao rodar os notebooks
+fogo.py
+model.toml
+floresta*.gpkg
+saida*/
+requirements.lock
+.cache/
