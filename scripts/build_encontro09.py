@@ -81,7 +81,7 @@ cells.append(md("""| Coluna | O que é |
 | `uc_us`, `uc_pi` | fração em unidades de conservação de uso sustentável e de proteção integral |
 | `ti` | fração em terras indígenas |
 | `fertilidad` | fração com solo fértil (pelo nome; os dados não trazem a definição) |
-| `dist_riobr` | distância em metros, até cerca de 740 km (pelo nome, a Rio Branco; os dados não trazem a definição) |"""))
+| `dist_riobr` | distância em linha reta até Rio Branco, a capital, em metros (até cerca de 740 km) |"""))
 
 cells.append(code("""fig, eixos = plt.subplots(2, 3, figsize=(13, 7))
 for ax, (col, titulo, cmap) in zip(eixos.flat, [
