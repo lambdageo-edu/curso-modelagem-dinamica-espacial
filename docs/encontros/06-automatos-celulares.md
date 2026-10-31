@@ -72,7 +72,7 @@ Aplicar a regra do Jogo da Vida ao blinker no papel: três células em linha vir
 | Serve para | polígonos irregulares, municípios, setores | grades regulares grandes |
 | Velocidade (30 × 30) | cerca de 0,2 s por passo | cerca de 0,0001 s por passo |
 
-O custo do vetor é Python célula a célula, não a geometria. A partir do encontro 9 os dados chegam como raster, pelo DisSCube.
+O custo do vetor é Python célula a célula, não a geometria. No encontro 10 os dados chegam como raster, pelo DisSCube.
 
 ## Prática (55 min)
 

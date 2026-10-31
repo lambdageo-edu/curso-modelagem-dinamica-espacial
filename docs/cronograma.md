@@ -1,6 +1,6 @@
 # Cronograma
 
-Seis módulos: fundamentos (1), Python (2–3), reprodutibilidade e paradigmas didáticos (4–7), modelos de mudança da terra e dados (8–10), LUCC no DisSLUCC com cenários (11–12), verificação e projeto (13–15). O projeto final começa a ser definido no encontro 7, para haver tempo de montar os dados.
+Cinco módulos: fundamentos (1), Python (2–3), reprodutibilidade e paradigmas didáticos (4–7), modelos de mudança da terra no DisSLUCC, com dados e cenários (8–12), verificação e projeto (13–15). No bloco de LUCC o modelo vem antes dos dados: o aluno roda um modelo com dados prontos (9) e só então monta, com o DisSCube, as variáveis que o potencial usa (10). O projeto final começa a ser definido no encontro 7, para haver tempo de montar os dados.
 
 Os encontros com roteiro e notebook prontos têm link.
 
@@ -13,11 +13,11 @@ Os encontros com roteiro e notebook prontos têm link.
 | [5](encontros/05-dinamica-sistemas.md) | Dinâmica de sistemas | Estoques, fluxos, retroalimentação, equilíbrio; o ambiente e o relógio do DisSModel | Banheira, SIR e Lotka-Volterra; variar parâmetros; comparar com a saída do TerraME | dissmodel-sysdyn, terrame-docker (demonstração) |
 | [6](encontros/06-automatos-celulares.md) | Autômatos celulares | Espaço celular, estado, vizinhança, regra, borda; processos espaciais | Jogo da Vida e modelo de incêndio; densidade crítica; borda fixa × periódica | dissmodel-ca |
 | [7](encontros/07-agentes-acoplamento.md) | Agentes e acoplamento | Agentes e sociedades (visão geral); acoplar um AC a uma dinâmica de sistemas | Ler um modelo de agentes pronto; esboço do projeto final | dissmodel-abm (demonstração) |
-| 8 | Modelos de mudança da terra | Land change models em geral: forças motrizes, escalas, abordagens; demanda, potencial e alocação; CLUE/CLUE-S, Dinamica EGO, LuccME, Land Change Modeler, SLEUTH. Cenários: narrativa traduzida em números, cenário × previsão; demanda decide quanto, potencial e restrições decidem onde | Ler e comparar dois estudos de cenários na Amazônia ou no Cerrado | — |
-| 9 | Dados | Grade como garantia; cubo de dados; o `fill` do TerraME e seus operadores | Arquivo TOML com fontes e derivações sobre um recorte pequeno | disscube |
-| 10 | Dados | Fontes abertas: MapBiomas, PRODES, BDC; agregação por classe, percentual, distância | Montar a grade do projeto de cada aluno; conferir com `disscube plot` | disscube |
-| 11 | LUCC | Estrutura de um modelo no DisSLUCC; demanda como tabela; dois cenários de demanda | Rodar um lab; cenários "tendência" e "governança" (taxa reduzida); curva de área por ano e mapa das células que mudam só num deles | disslucc |
-| 12 | LUCC | Potencial por regressão; alocação contínua, discreta e por saturação; restrições e sensibilidade | Ajustar a regressão nos dados da turma; rodar com e sem áreas protegidas como restrição; varrer um coeficiente e fazer o mapa de concordância | disslucc |
+| 8 | Modelos de mudança da terra | Land change models em geral: forças motrizes, escalas, abordagens; demanda, potencial e alocação; CLUE/CLUE-S, Dinamica EGO, LuccME, Land Change Modeler, SLEUTH. Cenários: narrativa traduzida em números, cenário × previsão; demanda decide quanto, potencial e restrições decidem onde | Ler e comparar dois estudos de cenários na Amazônia ou no Cerrado; listar as variáveis (drivers) que cada um usa no potencial | — |
+| 9 | LUCC | Estrutura de um modelo no DisSLUCC, com dados prontos: demanda como tabela, potencial, alocação; dois cenários de demanda | Rodar um lab do LuccME; cenários "tendência" e "governança" (taxa reduzida); curva de área por ano e mapa das células que mudam só num deles | disslucc |
+| 10 | Dados | Grade como garantia; cubo de dados; o `fill` do TerraME e seus operadores; fontes abertas (MapBiomas, PRODES, BDC) | Montar com o DisSCube, a partir de um TOML pronto, as variáveis que o potencial do encontro 9 usou; conferir com `disscube plot`. A grade do projeto fica como tarefa, com cubos prontos para quem não tiver área própria | disscube |
+| 11 | LUCC | Potencial por regressão; alocação contínua e discreta (a por saturação só mencionada); restrições | Ajustar a regressão nos dados da turma; comparar as alocações contínua e discreta; rodar com e sem áreas protegidas como restrição | disslucc |
+| 12 | LUCC | Incerteza e sensibilidade: várias sementes, varredura de parâmetros, concordância entre rodadas | Varrer um coeficiente; mapa de concordância; primeira conferência dos projetos | disslucc, dissmodel |
 | 13 | Verificação e validação | Verificar × validar; comparação com uma implementação de referência; tolerância para equivalência; validação multiescala | Comparar uma rodada com o golden do LuccME; validar a rodada da turma contra o mapa observado | disslucc-benchmark |
 | 14 | Projeto | Seminários: modelo, dados, resultados e limitações | Apresentações de 15 min com discussão | — |
 | 15 | Projeto | Seminários e fechamento | Apresentações; avaliação da disciplina | — |

@@ -77,7 +77,7 @@ A disciplina trata da primeira. As outras duas dependem dela.
 | Organização | `load` e `save` fazem a leitura e a gravação; `run` só simula, o que permite trocar a fonte de dados sem mexer no modelo | Parte 2 |
 | Ambiente | registro parcial: versão do dissmodel; o resto vem do `requirements.lock` | Parte 8 |
 
-Fechar com a ponte: o DisSCube (encontros 9 e 10) faz o mesmo com a preparação dos dados, no `run.json`, e o DisSLUCC herda o executor do DisSModel.
+Fechar com a ponte: o DisSCube (encontro 10) faz o mesmo com a preparação dos dados, no `run.json`, e o DisSLUCC herda o executor do DisSModel.
 
 ## Prática (50 min)
 

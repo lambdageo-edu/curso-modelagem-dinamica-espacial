@@ -33,8 +33,8 @@ jupyter lab
 | dissmodel-ca | 0.2.0 | GitHub, tag `v0.2.0` |
 | dissmodel-sysdyn | 0.2.0 | GitHub, tag `v0.2.0` |
 | dissmodel-abm | 0.2.0 | GitHub, tag `v0.2.0` (ainda não está no PyPI) |
-| disscube | 0.6.0 | PyPI (a partir do encontro 9) |
-| disslucc | 0.5.0 | PyPI (a partir do encontro 11) |
+| disscube | 0.6.0 | PyPI (a partir do encontro 10) |
+| disslucc | 0.5.0 | PyPI (a partir do encontro 9) |
 
 No Colab, a primeira célula de cada notebook tem o `pip install` comentado: basta descomentar e rodar.
 
