@@ -33,6 +33,7 @@ ENCONTROS = {
     "06": "encontro06_automatos_celulares",
     "07": "encontro07_agentes_acoplamento",
     "09": "encontro09_disslucc",
+    "10": "encontro10_disscube",
 }
 
 
