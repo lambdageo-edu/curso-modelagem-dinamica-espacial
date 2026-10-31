@@ -1,6 +1,7 @@
 """Gera o notebook do encontro 5 (dinâmica de sistemas)."""
 import sys
 import nbformat as nbf
+from colab import selo
 
 md = nbf.v4.new_markdown_cell
 code = nbf.v4.new_code_cell
@@ -9,6 +10,8 @@ cells = []
 cells.append(md("""# Encontro 5 — Dinâmica de sistemas
 
 **Modelagem Dinâmica Espacial · LambdaGeo/UFMA**
+
+""" + selo("encontro05_dinamica_sistemas") + """
 
 Dinâmica de sistemas descreve o mundo como **estoques** (o que se acumula: água, floresta, pessoas) e **fluxos** (o que entra e sai a cada passo). Ainda não há espaço: cada modelo é um único lugar. O espaço chega no próximo encontro, com os autômatos celulares.
 
@@ -21,9 +24,14 @@ Ao final, você deve saber:
 3. Encontrar o equilíbrio de um modelo pela conta e pela simulação.
 4. Comparar uma simulação do DisSModel com a do TerraME."""))
 
-cells.append(md("## 0. Preparação"))
+cells.append(md("""## 0. Preparação
 
-cells.append(code("""# !pip install -q "dissmodel==0.6.6" "dissmodel-sysdyn @ git+https://github.com/DisSModel/dissmodel-sysdyn.git@v0.2.0"
+No Colab, a célula abaixo instala o DisSModel e o pacote de dinâmica de sistemas (cerca de 1 minuto). No laboratório o ambiente já está instalado e ela não instala nada."""))
+
+cells.append(code("""import sys
+if "google.colab" in sys.modules:
+    %pip install -q "dissmodel==0.6.6" "dissmodel-sysdyn @ git+https://github.com/DisSModel/dissmodel-sysdyn.git@v0.2.0"
+
 import contextlib, io
 import pandas as pd
 import matplotlib.pyplot as plt

@@ -22,7 +22,7 @@ O aluno sai do encontro lendo e alterando modelos de estoque e fluxo, encontrand
 
 ## Antes da aula
 
-- [ ] Instalar `dissmodel-sysdyn` pela tag: `pip install "dissmodel-sysdyn @ git+https://github.com/DisSModel/dissmodel-sysdyn.git@v0.2.0"`. O resto já veio do encontro 4.
+- [ ] Instalar `dissmodel-sysdyn` pela tag: `pip install "dissmodel-sysdyn @ git+https://github.com/DisSModel/dissmodel-sysdyn.git@v0.2.0"`. O resto já veio do encontro 4. No Colab, a primeira célula do notebook instala tudo sozinha; o selo **Abrir no Colab** fica no topo do notebook.
 - [ ] Conferir que o laboratório acessa `raw.githubusercontent.com` (Parte 5). Sem rede, copiar `sir.csv.gz`, `tub.csv.gz` e `predator_prey.csv.gz` do `terrame-goldens` v0.1.0 para a pasta da turma e trocar a `URL` por um caminho local.
 - [ ] Rodar o notebook do professor uma vez. Os números da Parte 3 (picos de 3.558, 1.733 e 677 pessoas) e da Parte 5 (diferença zero) não mudam.
 - [ ] Desenhar no quadro, antes da aula, o diagrama de estoque e fluxo da banheira (uma caixa, uma torneira, um ralo): é a imagem que a aula inteira reaproveita.
