@@ -1,6 +1,7 @@
 """Gera o notebook do encontro 6 (autômatos celulares)."""
 import sys
 import nbformat as nbf
+from colab import selo
 
 md = nbf.v4.new_markdown_cell
 code = nbf.v4.new_code_cell
@@ -9,6 +10,8 @@ cells = []
 cells.append(md("""# Encontro 6 — Autômatos celulares
 
 **Modelagem Dinâmica Espacial · LambdaGeo/UFMA**
+
+""" + selo("encontro06_automatos_celulares") + """
 
 No encontro 5 cada modelo era um único lugar. Agora o espaço entra: uma grade de células, cada uma com um **estado**, que muda a cada passo conforme o estado das **vizinhas**. É a base dos modelos de mudança de uso da terra que veremos a partir do encontro 8.
 
@@ -23,9 +26,14 @@ Um autômato celular tem quatro ingredientes:
 
 Rode as células na ordem. 🔧 = troque um número e rode de novo; ✏️ = responda."""))
 
-cells.append(md("## 0. Preparação"))
+cells.append(md("""## 0. Preparação
 
-cells.append(code("""# !pip install -q "dissmodel==0.6.6" "dissmodel-ca @ git+https://github.com/DisSModel/dissmodel-ca.git@v0.2.0"
+No Colab, a célula abaixo instala o DisSModel e o pacote de autômatos celulares (cerca de 1 minuto). No laboratório o ambiente já está instalado e ela não instala nada."""))
+
+cells.append(code("""import sys
+if "google.colab" in sys.modules:
+    %pip install -q "dissmodel==0.6.6" "dissmodel-ca @ git+https://github.com/DisSModel/dissmodel-ca.git@v0.2.0"
+
 import contextlib, io, time
 import numpy as np
 import pandas as pd

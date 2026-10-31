@@ -22,9 +22,9 @@ O aluno sai do encontro sabendo nomear os quatro ingredientes de um autômato ce
 
 ## Antes da aula
 
-- [ ] O ambiente do encontro 4 já tem o `dissmodel-ca` v0.2.0; nada a instalar.
+- [ ] O ambiente do encontro 4 já tem o `dissmodel-ca` v0.2.0; nada a instalar. No Colab, a primeira célula do notebook instala tudo sozinha; o selo **Abrir no Colab** fica no topo do notebook.
 - [ ] Conferir acesso a `raw.githubusercontent.com` (Parte 5). Sem rede, copiar `goldens/ca/grids/life_glider.csv.gz` do `terrame-goldens` v0.1.0 para a pasta da turma.
-- [ ] Rodar o notebook do professor. Números que não mudam: 0,215 s por passo em vetor e 0,0001 s em raster numa grade 30 × 30 (variam com a máquina; a razão fica perto de 2.000×), 2.576 células vivas no passo 200, zero células diferentes do TerraME.
+- [ ] Rodar o notebook do professor. Números que não mudam: 2.576 células vivas no passo 200, zero células diferentes do TerraME. Os tempos variam: cerca de 0,2 s por passo em vetor e 0,0001 s em raster numa grade 30 × 30, e a razão oscila entre 800× e 2.300× em execuções seguidas na mesma máquina, porque o passo em raster é curto demais para medir com precisão. Falar em "cerca de mil vezes".
 - [ ] Trazer em papel quadriculado um blinker (três células em linha) para a turma aplicar a regra do Jogo da Vida à mão antes de ver no computador.
 - [ ] Recolher os diagramas de estoque e fluxo pedidos no encontro 5 e escolher dois para comentar na abertura.
 
@@ -37,7 +37,7 @@ O aluno sai do encontro sabendo nomear os quatro ingredientes de um autômato ce
 | 30–38 | Prática | Grade vetorial: uma linha por célula, identificador "linha-coluna" | Parte 1 |
 | 38–45 | Prática | Vizinhanças e bordas desenhadas; pergunta 1 (a divisa com o Pará) | Parte 2 |
 | 45–58 | Prática | Planador: forma que anda; borda periódica × fechada | Parte 3 |
-| 58–65 | Prática | Mesmo modelo em raster: cerca de 2.000× mais rápido; 40 mil células em segundos | Parte 4 |
+| 58–65 | Prática | Mesmo modelo em raster: cerca de mil vezes mais rápido; 40 mil células em segundos | Parte 4 |
 | 65–70 | Prática | Comparação com o TerraME, célula a célula, em 100 passos | Parte 5 |
 | 70–85 | Prática | Incêndio e conectividade: três mapas e a curva de percolação | Parte 6 |
 | 85–100 | Fechamento | Pergunta 3 em turma; ligar o limiar à fragmentação e ao desmatamento a partir de estradas; exercícios | Para casa |
@@ -83,7 +83,7 @@ Como no encontro 5, o notebook traz funções de apoio que o aluno só usa: `rod
 | 1. Espaço celular | Grade 5 × 5; a tabela do GeoPandas e o mapa com os identificadores "linha-coluna" | Uma célula é uma linha de tabela com geometria |
 | 2. Vizinhança | Quatro desenhos: von Neumann (4), Moore (8), Moore no canto com borda fechada (3) e periódica (8) | A borda periódica liga o canto aos outros três cantos |
 | 3. Planador | Grade 12 × 12; a forma se repete a cada 4 passos, deslocada na diagonal. Com borda periódica, sai por um canto e volta pelo oposto; com fechada, vira um bloco parado no canto | Mesma regra, outro resultado: a borda faz parte do modelo |
-| 4. Raster | Cronômetro: vetor cerca de 2.000× mais lento. Grade 200 × 200 aleatória (30% vivas): 2.576 vivas no passo 200 | Mesma regra escrita sobre matrizes |
+| 4. Raster | Cronômetro: vetor cerca de mil vezes mais lento (a razão oscila entre 800× e 2.300×). Grade 200 × 200 aleatória (30% vivas): 2.576 vivas no passo 200 | Mesma regra escrita sobre matrizes |
 | 5. TerraME | Lê a grade do planador do TerraME (30 × 30, 101 passos) e compara: zero células diferentes | Comparação célula a célula só vale para modelo determinístico |
 | 6. Incêndio | Fogo a partir da borda esquerda; mapas com 55%, 60% e 65% de floresta; curva com 17 densidades × 10 sementes (cerca de 3 s): o salto fica entre 0,55 e 0,65 | O limiar (cerca de 0,59) emerge da conectividade, não do código |
 
