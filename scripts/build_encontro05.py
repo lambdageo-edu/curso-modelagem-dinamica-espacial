@@ -8,7 +8,7 @@ cells = []
 
 cells.append(md("""# Encontro 5 — Dinâmica de sistemas
 
-**Modelagem Dinâmica Espacial · PPGC&TAmb/UFMA**
+**Modelagem Dinâmica Espacial · LambdaGeo/UFMA**
 
 Dinâmica de sistemas descreve o mundo como **estoques** (o que se acumula: água, floresta, pessoas) e **fluxos** (o que entra e sai a cada passo). Ainda não há espaço: cada modelo é um único lugar. O espaço chega no próximo encontro, com os autômatos celulares.
 

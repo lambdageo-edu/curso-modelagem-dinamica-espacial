@@ -1,5 +1,5 @@
 site_name: Modelagem Dinâmica Espacial
-site_description: Disciplina de pós-graduação (PPGC&TAmb/UFMA) — de autômatos celulares a modelos de mudança de uso da terra, com DisSModel, DisSCube e DisSLUCC.
+site_description: Proposta de disciplina de pós-graduação (LambdaGeo/UFMA) — de autômatos celulares a modelos de mudança de uso da terra, com DisSModel, DisSCube e DisSLUCC.
 site_author: Sérgio Souza Costa
 copyright: LambdaGeo · UFMA
 
@@ -59,6 +59,12 @@ nav:
       - Preparação e riscos: preparacao.md
   - Encontros:
       - encontros/index.md
+      - "2. Python I":
+          - Roteiro: encontros/02-python-basico.md
+          - Notebook: notebooks/encontro02_python_basico.ipynb
+      - "3. Python II: dados espaciais":
+          - Roteiro: encontros/03-python-dados-espaciais.md
+          - Notebook: notebooks/encontro03_python_dados_espaciais.ipynb
       - "4. Reprodutibilidade e o DisSModel":
           - Roteiro: encontros/04-reprodutibilidade.md
           - Notebook: notebooks/encontro04_reprodutibilidade.ipynb

@@ -2,17 +2,17 @@
 
 **De autômatos celulares a modelos de mudança de uso da terra**
 
-Disciplina eletiva do Programa de Pós-Graduação em Ciência e Tecnologia Ambiental (PPGC&TAmb) da UFMA. Os encontros começam com modelos pequenos e didáticos (dinâmica de sistemas, autômatos celulares, agentes) e terminam num modelo de mudança de uso e cobertura da terra (LUCC) sobre dados reais. Tudo é feito em Python, com o [DisSModel](https://github.com/DisSModel/dissmodel), o [DisSCube](https://github.com/DisSModel/disscube) e o [DisSLUCC](https://github.com/DisSModel/disslucc), comparados com o TerraME e o LuccME, que continuam sendo a referência.
+Proposta de disciplina eletiva de pós-graduação, elaborada no grupo LambdaGeo (UFMA). Os encontros começam com modelos pequenos e didáticos (dinâmica de sistemas, autômatos celulares, agentes) e terminam num modelo de mudança de uso e cobertura da terra (LUCC) sobre dados reais. Tudo é feito em Python, com o [DisSModel](https://github.com/DisSModel/dissmodel), o [DisSCube](https://github.com/DisSModel/disscube) e o [DisSLUCC](https://github.com/DisSModel/disslucc), comparados com o TerraME e o LuccME, que continuam sendo a referência.
 
 !!! note "Estado deste material"
-    Proposta em elaboração. Os roteiros e notebooks dos encontros 4 a 7 estão prontos e testados; os demais encontros têm só o tema no [cronograma](cronograma.md).
+    Proposta em elaboração. Os roteiros e notebooks dos encontros 2 a 7 estão prontos e testados; os demais encontros têm só o tema no [cronograma](cronograma.md).
 
 ## Identificação
 
 | Campo | Proposta |
 | --- | --- |
 | Nome | Modelagem Dinâmica Espacial: de autômatos celulares a modelos de mudança de uso da terra |
-| Programa | PPGC&TAmb – UFMA (eletiva) |
+| Oferta | Pós-graduação, eletiva; programa e semestre a definir |
 | Carga horária | 30 horas-aula (15 encontros de 1h40, isto é, 2 aulas de 50 min por encontro) |
 | Créditos | 2 |
 | Formato | Presencial, em laboratório, com notebooks Jupyter |
@@ -28,7 +28,7 @@ Conceitos de modelagem dinâmica espacial: espaço, tempo, processo e escala. Pa
 
 ## Justificativa
 
-A modelagem dinâmica é central em estudos de desmatamento, expansão urbana, zona costeira e cenários de política ambiental, temas frequentes nas dissertações do programa. O ensino na área se apoiou por muito tempo no TerraME e nos cursos do INPE, que continuam sendo a referência; a disciplina segue a mesma progressão didática (modelos pequenos primeiro, LUCC depois), mas em Python, a linguagem que os alunos já usam em análise de dados. O DisSModel, o DisSCube e o DisSLUCC são desenvolvidos no LambdaGeo, têm versões publicadas com DOI e foram comparados com o TerraME e o LuccME, o que permite mostrar ao aluno não só como construir um modelo, mas como verificar e repetir o resultado.
+A modelagem dinâmica é central em estudos de desmatamento, expansão urbana, zona costeira e cenários de política ambiental, temas frequentes em dissertações e teses da área ambiental. O ensino na área se apoiou por muito tempo no TerraME e nos cursos do INPE, que continuam sendo a referência; a disciplina segue a mesma progressão didática (modelos pequenos primeiro, LUCC depois), mas em Python, a linguagem que os alunos já usam em análise de dados. O DisSModel, o DisSCube e o DisSLUCC são desenvolvidos no LambdaGeo, têm versões publicadas com DOI e foram comparados com o TerraME e o LuccME, o que permite mostrar ao aluno não só como construir um modelo, mas como verificar e repetir o resultado.
 
 ## Objetivos
 

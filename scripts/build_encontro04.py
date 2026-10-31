@@ -8,7 +8,7 @@ cells = []
 
 cells.append(md("""# Encontro 4 — Reprodutibilidade e o DisSModel
 
-**Modelagem Dinâmica Espacial · PPGC&TAmb/UFMA**
+**Modelagem Dinâmica Espacial · LambdaGeo/UFMA**
 
 Neste notebook você **não precisa escrever código**: rode as células na ordem (Shift+Enter), leia as saídas e responda às perguntas marcadas com ✏️. Em alguns lugares você vai trocar um número e rodar de novo.
 

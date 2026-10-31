@@ -1,8 +1,8 @@
 # Modelagem Dinâmica Espacial
 
-Material da disciplina de pós-graduação **Modelagem Dinâmica Espacial: de autômatos celulares a modelos de mudança de uso da terra** (PPGC&TAmb/UFMA, LambdaGeo). Proposta, cronograma, roteiros dos encontros e notebooks, publicados como site MkDocs.
+Material da disciplina de pós-graduação **Modelagem Dinâmica Espacial: de autômatos celulares a modelos de mudança de uso da terra** (proposta, LambdaGeo/UFMA). Proposta, cronograma, roteiros dos encontros e notebooks, publicados como site MkDocs.
 
-Estado: proposta em elaboração. Roteiros e notebooks prontos e testados para os encontros 4 a 7; os demais estão só no cronograma.
+Estado: proposta em elaboração. Roteiros e notebooks prontos e testados para os encontros 2 a 7; os demais estão só no cronograma.
 
 ## Conteúdo
 

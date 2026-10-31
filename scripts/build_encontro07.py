@@ -8,7 +8,7 @@ cells = []
 
 cells.append(md("""# Encontro 7 — Agentes e acoplamento
 
-**Modelagem Dinâmica Espacial · PPGC&TAmb/UFMA**
+**Modelagem Dinâmica Espacial · LambdaGeo/UFMA**
 
 Duas ideias neste encontro:
 

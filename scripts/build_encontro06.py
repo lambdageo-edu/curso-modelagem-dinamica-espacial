@@ -8,7 +8,7 @@ cells = []
 
 cells.append(md("""# Encontro 6 — Autômatos celulares
 
-**Modelagem Dinâmica Espacial · PPGC&TAmb/UFMA**
+**Modelagem Dinâmica Espacial · LambdaGeo/UFMA**
 
 No encontro 5 cada modelo era um único lugar. Agora o espaço entra: uma grade de células, cada uma com um **estado**, que muda a cada passo conforme o estado das **vizinhas**. É a base dos modelos de mudança de uso da terra que veremos a partir do encontro 8.
 

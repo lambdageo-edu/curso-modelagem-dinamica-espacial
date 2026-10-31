@@ -4,6 +4,8 @@ Cada encontro tem duas páginas: o **roteiro**, para o professor (tempo de cada 
 
 | Encontro | Tema | Notebook roda em |
 | --- | --- | --- |
+| [2](02-python-basico.md) | Python I: notebook, variáveis, listas, laços e funções | cerca de 2 s |
+| [3](03-python-dados-espaciais.md) | Python II: grades, tabelas, vetor e raster | cerca de 4 s (a Parte 4 lê o MapBiomas pela internet) |
 | [4](04-reprodutibilidade.md) | Reprodutibilidade e o DisSModel | cerca de 30 s |
 | [5](05-dinamica-sistemas.md) | Dinâmica de sistemas | cerca de 6 s |
 | [6](06-automatos-celulares.md) | Autômatos celulares | cerca de 20 s |

@@ -4,6 +4,9 @@ Cada `build_encontroNN.py` escreve um notebook; este script o executa numa pasta
 temporária (os notebooks criam arquivos como `fogo.py` e `saida/`) e grava a versão
 executada em `docs/notebooks/`, que é a que o site mostra.
 
+Células com a tag `raises-exception` mostram um erro de propósito. Células com a
+tag `sem-saida-no-site` leem dados de fora (MapBiomas) e ficam sem saída no site.
+
 Uso:
     python scripts/executar_notebooks.py            # todos
     python scripts/executar_notebooks.py 05 06      # só alguns
@@ -23,6 +26,8 @@ RAIZ = Path(__file__).resolve().parent.parent
 SAIDA = RAIZ / "docs" / "notebooks"
 
 ENCONTROS = {
+    "02": "encontro02_python_basico",
+    "03": "encontro03_python_dados_espaciais",
     "04": "encontro04_reprodutibilidade",
     "05": "encontro05_dinamica_sistemas",
     "06": "encontro06_automatos_celulares",
@@ -38,11 +43,17 @@ def executar(numero: str) -> None:
         subprocess.run([sys.executable, str(gerador), str(caminho)], check=True)
         nb = nbformat.read(caminho, as_version=4)
         inicio = time.perf_counter()
-        NotebookClient(nb, timeout=600, kernel_name="python3",
+        NotebookClient(nb, timeout=600, kernel_name="python3", allow_errors=True,
                        resources={"metadata": {"path": pasta}}).execute()
-        erros = [o for c in nb.cells for o in c.get("outputs", []) if o.get("output_type") == "error"]
+        erros = 0
+        for c in nb.cells:
+            tags = c.get("metadata", {}).get("tags", [])
+            if "sem-saida-no-site" in tags:        # dependem de rede externa (MapBiomas)
+                c.outputs, c.execution_count = [], None
+            elif "raises-exception" not in tags:   # erros de propósito ficam
+                erros += sum(o.get("output_type") == "error" for o in c.get("outputs", []))
         if erros:
-            raise SystemExit(f"{nome}: {len(erros)} célula(s) com erro")
+            raise SystemExit(f"{nome}: {erros} célula(s) com erro")
         nbformat.write(nb, SAIDA / f"{nome}.ipynb")
         print(f"{nome}: ok em {time.perf_counter() - inicio:.0f} s")
 
