@@ -22,7 +22,7 @@ O aluno sai do encontro tendo rodado um modelo de mudança de uso de verdade, o 
 
 ## Antes da aula
 
-- [ ] Instalar o DisSLUCC: `pip install "disslucc==0.5.0"` (está no PyPI).
+- [ ] Instalar o DisSLUCC: `pip install "disslucc==0.5.0"` (está no PyPI). No Colab, a primeira célula do notebook instala tudo sozinha; o selo **Abrir no Colab** fica no topo do notebook.
 - [ ] Conferir acesso a `raw.githubusercontent.com`. Sem rede, copiar para a pasta `dados_lab01/` os sete arquivos da lista `ARQUIVOS` (do `luccme-goldens` v1.1.0); a função `baixar` aceita arquivos já presentes se o hash confere.
 - [ ] Rodar o notebook do professor. Números que não mudam: desmatado de 19.983 km² em 2008; diferenças contra o LuccME abaixo de 5 × 10⁻⁷; iterações da variante `[0, 0, 8, 26, 18, 17, 17]`; com tolerância de 5.000 km², 24.530 km² desmatados em 2014 contra 21.607 da demanda; com 200 km², 21.611 (tendência) e cerca de 20.800 (governança); 1.135 células diferem mais de 1 ponto percentual entre os cenários.
 - [ ] Trazer as fichas de leitura do encontro 8 devolvidas, com os drivers marcados: são usadas no fechamento.

@@ -1,6 +1,7 @@
 """Gera o notebook do encontro 9 (DisSLUCC com dados prontos: o lab01 do LuccME)."""
 import sys
 import nbformat as nbf
+from colab import selo
 
 md = nbf.v4.new_markdown_cell
 code = nbf.v4.new_code_cell
@@ -9,6 +10,8 @@ cells = []
 cells.append(md("""# Encontro 9 — Um modelo LUCC com o DisSLUCC
 
 **Modelagem Dinâmica Espacial · LambdaGeo/UFMA**
+
+""" + selo("encontro09_disslucc") + """
 
 No encontro 8 vimos a estrutura de um modelo de mudança de uso: **demanda** (quanto), **potencial** (onde é mais provável) e **alocação** (onde de fato muda). Hoje rodamos um modelo de verdade com essa estrutura, com dados prontos: o **lab01** do LuccME, o primeiro exemplo do pacote do INPE, sobre o estado do Acre.
 
@@ -22,9 +25,14 @@ O roteiro da aula:
 
 🔧 = troque um valor e rode de novo; ✏️ = responda."""))
 
-cells.append(md("## 0. Preparação"))
+cells.append(md("""## 0. Preparação
 
-cells.append(code("""# !pip install -q "dissmodel==0.6.6" "disslucc==0.5.0"
+No Colab, a célula abaixo instala o DisSModel e o DisSLUCC (cerca de 1 minuto). No laboratório o ambiente já está instalado e ela não instala nada."""))
+
+cells.append(code("""import sys
+if "google.colab" in sys.modules:
+    %pip install -q "dissmodel==0.6.6" "disslucc==0.5.0"
+
 import contextlib, hashlib, io, time, urllib.request
 from pathlib import Path
 import numpy as np
