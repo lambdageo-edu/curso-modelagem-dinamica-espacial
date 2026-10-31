@@ -32,6 +32,7 @@ ENCONTROS = {
     "05": "encontro05_dinamica_sistemas",
     "06": "encontro06_automatos_celulares",
     "07": "encontro07_agentes_acoplamento",
+    "09": "encontro09_disslucc",
 }
 
 
