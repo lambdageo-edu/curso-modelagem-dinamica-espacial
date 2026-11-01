@@ -2,7 +2,7 @@
 
 Material da disciplina de pós-graduação **Modelagem Dinâmica Espacial: de autômatos celulares a modelos de mudança de uso da terra** (proposta, LambdaGeo/UFMA). Proposta, cronograma, roteiros dos encontros e notebooks, publicados como site MkDocs.
 
-Estado: proposta em elaboração. Roteiros e material prontos para os encontros 2 a 13 (notebooks testados nos encontros 2 a 7 e 9 a 13; notas de aula e ficha de leitura no 8); os demais estão só no cronograma.
+Estado: proposta em elaboração. Roteiros para os 15 encontros; notebooks testados nos encontros 2 a 7 e 9 a 13, notas de aula e ficha de leitura no 8. O encontro 1 (NetLogo Web) e os seminários (14 e 15) não têm notebook e ainda não foram testados em sala.
 
 ## Conteúdo
 

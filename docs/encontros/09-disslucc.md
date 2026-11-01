@@ -10,7 +10,7 @@ O aluno sai do encontro tendo rodado um modelo de mudança de uso de verdade, o 
 | Material | Notebook `encontro09_disslucc.ipynb` (35 células, roda em cerca de 15 s) |
 | Modelo | `DemandPreComputedValues`, `PotentialLinearRegression` e `AllocationClueLike` do `disslucc` 0.5.0 |
 | Dados e referência | `csAC` (6.574 células de 5 × 5 km) e as saídas do LuccME para o lab01 e a variante `lab01_md1643`, do `luccme-goldens` v1.1.0 (DOI 10.5281/zenodo.23161342) |
-| Leitura de apoio | Livro *Geospatial Modeling with Python*, cap. 26; Verburg et al. (1999) e Veldkamp e Fresco (1996), já citados nas notas do encontro 8 |
+| Leitura de apoio | Livro *Geospatial Modeling with Python*, caps. 26 (LUCC) e 30 (verificação); Verburg et al. (1999), a alocação contínua; Aguiar et al. (2012), o LuccME |
 
 **Objetivos**
 

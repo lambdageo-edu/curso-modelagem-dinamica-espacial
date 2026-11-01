@@ -10,7 +10,7 @@ O aluno sai do encontro lendo e alterando modelos de estoque e fluxo, encontrand
 | Material | Notebook `encontro05_dinamica_sistemas.ipynb` (32 células, roda em cerca de 6 s) |
 | Modelos | `Tub`, `SIR` e `PredatorPrey` do `dissmodel-sysdyn` v0.2.0; `Floresta`, escrito no notebook |
 | Referência | Saídas do TerraME no `terrame-goldens` v0.1.0, lidas direto do GitHub |
-| Leitura de apoio | Livro *Geospatial Modeling with Python*, Cap. 23; Ford (2010), caps. 1–4 |
+| Leitura de apoio | Livro *Geospatial Modeling with Python*, Cap. 23; Ford (2009), caps. 1–4 |
 
 **Objetivos**
 

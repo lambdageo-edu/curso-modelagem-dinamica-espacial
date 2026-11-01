@@ -2,9 +2,6 @@
 
 Estas notas acompanham a exposição do encontro 8 e servem de referência para os encontros 9 a 12. Leia antes da aula ou logo depois; os termos em **negrito** voltam ao longo da disciplina.
 
-!!! note "Sobre as referências"
-    As referências ao fim foram listadas sem consulta às fontes e devem ser conferidas (volume, páginas) antes de circular o material.
-
 ## 1. O que um modelo de mudança da terra responde
 
 Um modelo de mudança de uso e cobertura da terra (LUCC, do inglês *land use and cover change*) simula como a ocupação de um território muda ao longo do tempo. As perguntas típicas são quatro:
@@ -45,7 +42,7 @@ Todo modelo escolhe uma **extensão** (a área inteira estudada) e uma **resolu�
 - **Resolução fina** (30 m a 1 km) mostra onde exatamente cada mudança acontece, mas exige dados detalhados e torna a localização exata difícil de acertar.
 - **Resolução grossa** (5 km a 25 km) suaviza a localização e permite trabalhar com frações: uma célula pode ter 40% de floresta e 60% de pastagem.
 
-Muitos modelos combinam escalas. A demanda é calculada para a região inteira (por exemplo, a área desmatada por ano no estado), e a alocação distribui essa demanda pelas células. Essa separação é a origem da família CLUE (Veldkamp e Fresco, 1996).
+Muitos modelos combinam escalas. A demanda é calculada para a região inteira (por exemplo, a área desmatada por ano no estado), e a alocação distribui essa demanda pelas células. Essa separação é a origem da família CLUE (Veldkamp e Fresco, 1996), que Verburg et al. (1999) levaram para a alocação espacial em células e Verburg et al. (2002) adaptaram para células com uma classe só (CLUE-S).
 
 A resolução também afeta a avaliação: um modelo que erra a célula exata pode acertar a quantidade na vizinhança. Por isso a validação compara em mais de uma resolução (seção 7).
 
@@ -69,8 +66,11 @@ Diferenças práticas entre as ferramentas mais usadas no Brasil:
 | LuccME | INPE | Lua, sobre o TerraME; código aberto |
 | Dinamica EGO | UFMG | interface gráfica própria; gratuito, mas com licença proprietária (sem modificação nem redistribuição) |
 | CLUE-S | Universidade de Wageningen | programa para Windows; gratuito |
+| lulcc | Imperial College London | pacote R; código aberto (Moulds et al., 2015) |
 | Land Change Modeler | Clark Labs | módulo do TerrSet; comercial |
 | DisSLUCC | LambdaGeo/UFMA | Python, sobre o DisSModel; código aberto; comparado com o LuccME |
+
+Ferramentas da mesma família não dão necessariamente o mesmo mapa: comparando quatro programas com os mesmos dados, Mas et al. (2014) encontraram diferenças de método que mudam o resultado, e Mazy e Longaretti (2023) mostraram que as descrições publicadas deixam escolhas de alocação em aberto. É uma das razões pelas quais a disciplina compara cada componente com uma implementação de referência.
 
 ## 5. Demanda, potencial e alocação
 
@@ -82,12 +82,12 @@ A maior parte dos modelos da família CLUE, incluindo o LuccME e o DisSLUCC, div
 
 **Alocação (onde de fato muda).** Um procedimento iterativo que distribui a demanda pelas células, em ordem de potencial, até que a soma de cada classe bata com a demanda do ano. As variantes:
 
-- **contínua:** cada célula guarda frações das classes (40% floresta, 60% pastagem), como no LuccME;
-- **discreta:** cada célula tem uma classe só, como no CLUE-S;
+- **contínua:** cada célula guarda frações das classes (40% floresta, 60% pastagem), como no CLUE e no lab01 do LuccME (encontro 9);
+- **discreta:** cada célula tem uma classe só, como no CLUE-S e no lab15 do LuccME (encontro 11);
 - **com restrições:** células em áreas protegidas não mudam, ou mudam menos;
 - **com inércia:** algumas classes resistem a mudar (uma área urbana raramente volta a ser floresta).
 
-A separação tem uma consequência importante: **a demanda decide a quantidade e o potencial decide a localização.** Um modelo pode acertar uma e errar a outra, e por isso as duas são avaliadas separadamente.
+A separação tem uma consequência importante: **a demanda decide a quantidade e o potencial decide a localização.** Um modelo pode acertar uma e errar a outra, e por isso as duas são avaliadas separadamente. Como o potencial é especificado (que regressão, que variáveis) também muda o resultado: com a mesma alocação, duas especificações diferentes chegaram a mapas diferentes em 15% das células num estudo nas Filipinas (Overmars et al., 2007).
 
 ## 6. Cenários
 
@@ -113,9 +113,11 @@ O valor de um cenário está na **diferença** entre eles: o que muda, e onde, s
 Duas cautelas:
 
 - **Compare com o modelo nulo.** O modelo nulo é "nada muda": o mapa final é igual ao inicial. Como as mudanças anuais costumam ser pequenas, ele acerta a maior parte das células. Um modelo só tem mérito se fizer melhor que isso. Comparações de vários modelos publicadas por Pontius et al. (2008) mostraram que superar o modelo nulo na resolução original é mais difícil do que parece.
-- **Separe quantidade de localização,** e avalie em mais de uma resolução: o erro de localização diminui quando a célula de comparação cresce.
+- **Separe quantidade de localização** (Pontius e Millones, 2011), e avalie em mais de uma resolução: o erro de localização diminui quando a célula de comparação cresce (Pontius, Huffaker e Denman, 2004).
 
-**Verificar** é outra coisa: conferir se o programa faz o que o modelo descreve. Foi o que os encontros 5 a 7 fizeram ao comparar o DisSModel com o TerraME, e o que o encontro 9 faz com o DisSLUCC e o LuccME. Verificação mostra que o código está certo; validação, que o modelo representa o território.
+O encontro 13 faz essa validação com um lab do LuccME e o mapa observado, e o encontro 12 trata da incerteza que vem dos parâmetros.
+
+**Verificar** é outra coisa: conferir se o programa faz o que o modelo descreve. Foi o que os encontros 5 a 7 fizeram ao comparar o DisSModel com o TerraME, e o que os encontros 9 a 11 fazem com o DisSLUCC e o DisSCube. Verificação mostra que o código está certo; validação, que o modelo representa o território.
 
 ## 8. Limites
 
@@ -141,9 +143,18 @@ Duas cautelas:
 
 ## Referências
 
-- AGUIAR, A. P. D. et al. Land use change emission scenarios: anticipating a forest transition process in the Brazilian Amazon. *Global Change Biology*, v. 22, n. 5, p. 1821–1840, 2016.
+Estas referências estão também na [bibliografia](../bibliografia.md), com a situação de cada uma.
+
+- AGUIAR, A. P. D. et al. Land use change emission scenarios: anticipating a forest transition process in the Brazilian Amazon. *Global Change Biology*, v. 22, n. 5, p. 1821–1840, 2016. DOI: 10.1111/gcb.13134.
 - GEIST, H. J.; LAMBIN, E. F. Proximate causes and underlying driving forces of tropical deforestation. *BioScience*, v. 52, n. 2, p. 143–150, 2002.
-- PONTIUS JR., R. G. et al. Comparing the input, output, and validation maps for several models of land change. *Annals of Regional Science*, v. 42, p. 11–37, 2008.
+- MAS, J.-F. et al. Inductive pattern-based land use/cover change models: a comparison of four software packages. *Environmental Modelling & Software*, v. 51, p. 94–111, 2014. DOI: 10.1016/j.envsoft.2013.09.010.
+- MAZY, F.-R.; LONGARETTI, P.-Y. Towards a generic theoretical framework for pattern-based LUCC modeling: allocation revisited. *Environmental Modelling & Software*, v. 166, 105706, 2023. DOI: 10.1016/j.envsoft.2023.105706.
+- MOULDS, S.; BUYTAERT, W.; MIJIC, A. An open and extensible framework for spatially explicit land use change modelling: the lulcc R package. *Geoscientific Model Development*, v. 8, p. 3215–3229, 2015. DOI: 10.5194/gmd-8-3215-2015.
+- OVERMARS, K. P.; VERBURG, P. H.; VELDKAMP, T. A. Comparison of a deductive and an inductive approach to specify land suitability in a spatially explicit land use model. *Land Use Policy*, v. 24, n. 3, p. 584–599, 2007.
+- PONTIUS JR., R. G. et al. Comparing the input, output, and validation maps for several models of land change. *The Annals of Regional Science*, v. 42, n. 1, p. 11–37, 2008. DOI: 10.1007/s00168-007-0138-2.
+- PONTIUS JR., R. G.; HUFFAKER, D.; DENMAN, K. Useful techniques of validation for spatially explicit land-change models. *Ecological Modelling*, v. 179, n. 4, p. 445–461, 2004.
+- PONTIUS JR., R. G.; MILLONES, M. Death to Kappa: birth of quantity disagreement and allocation disagreement for accuracy assessment. *International Journal of Remote Sensing*, v. 32, n. 15, p. 4407–4429, 2011.
 - SOARES-FILHO, B. S. et al. Modelling conservation in the Amazon basin. *Nature*, v. 440, p. 520–523, 2006.
-- VELDKAMP, A.; FRESCO, L. O. CLUE-CR: an integrated multi-scale model to simulate land use change scenarios in Costa Rica. *Ecological Modelling*, v. 91, p. 231–248, 1996.
-- VERBURG, P. H. et al. Modeling the spatial dynamics of regional land use: the CLUE-S model. *Environmental Management*, v. 30, n. 3, p. 391–405, 2002.
+- VELDKAMP, A.; FRESCO, L. O. CLUE: a conceptual model to study the conversion of land use and its effects. *Ecological Modelling*, v. 85, p. 253–270, 1996.
+- VERBURG, P. H. et al. A spatial explicit allocation procedure for modelling the pattern of land use change based upon actual land use. *Ecological Modelling*, v. 116, n. 1, p. 45–61, 1999.
+- VERBURG, P. H. et al. Modeling the spatial dynamics of regional land use: the CLUE-S model. *Environmental Management*, v. 30, n. 3, p. 391–405, 2002. DOI: 10.1007/s00267-002-2630-x.

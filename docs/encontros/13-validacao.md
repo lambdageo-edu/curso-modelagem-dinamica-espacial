@@ -10,7 +10,7 @@ O encontro tem duas partes. Na primeira, uma demonstração de 25 minutos compar
 | Material | Notebook `encontro13_validacao.ipynb` (15 células, roda em cerca de 6 s) |
 | Modelo e dados | lab15 (tolerância 10) sobre o `cs_moju` do `luccme-goldens` v1.1.0, que traz o desmatado observado em 1999 (`d`), 2004 (`d04`) e 2007 (`d07`) |
 | Funções | `pontius_millones` e `naive_allocation` do `disslucc.validation`; figura de mérito e erro por bloco escritos no notebook |
-| Leitura de apoio | Pontius e Millones (2011); Pontius et al. (2008); Pontius, Huffaker e Denman (2004), sobre validação em várias resoluções |
+| Leitura de apoio | Pontius et al. (2008); Pontius e Millones (2011); Pontius, Huffaker e Denman (2004), sobre validação em várias resoluções; Pontius, Peethambaram e Castella (2011), a comparação de três mapas |
 
 **Objetivos**
 

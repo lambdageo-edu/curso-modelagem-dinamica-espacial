@@ -82,6 +82,7 @@ nav:
       - Preparação e riscos: preparacao.md
   - Encontros:
       - encontros/index.md
+      - "1. Fundamentos": encontros/01-fundamentos.md
       - "2. Python I":
           - Roteiro: encontros/02-python-basico.md
           - Notebook: notebooks/encontro02_python_basico.ipynb
@@ -119,3 +120,4 @@ nav:
       - "13. Validação e oficina de projeto":
           - Roteiro: encontros/13-validacao.md
           - Notebook: notebooks/encontro13_validacao.ipynb
+      - "14 e 15. Seminários": encontros/14-15-seminarios.md

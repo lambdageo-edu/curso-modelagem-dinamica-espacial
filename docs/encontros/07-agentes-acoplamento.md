@@ -10,7 +10,7 @@ O aluno sai do encontro tendo lido e rodado um modelo de agentes (Schelling), co
 | Material | Notebook `encontro07_agentes_acoplamento.ipynb` (21 células, roda em cerca de 11 s) |
 | Modelos | `Schelling` do `dissmodel-abm` v0.2.0; `Demanda` e `Alocacao`, escritos no notebook |
 | Referência | 50 rodadas do Schelling no TerraME (`goldens/logo/schelling.csv.gz`), `terrame-goldens` v0.1.0 |
-| Leitura de apoio | Livro *Geospatial Modeling with Python*, Cap. 25; Railsback e Grimm (2019), cap. 1 |
+| Leitura de apoio | Livro *Geospatial Modeling with Python*, Cap. 25; Railsback e Grimm (2019), cap. 1; Schelling (1971); Grimm et al. (2020), o protocolo ODD usado no relatório do projeto |
 
 **Objetivos**
 
