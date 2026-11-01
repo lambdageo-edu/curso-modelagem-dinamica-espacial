@@ -14,5 +14,6 @@ Cada encontro tem duas páginas: o **roteiro**, para o professor (tempo de cada 
 | [9](09-disslucc.md) | Um modelo LUCC com o DisSLUCC: o lab01 do LuccME, verificação e cenários | cerca de 15 s (baixa os dados do `luccme-goldens` pela internet) |
 | [10](10-disscube.md) | Dados para o modelo: do mapa à grade com o DisSCube | cerca de 12 s (baixa as camadas do exemplo do TerraME pela internet) |
 | [11](11-potencial-alocacao.md) | Potencial por regressão; alocação contínua e discreta; restrições | cerca de 15 s (baixa os labs 01 e 15 do `luccme-goldens` pela internet) |
+| [12](12-incerteza-sensibilidade.md) | Incerteza e sensibilidade; conferência dos projetos | cerca de 15 s (50 rodadas do lab15 em 4 s) |
 
 Os notebooks foram testados em 31 out 2026 com Python 3.13 e as versões listadas em [Metodologia e ambiente](../metodologia.md).

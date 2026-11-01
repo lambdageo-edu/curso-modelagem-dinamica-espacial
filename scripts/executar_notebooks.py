@@ -35,6 +35,7 @@ ENCONTROS = {
     "09": "encontro09_disslucc",
     "10": "encontro10_disscube",
     "11": "encontro11_potencial_alocacao",
+    "12": "encontro12_incerteza_sensibilidade",
 }
 
 
