@@ -2,7 +2,7 @@
 
 Material da disciplina de pós-graduação **Modelagem Dinâmica Espacial: de autômatos celulares a modelos de mudança de uso da terra** (proposta, LambdaGeo/UFMA). Proposta, cronograma, roteiros dos encontros e notebooks, publicados como site MkDocs.
 
-Estado: proposta em elaboração. Roteiros e material prontos para os encontros 2 a 10 (notebooks testados nos encontros 2 a 7, 9 e 10; notas de aula e ficha de leitura no 8); os demais estão só no cronograma.
+Estado: proposta em elaboração. Roteiros e material prontos para os encontros 2 a 11 (notebooks testados nos encontros 2 a 7 e 9 a 11; notas de aula e ficha de leitura no 8); os demais estão só no cronograma.
 
 ## Conteúdo
 
@@ -44,7 +44,7 @@ make notebooks                        # regenera a partir de scripts/ e reexecut
 
 Os notebooks dos encontros 5, 6 e 7 leem saídas de referência do TerraME do repositório [`terrame-goldens`](https://github.com/LambdaGeo/terrame-goldens) v0.1.0 e precisam de acesso a `raw.githubusercontent.com`. O do encontro 9 baixa os dados e as saídas do LuccME do [`luccme-goldens`](https://github.com/LambdaGeo/luccme-goldens) v1.1.0; o do encontro 10, as camadas do exemplo Amazônia do TerraME e o TOML do [`disscube-benchmark`](https://github.com/LambdaGeo/disscube-benchmark) v1.1.0.
 
-Testado em 31 out 2026 com Python 3.13, dissmodel 0.6.6 e dissmodel-ca, dissmodel-sysdyn e dissmodel-abm 0.2.0, disslucc 0.5.0 e disscube 0.6.0.
+Testado em 31 out 2026 com Python 3.13, dissmodel 0.6.6 e dissmodel-ca, dissmodel-sysdyn e dissmodel-abm 0.2.0, disslucc 0.5.0, disscube 0.6.0 e statsmodels 0.15.0.
 
 ## Publicação
 

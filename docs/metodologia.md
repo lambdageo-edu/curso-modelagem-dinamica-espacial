@@ -34,8 +34,9 @@ jupyter lab
 | dissmodel-sysdyn | 0.2.0 | GitHub, tag `v0.2.0` |
 | dissmodel-abm | 0.2.0 | GitHub, tag `v0.2.0` (ainda não está no PyPI) |
 | disscube | 0.6.0 | PyPI (a partir do encontro 10) |
+| statsmodels | 0.15.0 | PyPI (a partir do encontro 11) |
 | disslucc | 0.5.0 | PyPI (a partir do encontro 9) |
 
-Os notebooks dos encontros 2 a 7, 9 e 10 têm um selo **Abrir no Colab** no topo, que abre o notebook no Google Colab direto do GitHub; os dos encontros 3 a 7, 9 e 10 instalam sozinhos o que falta no Colab (`rasterio`; DisSModel, `dissmodel-ca`, `dissmodel-sysdyn`, `dissmodel-abm`, `disslucc` e `disscube`). O encontro 8 não tem notebook.
+Os notebooks dos encontros 2 a 7 e 9 a 11 têm um selo **Abrir no Colab** no topo, que abre o notebook no Google Colab direto do GitHub; os dos encontros 3 a 7 e 9 a 11 instalam sozinhos o que falta no Colab (`rasterio`; DisSModel, `dissmodel-ca`, `dissmodel-sysdyn`, `dissmodel-abm`, `disslucc`, `disscube` e `statsmodels`). O encontro 8 não tem notebook.
 
 Os encontros 5, 6 e 7 leem as saídas de referência do TerraME direto do repositório [`terrame-goldens`](https://github.com/LambdaGeo/terrame-goldens) (versão 0.1.0), e por isso precisam de acesso a `raw.githubusercontent.com`.
