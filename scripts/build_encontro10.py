@@ -17,7 +17,7 @@ No encontro 9 o espaço celular do Acre veio pronto: cada célula já tinha a fr
 
 No TerraME isso é o `fill` do espaço celular, escrito em Lua. No DisSCube é um arquivo **TOML** que declara a grade, as fontes e as variáveis; o programa baixa, confere e calcula.
 
-O roteiro da aula:
+O que vamos fazer:
 
 1. reconhecer os tipos de variável do lab01 e a operação que produz cada um;
 2. ler um arquivo TOML pronto e rodá-lo;

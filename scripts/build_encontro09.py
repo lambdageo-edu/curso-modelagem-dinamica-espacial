@@ -15,7 +15,7 @@ cells.append(md("""# Encontro 9 — Um modelo LUCC com o DisSLUCC
 
 No encontro 8 vimos a estrutura de um modelo de mudança de uso: **demanda** (quanto), **potencial** (onde é mais provável) e **alocação** (onde de fato muda). Hoje rodamos um modelo de verdade com essa estrutura, com dados prontos: o **lab01** do LuccME, o primeiro exemplo do pacote do INPE, sobre o estado do Acre.
 
-O roteiro da aula:
+O que vamos fazer:
 
 1. conhecer os dados e as três peças do modelo;
 2. rodar o modelo no DisSLUCC;

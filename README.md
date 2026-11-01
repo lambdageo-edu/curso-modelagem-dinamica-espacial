@@ -1,8 +1,8 @@
 # Modelagem Dinâmica Espacial
 
-Material da disciplina de pós-graduação **Modelagem Dinâmica Espacial: de autômatos celulares a modelos de mudança de uso da terra** (proposta, LambdaGeo/UFMA). Proposta, cronograma, roteiros dos encontros e notebooks, publicados como site MkDocs.
+Material da disciplina de pós-graduação **Modelagem Dinâmica Espacial: de autômatos celulares a modelos de mudança de uso da terra** (proposta, LambdaGeo/UFMA). Proposta, cronograma, notas de aula e notebooks, publicados como site MkDocs.
 
-Estado: proposta em elaboração. Roteiros para os 15 encontros; notebooks testados nos encontros 2 a 7 e 9 a 13, notas de aula e ficha de leitura no 8. O encontro 1 (NetLogo Web) e os seminários (14 e 15) não têm notebook e ainda não foram testados em sala.
+Estado: proposta em elaboração. Notebooks testados nos encontros 2 a 7 e 9 a 13; notas de aula nos encontros 1 e 8, com ficha de leitura no 8. O encontro 1 (NetLogo Web) ainda não foi testado em sala.
 
 ## Conteúdo
 
@@ -13,15 +13,14 @@ docs/
   metodologia.md           formato das aulas e ambiente (versões fixadas)
   avaliacao.md             pesos, projeto, esboço e checklist de reprodutibilidade
   bibliografia.md
-  preparacao.md            riscos e o que preparar
-  encontros/               um roteiro por encontro (para o professor)
+  encontros/               índice dos encontros, notas de aula (1 e 8) e ficha de leitura (8)
   notebooks/               os notebooks dos encontros, já executados
 scripts/
   build_encontroNN.py      gera o notebook de cada encontro
   executar_notebooks.py    gera, executa e grava em docs/notebooks/
 ```
 
-Os roteiros trazem as respostas esperadas das perguntas dos notebooks.
+O site traz só o material do aluno. Os roteiros dos encontros, as respostas esperadas e a preparação da oferta ficam num documento à parte, do professor.
 
 ## Ver o site localmente
 

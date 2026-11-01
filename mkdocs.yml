@@ -79,45 +79,20 @@ nav:
       - Metodologia e ambiente: metodologia.md
       - Avaliação e projeto: avaliacao.md
       - Bibliografia: bibliografia.md
-      - Preparação e riscos: preparacao.md
   - Encontros:
       - encontros/index.md
-      - "1. Fundamentos": encontros/01-fundamentos.md
-      - "2. Python I":
-          - Roteiro: encontros/02-python-basico.md
-          - Notebook: notebooks/encontro02_python_basico.ipynb
-      - "3. Python II: dados espaciais":
-          - Roteiro: encontros/03-python-dados-espaciais.md
-          - Notebook: notebooks/encontro03_python_dados_espaciais.ipynb
-      - "4. Reprodutibilidade e o DisSModel":
-          - Roteiro: encontros/04-reprodutibilidade.md
-          - Notebook: notebooks/encontro04_reprodutibilidade.ipynb
-      - "5. Dinâmica de sistemas":
-          - Roteiro: encontros/05-dinamica-sistemas.md
-          - Notebook: notebooks/encontro05_dinamica_sistemas.ipynb
-      - "6. Autômatos celulares":
-          - Roteiro: encontros/06-automatos-celulares.md
-          - Notebook: notebooks/encontro06_automatos_celulares.ipynb
-      - "7. Agentes e acoplamento":
-          - Roteiro: encontros/07-agentes-acoplamento.md
-          - Notebook: notebooks/encontro07_agentes_acoplamento.ipynb
+      - "1. Fundamentos": encontros/01-notas.md
+      - "2. Python I": notebooks/encontro02_python_basico.ipynb
+      - "3. Python II: dados espaciais": notebooks/encontro03_python_dados_espaciais.ipynb
+      - "4. Reprodutibilidade e o DisSModel": notebooks/encontro04_reprodutibilidade.ipynb
+      - "5. Dinâmica de sistemas": notebooks/encontro05_dinamica_sistemas.ipynb
+      - "6. Autômatos celulares": notebooks/encontro06_automatos_celulares.ipynb
+      - "7. Agentes e acoplamento": notebooks/encontro07_agentes_acoplamento.ipynb
       - "8. Modelos de mudança da terra":
-          - Roteiro: encontros/08-modelos-mudanca-terra.md
           - Notas de aula: encontros/08-notas.md
           - Ficha de leitura: encontros/08-ficha.md
-      - "9. LUCC com o DisSLUCC":
-          - Roteiro: encontros/09-disslucc.md
-          - Notebook: notebooks/encontro09_disslucc.ipynb
-      - "10. Dados com o DisSCube":
-          - Roteiro: encontros/10-disscube.md
-          - Notebook: notebooks/encontro10_disscube.ipynb
-      - "11. Potencial, alocação e restrições":
-          - Roteiro: encontros/11-potencial-alocacao.md
-          - Notebook: notebooks/encontro11_potencial_alocacao.ipynb
-      - "12. Incerteza e sensibilidade":
-          - Roteiro: encontros/12-incerteza-sensibilidade.md
-          - Notebook: notebooks/encontro12_incerteza_sensibilidade.ipynb
-      - "13. Validação e oficina de projeto":
-          - Roteiro: encontros/13-validacao.md
-          - Notebook: notebooks/encontro13_validacao.ipynb
-      - "14 e 15. Seminários": encontros/14-15-seminarios.md
+      - "9. LUCC com o DisSLUCC": notebooks/encontro09_disslucc.ipynb
+      - "10. Dados com o DisSCube": notebooks/encontro10_disscube.ipynb
+      - "11. Potencial, alocação e restrições": notebooks/encontro11_potencial_alocacao.ipynb
+      - "12. Incerteza e sensibilidade": notebooks/encontro12_incerteza_sensibilidade.ipynb
+      - "13. Validação e oficina de projeto": notebooks/encontro13_validacao.ipynb

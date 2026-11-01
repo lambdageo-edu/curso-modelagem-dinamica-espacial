@@ -15,7 +15,7 @@ cells.append(md("""# Encontro 12 — Incerteza e sensibilidade
 
 Até aqui cada modelo rodou uma vez e produziu um mapa. Mas os coeficientes do potencial são estimativas, a tolerância é uma escolha e a demanda é um cenário. Se um desses valores fosse um pouco diferente, o mapa mudaria muito ou pouco? E quais partes do mapa são confiáveis?
 
-O roteiro da aula:
+O que vamos fazer:
 
 1. as fontes de incerteza de um modelo de mudança de uso;
 2. varrer um coeficiente;

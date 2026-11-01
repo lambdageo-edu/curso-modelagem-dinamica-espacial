@@ -5,7 +5,7 @@
 Proposta de disciplina eletiva de pós-graduação, elaborada no grupo LambdaGeo (UFMA). Os encontros começam com modelos pequenos e didáticos (dinâmica de sistemas, autômatos celulares, agentes) e terminam num modelo de mudança de uso e cobertura da terra (LUCC) sobre dados reais. Tudo é feito em Python, com o [DisSModel](https://github.com/DisSModel/dissmodel), o [DisSCube](https://github.com/DisSModel/disscube) e o [DisSLUCC](https://github.com/DisSModel/disslucc), comparados com o TerraME e o LuccME, que continuam sendo a referência.
 
 !!! note "Estado deste material"
-    Proposta em elaboração. Os quinze encontros têm roteiro. Os encontros 2 a 7 e 9 a 13 têm notebooks testados; o 8 tem notas de aula e ficha de leitura; o 1 e os seminários (14 e 15) não usam notebook.
+    Proposta em elaboração. Os encontros 2 a 7 e 9 a 13 têm notebooks testados; os encontros 1 e 8 têm notas de aula; os seminários (14 e 15) seguem o que está em [Avaliação e projeto](avaliacao.md#seminario).
 
 ## Identificação
 
