@@ -5,6 +5,7 @@ dissmodel-sysdyn @ git+https://github.com/DisSModel/dissmodel-sysdyn.git@v0.2.0
 dissmodel-abm @ git+https://github.com/DisSModel/dissmodel-abm.git@v0.2.0
 disslucc==0.5.0
 disscube[dissmodel]==0.6.0
+statsmodels
 matplotlib
 pandas
 geopandas

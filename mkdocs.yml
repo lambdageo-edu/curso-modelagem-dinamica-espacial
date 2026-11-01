@@ -110,3 +110,9 @@ nav:
       - "10. Dados com o DisSCube":
           - Roteiro: encontros/10-disscube.md
           - Notebook: notebooks/encontro10_disscube.ipynb
+      - "11. Potencial, alocação e restrições":
+          - Roteiro: encontros/11-potencial-alocacao.md
+          - Notebook: notebooks/encontro11_potencial_alocacao.ipynb
+      - "12. Incerteza e sensibilidade":
+          - Roteiro: encontros/12-incerteza-sensibilidade.md
+          - Notebook: notebooks/encontro12_incerteza_sensibilidade.ipynb
