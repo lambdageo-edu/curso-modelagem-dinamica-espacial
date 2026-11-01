@@ -116,3 +116,6 @@ nav:
       - "12. Incerteza e sensibilidade":
           - Roteiro: encontros/12-incerteza-sensibilidade.md
           - Notebook: notebooks/encontro12_incerteza_sensibilidade.ipynb
+      - "13. Validação e oficina de projeto":
+          - Roteiro: encontros/13-validacao.md
+          - Notebook: notebooks/encontro13_validacao.ipynb
