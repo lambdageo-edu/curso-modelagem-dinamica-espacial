@@ -1,0 +1,1544 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Proposta de disciplina de pós-graduação (LambdaGeo/UFMA) — de autômatos celulares a modelos de mudança de uso da terra, com DisSModel, DisSCube e DisSLUCC.">
+      
+      
+        <meta name="author" content="Sérgio Souza Costa">
+      
+      
+        <link rel="canonical" href="https://lambdageo-edu.github.io/curso-modelagem-dinamica-espacial/bibliografia/">
+      
+      
+        <link rel="prev" href="../avaliacao/">
+      
+      
+        <link rel="next" href="../encontros/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Bibliografia - Modelagem Dinâmica Espacial</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/lambdageo.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bibliografia" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Modelagem Dinâmica Espacial" class="md-header__button md-logo" aria-label="Modelagem Dinâmica Espacial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Modelagem Dinâmica Espacial
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bibliografia
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Alternar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Alternar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartilhar" aria-label="Compartilhar" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lambdageo-edu/curso-modelagem-dinamica-espacial" title="Ir ao repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lambdageo-edu/curso-modelagem-dinamica-espacial
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Modelagem Dinâmica Espacial" class="md-nav__button md-logo" aria-label="Modelagem Dinâmica Espacial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Modelagem Dinâmica Espacial
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lambdageo-edu/curso-modelagem-dinamica-espacial" title="Ir ao repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lambdageo-edu/curso-modelagem-dinamica-espacial
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A disciplina
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    A disciplina
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cronograma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cronograma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metodologia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metodologia e ambiente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../avaliacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Avaliação e projeto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bibliografia
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bibliografia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Básica
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complementar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complementar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complementar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paradigmas-e-ferramentas-encontros-1-5-a-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paradigmas e ferramentas (encontros 1, 5 a 7)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelos-de-mudanca-de-uso-e-cobertura-da-terra-encontros-8-9-e-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelos de mudança de uso e cobertura da terra (encontros 8, 9 e 11)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dados-encontros-3-e-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dados (encontros 3 e 10)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacao-incerteza-e-sensibilidade-encontros-12-e-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validação, incerteza e sensibilidade (encontros 12 e 13)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reprodutibilidade-e-verificacao-encontro-4-e-todos-os-demais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reprodutibilidade e verificação (encontro 4 e todos os demais)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-e-dados-usados-nos-encontros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software e dados usados nos encontros
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encontros
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Encontros
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../encontros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encontros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../encontros/01-notas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Fundamentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/encontro02_python_basico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Python I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/encontro03_python_dados_espaciais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Python II: dados espaciais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/encontro04_reprodutibilidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Reprodutibilidade e o DisSModel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/encontro05_dinamica_sistemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Dinâmica de sistemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/encontro06_automatos_celulares/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Autômatos celulares
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/encontro07_agentes_acoplamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Agentes e acoplamento
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Modelos de mudança da terra
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    8. Modelos de mudança da terra
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../encontros/08-notas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notas de aula
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../encontros/08-ficha/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ficha de leitura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/encontro09_disslucc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. LUCC com o DisSLUCC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/encontro10_disscube/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Dados com o DisSCube
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/encontro11_potencial_alocacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Potencial, alocação e restrições
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/encontro12_incerteza_sensibilidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Incerteza e sensibilidade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/encontro13_validacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Validação e oficina de projeto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Básica
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complementar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complementar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complementar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paradigmas-e-ferramentas-encontros-1-5-a-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paradigmas e ferramentas (encontros 1, 5 a 7)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelos-de-mudanca-de-uso-e-cobertura-da-terra-encontros-8-9-e-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelos de mudança de uso e cobertura da terra (encontros 8, 9 e 11)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dados-encontros-3-e-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dados (encontros 3 e 10)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacao-incerteza-e-sensibilidade-encontros-12-e-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validação, incerteza e sensibilidade (encontros 12 e 13)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reprodutibilidade-e-verificacao-encontro-4-e-todos-os-demais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reprodutibilidade e verificação (encontro 4 e todos os demais)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-e-dados-usados-nos-encontros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software e dados usados nos encontros
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="bibliografia">Bibliografia<a class="headerlink" href="#bibliografia" title="Permanent link">&para;</a></h1>
+<p>A bibliografia está organizada por tema, na ordem em que os temas aparecem nos encontros. A página <a href="../encontros/">Encontros</a> indica o que ler para cada encontro.</p>
+<div class="admonition note">
+<p class="admonition-title">Situação das referências</p>
+<p>As referências com DOI foram conferidas na fonte ou na página do editor em 1 nov 2026. As marcadas com <strong>(a conferir)</strong> ainda precisam ter volume, páginas ou edição conferidos antes de enviar a proposta à coordenação.</p>
+</div>
+<h2 id="basica">Básica<a class="headerlink" href="#basica" title="Permanent link">&para;</a></h2>
+<ul>
+<li>COSTA, S. S. <em>Geospatial Modeling with Python</em>. São Luís: LambdaGeo/UFMA, 2026. Livro aberto, Volumes I e II. Disponível em: <a href="https://github.com/LambdaGeo/geospatial-modeling-python">https://github.com/LambdaGeo/geospatial-modeling-python</a>. O DOI será atribuído no primeiro <em>release</em>.</li>
+<li>FORD, A. <em>Modeling the Environment</em>. 2. ed. Washington: Island Press, 2009.</li>
+<li>CARNEIRO, T. G. S.; ANDRADE, P. R.; CÂMARA, G.; MONTEIRO, A. M. V.; PEREIRA, R. R. An extensible toolbox for modeling nature–society interactions. <em>Environmental Modelling &amp; Software</em>, v. 46, p. 104–117, 2013. DOI: 10.1016/j.envsoft.2013.03.002.</li>
+<li>VERBURG, P. H.; SOEPBOER, W.; VELDKAMP, A.; LIMPIADA, R.; ESPALDON, V.; MASTURA, S. S. A. Modeling the spatial dynamics of regional land use: the CLUE-S model. <em>Environmental Management</em>, v. 30, n. 3, p. 391–405, 2002. DOI: 10.1007/s00267-002-2630-x.</li>
+<li>PONTIUS JR., R. G. et al. Comparing the input, output, and validation maps for several models of land change. <em>The Annals of Regional Science</em>, v. 42, n. 1, p. 11–37, 2008. DOI: 10.1007/s00168-007-0138-2.</li>
+</ul>
+<h2 id="complementar">Complementar<a class="headerlink" href="#complementar" title="Permanent link">&para;</a></h2>
+<h3 id="paradigmas-e-ferramentas-encontros-1-5-a-7">Paradigmas e ferramentas (encontros 1, 5 a 7)<a class="headerlink" href="#paradigmas-e-ferramentas-encontros-1-5-a-7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>COUCLELIS, H. Modeling frameworks, paradigms and approaches. In: CLARKE, K. C.; PARKS, B. O.; CRANE, M. P. (org.). <em>Geographic Information Systems and Environmental Modeling</em>. Upper Saddle River: Prentice Hall, 2002. <strong>(a conferir: páginas do capítulo)</strong></li>
+<li>STERMAN, J. D. <em>Business Dynamics: Systems Thinking and Modeling for a Complex World</em>. Boston: McGraw-Hill, 2000. <strong>(a conferir)</strong></li>
+<li>GARDNER, M. Mathematical games: the fantastic combinations of John Conway's new solitaire game "life". <em>Scientific American</em>, v. 223, n. 4, p. 120–123, 1970. <strong>(a conferir)</strong></li>
+<li>TOFFOLI, T.; MARGOLUS, N. <em>Cellular Automata Machines</em>. Cambridge: MIT Press, 1987. <strong>(a conferir)</strong></li>
+<li>SCHELLING, T. C. Dynamic models of segregation. <em>Journal of Mathematical Sociology</em>, v. 1, n. 2, p. 143–186, 1971. <strong>(a conferir)</strong></li>
+<li>RAILSBACK, S. F.; GRIMM, V. <em>Agent-Based and Individual-Based Modeling: A Practical Introduction</em>. 2. ed. Princeton: Princeton University Press, 2019. <strong>(a conferir)</strong></li>
+<li>GRIMM, V. et al. The ODD protocol for describing agent-based and other simulation models: a second update to improve clarity, replication, and structural realism. <em>Journal of Artificial Societies and Social Simulation</em>, v. 23, n. 2, 7, 2020. DOI: 10.18564/jasss.4259.</li>
+<li>WILENSKY, U. <em>NetLogo</em>. Evanston: Center for Connected Learning and Computer-Based Modeling, Northwestern University, 1999. Disponível em: <a href="https://ccl.northwestern.edu/netlogo/">https://ccl.northwestern.edu/netlogo/</a>.</li>
+<li>KAZIL, J.; MASAD, D.; CROOKS, A. Utilizing Python for agent-based modeling: the Mesa framework. In: <em>Social, Cultural, and Behavioral Modeling (SBP-BRiMS 2020)</em>. Cham: Springer, 2020. p. 308–317. (Lecture Notes in Computer Science, 12268). <strong>(a conferir)</strong></li>
+<li>MARTIN-MARTINEZ, E.; SAMSÓ, R.; HOUGHTON, J.; SOLÉ, J. PySD: System Dynamics Modeling in Python. <em>Journal of Open Source Software</em>, v. 7, n. 78, 4329, 2022. <strong>(a conferir)</strong></li>
+<li>KARSSENBERG, D.; SCHMITZ, O.; SALAMON, P.; DE JONG, K.; BIERKENS, M. F. P. A software framework for construction of process-based stochastic spatio-temporal models and data assimilation. <em>Environmental Modelling &amp; Software</em>, v. 25, n. 4, p. 489–502, 2010. <strong>(a conferir)</strong></li>
+</ul>
+<h3 id="modelos-de-mudanca-de-uso-e-cobertura-da-terra-encontros-8-9-e-11">Modelos de mudança de uso e cobertura da terra (encontros 8, 9 e 11)<a class="headerlink" href="#modelos-de-mudanca-de-uso-e-cobertura-da-terra-encontros-8-9-e-11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>VELDKAMP, A.; FRESCO, L. O. CLUE: a conceptual model to study the conversion of land use and its effects. <em>Ecological Modelling</em>, v. 85, p. 253–270, 1996.</li>
+<li>VERBURG, P. H.; DE KONING, G. H. J.; KOK, K.; VELDKAMP, A.; BOUMA, J. A spatial explicit allocation procedure for modelling the pattern of land use change based upon actual land use. <em>Ecological Modelling</em>, v. 116, n. 1, p. 45–61, 1999. <strong>(a conferir)</strong></li>
+<li>VERBURG, P. H.; SCHOT, P. P.; DIJST, M. J.; VELDKAMP, A. Land use change modelling: current practice and research priorities. <em>GeoJournal</em>, v. 61, n. 4, p. 309–324, 2004. DOI: 10.1007/s10708-004-4946-y.</li>
+<li>GEIST, H. J.; LAMBIN, E. F. Proximate causes and underlying driving forces of tropical deforestation. <em>BioScience</em>, v. 52, n. 2, p. 143–150, 2002. <strong>(a conferir)</strong></li>
+<li>SOARES-FILHO, B. S.; CERQUEIRA, G. C.; PENNACHIN, C. L. DINAMICA: a stochastic cellular automata model designed to simulate the landscape dynamics in an Amazonian colonization frontier. <em>Ecological Modelling</em>, v. 154, n. 3, p. 217–235, 2002. DOI: 10.1016/S0304-3800(02)00059-5.</li>
+<li>SOARES-FILHO, B. S. et al. Modelling conservation in the Amazon basin. <em>Nature</em>, v. 440, p. 520–523, 2006. <strong>(a conferir)</strong></li>
+<li>AGUIAR, A. P. D.; CARNEIRO, T.; ANDRADE, P.; ASSIS, T. LuccME-TerraME: an open-source framework for spatially explicit land use change modelling. <em>GLP News</em>, v. 8, p. 21–23, 2012.</li>
+<li>AGUIAR, A. P. D. et al. Land use change emission scenarios: anticipating a forest transition process in the Brazilian Amazon. <em>Global Change Biology</em>, v. 22, n. 5, p. 1821–1840, 2016. DOI: 10.1111/gcb.13134.</li>
+<li>BEZERRA, F. G. S. et al. New land-use change scenarios for Brazil: refining global SSPs with a regional spatially-explicit allocation model. <em>PLOS ONE</em>, v. 17, n. 4, e0256052, 2022. DOI: 10.1371/journal.pone.0256052.</li>
+<li>MAS, J.-F.; KOLB, M.; PAEGELOW, M.; CAMACHO OLMEDO, M. T.; HOUET, T. Inductive pattern-based land use/cover change models: a comparison of four software packages. <em>Environmental Modelling &amp; Software</em>, v. 51, p. 94–111, 2014. DOI: 10.1016/j.envsoft.2013.09.010.</li>
+<li>MOULDS, S.; BUYTAERT, W.; MIJIC, A. An open and extensible framework for spatially explicit land use change modelling: the lulcc R package. <em>Geoscientific Model Development</em>, v. 8, n. 10, p. 3215–3229, 2015. DOI: 10.5194/gmd-8-3215-2015.</li>
+<li>OVERMARS, K. P.; VERBURG, P. H.; VELDKAMP, T. A. Comparison of a deductive and an inductive approach to specify land suitability in a spatially explicit land use model. <em>Land Use Policy</em>, v. 24, n. 3, p. 584–599, 2007.</li>
+<li>REN, Y.; LÜ, Y.; COMBER, A.; FU, B.; HARRIS, P.; WU, L. Spatially explicit simulation of land use/land cover changes: current coverage and future prospects. <em>Earth-Science Reviews</em>, v. 190, p. 398–415, 2019. DOI: 10.1016/j.earscirev.2019.01.001.</li>
+<li>MAZY, F.-R.; LONGARETTI, P.-Y. Towards a generic theoretical framework for pattern-based LUCC modeling: allocation revisited: formal foundations and bias identification. <em>Environmental Modelling &amp; Software</em>, v. 166, 105706, 2023. DOI: 10.1016/j.envsoft.2023.105706.</li>
+</ul>
+<h3 id="dados-encontros-3-e-10">Dados (encontros 3 e 10)<a class="headerlink" href="#dados-encontros-3-e-10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>FERREIRA, K. R. et al. Earth observation data cubes for Brazil: requirements, methodology and products. <em>Remote Sensing</em>, v. 12, n. 24, 4033, 2020. DOI: 10.3390/rs12244033.</li>
+<li>SOUZA, C. M., Jr. et al. Reconstructing three decades of land use and land cover changes in Brazilian biomes with Landsat archive and Earth Engine. <em>Remote Sensing</em>, v. 12, n. 17, 2735, 2020. DOI: 10.3390/rs12172735.</li>
+<li>ALMEIDA, C. A. de et al. <em>Metodologia utilizada nos sistemas PRODES e DETER</em>. 2. ed. atual. São José dos Campos: INPE, 2022.</li>
+<li>CÂMARA, G. et al. TerraLib: an open source GIS library for large-scale environmental and socio-economic applications. In: HALL, G. B.; LEAHY, M. G. (org.). <em>Open Source Approaches in Spatial Data Handling</em>. Berlin: Springer, 2008. p. 247–270. DOI: 10.1007/978-3-540-74831-1_12.</li>
+</ul>
+<h3 id="validacao-incerteza-e-sensibilidade-encontros-12-e-13">Validação, incerteza e sensibilidade (encontros 12 e 13)<a class="headerlink" href="#validacao-incerteza-e-sensibilidade-encontros-12-e-13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PONTIUS JR., R. G.; HUFFAKER, D.; DENMAN, K. Useful techniques of validation for spatially explicit land-change models. <em>Ecological Modelling</em>, v. 179, n. 4, p. 445–461, 2004. <strong>(a conferir)</strong></li>
+<li>PONTIUS JR., R. G.; MILLONES, M. Death to Kappa: birth of quantity disagreement and allocation disagreement for accuracy assessment. <em>International Journal of Remote Sensing</em>, v. 32, n. 15, p. 4407–4429, 2011. <strong>(a conferir)</strong></li>
+<li>PONTIUS JR., R. G.; PEETHAMBARAM, S.; CASTELLA, J.-C. Comparison of three maps at multiple resolutions: a case study of land change simulation in Cho Don District, Vietnam. <em>Annals of the Association of American Geographers</em>, v. 101, n. 1, p. 45–62, 2011. DOI: 10.1080/00045608.2010.517742.</li>
+<li>PONTIUS JR., R. G.; PARMENTIER, B. Recommendations for using the relative operating characteristic (ROC). <em>Landscape Ecology</em>, v. 29, n. 3, p. 367–382, 2014. DOI: 10.1007/s10980-013-9984-8.</li>
+<li>SALTELLI, A. et al. <em>Global Sensitivity Analysis: The Primer</em>. Chichester: Wiley, 2008. <strong>(a conferir)</strong></li>
+</ul>
+<h3 id="reprodutibilidade-e-verificacao-encontro-4-e-todos-os-demais">Reprodutibilidade e verificação (encontro 4 e todos os demais)<a class="headerlink" href="#reprodutibilidade-e-verificacao-encontro-4-e-todos-os-demais" title="Permanent link">&para;</a></h3>
+<ul>
+<li>NATIONAL ACADEMIES OF SCIENCES, ENGINEERING, AND MEDICINE. <em>Reproducibility and Replicability in Science</em>. Washington: The National Academies Press, 2019. DOI: 10.17226/25303.</li>
+<li>BAKER, M. 1,500 scientists lift the lid on reproducibility. <em>Nature</em>, v. 533, n. 7604, p. 452–454, 2016. DOI: 10.1038/533452a.</li>
+<li>BARBA, L. A. The hard road to reproducibility. <em>Science</em>, v. 354, n. 6308, p. 142, 2016. DOI: 10.1126/science.354.6308.142.</li>
+<li>SANDVE, G. K.; NEKRUTENKO, A.; TAYLOR, J.; HOVIG, E. Ten simple rules for reproducible computational research. <em>PLOS Computational Biology</em>, v. 9, n. 10, e1003285, 2013. <strong>(a conferir)</strong></li>
+<li>WILKINSON, M. D. et al. The FAIR Guiding Principles for scientific data management and stewardship. <em>Scientific Data</em>, v. 3, 160018, 2016. DOI: 10.1038/sdata.2016.18.</li>
+<li>ROUGIER, N. P. et al. Sustainable computational science: the ReScience initiative. <em>PeerJ Computer Science</em>, v. 3, e142, 2017. DOI: 10.7717/peerj-cs.142.</li>
+</ul>
+<h2 id="software-e-dados-usados-nos-encontros">Software e dados usados nos encontros<a class="headerlink" href="#software-e-dados-usados-nos-encontros" title="Permanent link">&para;</a></h2>
+<p>Citados pela versão usada, como pede a prática de reprodutibilidade do encontro 4.</p>
+<ul>
+<li>COSTA, S. S.; SANTOS JUNIOR, N. J.; SOUSA, F. M.; BEZERRA, D. S. <em>DisSModel: a Python framework for spatially explicit dynamic modeling</em>. Versão 0.6.6. Zenodo, 2026. DOI: 10.5281/zenodo.23246106.</li>
+<li>COSTA, S. S. et al. <em>dissmodel-ca</em>. Versão 0.2.0. Zenodo, 2026. DOI: 10.5281/zenodo.23593069.</li>
+<li>COSTA, S. S. et al. <em>dissmodel-sysdyn</em>. Versão 0.2.0. Zenodo, 2026. DOI: 10.5281/zenodo.23592996.</li>
+<li>COSTA, S. S. <em>dissmodel-abm</em>. Versão 0.2.0. Zenodo, 2026. DOI: 10.5281/zenodo.23593099.</li>
+<li>COSTA, S. S. <em>DisSCube</em>. Versão 0.6.0. Zenodo, 2026. DOI: 10.5281/zenodo.23365403.</li>
+<li>COSTA, S. S. <em>DisSLUCC</em>. Versão 0.5.0. Zenodo, 2026. DOI: 10.5281/zenodo.23219338.</li>
+<li>COSTA, S. S. <em>terrame-goldens</em>. Versão 0.1.0. Zenodo, 2026. DOI: 10.5281/zenodo.23592970. Saídas de referência do TerraME (encontros 5 a 7).</li>
+<li>COSTA, S. S. <em>LuccME goldens</em>. Versão 1.1.0. Zenodo, 2026. DOI: 10.5281/zenodo.23161342. Dados e saídas de referência do LuccME (encontros 9, 11 a 13).</li>
+<li>COSTA, S. S. <em>DisSCube benchmark</em>. Versão 1.1.0. Zenodo, 2026. DOI: 10.5281/zenodo.23366475. Arquivo TOML e comparação com o TerraME (encontro 10).</li>
+<li>COSTA, S. S. <em>disscube-grids</em>. Versão 1.1.0. Zenodo, 2026. DOI: 10.5281/zenodo.23502247. Casos prontos de grade (encontro 10).</li>
+<li>Documentação e tutoriais do TerraME e do LuccME (INPE): <a href="https://github.com/TerraME/terrame">https://github.com/TerraME/terrame</a>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar ao topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      LambdaGeo · UFMA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script data-mkdocs-jupyter-mathjax="{&quot;url&quot;: &quot;https://cdn.jsdelivr.net/npm/mathjax@4.1.3/tex-mml-chtml.js&quot;, &quot;version&quot;: 4}">
+/* Shared by full pages and Material's instant navigation. */
+(() => {
+  const config = JSON.parse(document.currentScript.dataset.mkdocsJupyterMathjax);
+  if (window.mkdocsJupyterMathJax) return;
+
+  let loading;
+  let queue = Promise.resolve();
+  let previous = [];
+
+  const ready = async () => {
+    if (!loading) {
+      loading = (async () => {
+        let math = window.MathJax;
+        if (!math?.typesetPromise) {
+          const url = new URL(config.url, document.baseURI).href;
+          const existing = Array.from(document.scripts).find(script =>
+            script.src && (script.src === url || script.id === 'MathJax-script' ||
+              (/mathjax/i.test(script.src) &&
+               /\/(?:MathJax|latest|(?:tex|mml)(?:-mml)?-(?:chtml|svg))\.js(?:[?#]|$)/i.test(script.src))));
+          if (existing) {
+            if (!math?.startup?.promise) {
+              await new Promise((resolve, reject) => {
+                existing.addEventListener('load', resolve, { once: true });
+                existing.addEventListener('error', reject, { once: true });
+              });
+            }
+          } else {
+            // Keep site macros, delimiters and startup hooks when supplied.
+            const options = math || {};
+            window.MathJax = {
+              ...options,
+              loader: {
+                ...options.loader,
+                load: Array.from(new Set(['ui/safe', ...(options.loader?.load || [])]))
+              },
+              startup: { typeset: false, ...options.startup },
+              tex: {
+                tags: 'ams',
+                useLabelIds: true,
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                ...options.tex
+              }
+            };
+            await new Promise((resolve, reject) => {
+              const script = document.createElement('script');
+              script.src = config.url;
+              script.id = 'MathJax-script';
+              script.async = true;
+              script.onload = resolve;
+              script.onerror = reject;
+              document.head.appendChild(script);
+            });
+          }
+        }
+        math = window.MathJax;
+        await math.startup.promise;
+        return math;
+      })();
+    }
+    const math = await loading;
+    // A site owner can extend the v3 queue again on each navigation.
+    await math.startup.promise;
+    return math;
+  };
+
+  const unrendered = node => {
+    if (node.matches('mjx-container')) return [];
+    if (!node.querySelector('mjx-container')) return [node];
+    // In v3, scanning generated assistive MathML again produces nested output.
+    return Array.from(node.children).flatMap(unrendered);
+  };
+
+  const refresh = () => {
+    // A separate chain also serializes v3, without changing v4's startup promise.
+    queue = queue.then(async () => {
+      const notebooks = Array.from(document.querySelectorAll('.jupyter-wrapper'));
+      if (!notebooks.length && !previous.length) return;
+      if (notebooks.length === previous.length &&
+          notebooks.every((node, index) => node === previous[index])) return;
+      const math = await ready();
+      if (previous.length) {
+        math.typesetClear(previous);
+        math.texReset();
+      }
+      previous = notebooks.filter(node => node.isConnected);
+      const pending = previous.flatMap(unrendered);
+      if (pending.length) await math.typesetPromise(pending);
+    }).catch(error => console.error('mkdocs-jupyter: MathJax rendering failed', error));
+    return queue;
+  };
+
+  window.mkdocsJupyterMathJax = { refresh };
+  const start = () => {
+    if (typeof document$ !== 'undefined') document$.subscribe(refresh);
+    else refresh();
+  };
+  // Theme bundles and user-provided MathJax scripts can follow notebook content.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, { once: true });
+  } else start();
+})();
+
+</script>
+</body>
+</html>
