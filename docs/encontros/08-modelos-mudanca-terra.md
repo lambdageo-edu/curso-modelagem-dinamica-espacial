@@ -10,7 +10,7 @@ O aluno sai do encontro com o vocabulário dos modelos LUCC (forças motrizes, d
 | Pré-requisito | Encontro 7 (quanto × onde); leitura de um dos dois artigos antes da aula |
 | Material | Notas de aula (texto-base, 8 seções); ficha de leitura; slides da exposição |
 | Artigos | Soares-Filho et al. (2006), *Nature*; Aguiar et al. (2016), *Global Change Biology* |
-| Leitura de apoio | Notas de aula; livro *Geospatial Modeling with Python*, Cap. 26 |
+| Leitura de apoio | Notas de aula; livro *Geospatial Modeling with Python*, Cap. 26; Verburg et al. (2004), revisão da área |
 
 **Objetivos**
 
@@ -70,6 +70,6 @@ As respostas da ficha dependem da leitura dos artigos e devem ser conferidas pel
 
 ## Achados ao preparar
 
-1. **As referências dos dois artigos foram listadas sem consulta às fontes.** Conferir volume, páginas e o acesso aos PDFs (o de *Nature* pode exigir assinatura) antes de distribuir.
+1. **Referências.** A de Aguiar et al. (2016) foi conferida (DOI 10.1111/gcb.13134); a de Soares-Filho et al. (2006) ainda está marcada como "a conferir" na bibliografia. Conferir também o acesso aos PDFs (o de *Nature* pode exigir assinatura) antes de distribuir.
 2. **Alternativa regional:** se houver interesse em Cerrado ou Maranhão, trocar um dos artigos por um estudo da região; a ficha funciona com qualquer estudo de cenários.
 3. **A tabela de ferramentas nas notas** (origem e licença) deve ser revista a cada oferta: licenças e versões mudam.

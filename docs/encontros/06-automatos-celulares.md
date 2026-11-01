@@ -10,7 +10,7 @@ O aluno sai do encontro sabendo nomear os quatro ingredientes de um autômato ce
 | Material | Notebook `encontro06_automatos_celulares.ipynb` (30 células, roda em cerca de 20 s) |
 | Modelos | `GameOfLife` (vetor), `GameOfLifeRaster` e `FireModelRaster` do `dissmodel-ca` v0.2.0 |
 | Referência | Grade do planador do TerraME (`life_glider`) no `terrame-goldens` v0.1.0, lida do GitHub |
-| Leitura de apoio | Livro *Geospatial Modeling with Python*, Caps. 18 e 24 |
+| Leitura de apoio | Livro *Geospatial Modeling with Python*, Caps. 18 e 24; Gardner (1970), a apresentação original do Jogo da Vida |
 
 **Objetivos**
 

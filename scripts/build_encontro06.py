@@ -124,7 +124,7 @@ cells.append(md("""✏️ **Pergunta 1.** Num modelo de desmatamento sobre o est
 
 cells.append(md("""## 3. A regra: o Jogo da Vida
 
-O Jogo da Vida (Conway, 1970) tem só duas regras, aplicadas a todas as células ao mesmo tempo, com vizinhança de Moore:
+O Jogo da Vida, criado por John Conway e divulgado por Gardner (1970), tem só duas regras, aplicadas a todas as células ao mesmo tempo, com vizinhança de Moore:
 
 - uma célula **viva** continua viva se tiver 2 ou 3 vizinhas vivas; senão, morre;
 - uma célula **morta** nasce se tiver exatamente 3 vizinhas vivas.

@@ -10,7 +10,7 @@ O aluno sai do encontro sabendo o que precisa guardar de uma execução para out
 | Pré-requisito | Encontros 2 e 3 (rodar células, ler uma tabela, abrir um arquivo vetorial) |
 | Material | Notebook `encontro04_reprodutibilidade.ipynb` (41 células, roda em cerca de 30 s); slides da exposição |
 | Modelo usado | `FireModel` do `dissmodel-ca` (o `Fire` do TerraME) numa grade de 30 × 30 células |
-| Leitura de apoio | Livro *Geospatial Modeling with Python*, Cap. 22 (seção do executor) e Cap. 29 |
+| Leitura de apoio | Livro *Geospatial Modeling with Python*, Cap. 22 (seção do executor) e Cap. 29; NASEM (2019); Sandve et al. (2013) |
 
 **Objetivos**
 

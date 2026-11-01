@@ -10,7 +10,7 @@ O aluno sai do encontro sabendo perguntar quanto um mapa simulado depende das es
 | Material | Notebook `encontro12_incerteza_sensibilidade.ipynb` (15 células, roda em cerca de 15 s; as 50 rodadas levam 4 s) |
 | Modelo | lab15 do LuccME (`PotentialDLogisticRegression` + `AllocationDClueSLike`, tolerância 10), do `disslucc` 0.5.0 |
 | Dados | `cs_moju` do `luccme-goldens` v1.1.0 |
-| Leitura de apoio | Saltelli et al. (2008), *Global Sensitivity Analysis: The Primer*, cap. 1; Pontius e Millones (2011) para o encontro 13 |
+| Leitura de apoio | Livro *Geospatial Modeling with Python*, cap. 32; Saltelli et al. (2008), *Global Sensitivity Analysis: The Primer*, cap. 1; Pontius e Millones (2011) para o encontro 13 |
 
 **Objetivos**
 

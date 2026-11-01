@@ -12,7 +12,7 @@ O aluno sai do encontro sabendo de onde vêm as variáveis de um espaço celular
 | Dados | Exemplo Amazônia do pacote `gis` do TerraME (PRODES simplificado, rodovias, portos, terras indígenas), lido do GitHub do TerraME num commit fixo |
 | Arquivo TOML | `benchmarks/terrame_fill/amazonia.toml` do `disscube-benchmark` v1.1.0 (DOI 10.5281/zenodo.23366475) |
 | Referência | O espaço celular do TerraME para o mesmo exemplo, `goldens/fill/amazonia_terrame.csv` do `luccme-goldens` v1.1.0 |
-| Leitura de apoio | Documentação do DisSCube: guia dos arquivos TOML e a correspondência entre o `fill` do TerraME e os operadores |
+| Leitura de apoio | Livro *Geospatial Modeling with Python*, cap. 28; documentação do DisSCube (guia dos arquivos TOML e correspondência entre o `fill` do TerraME e os operadores); Ferreira et al. (2020), sobre o Brazil Data Cube |
 
 **Objetivos**
 

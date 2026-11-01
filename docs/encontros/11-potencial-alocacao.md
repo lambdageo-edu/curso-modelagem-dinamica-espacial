@@ -10,7 +10,7 @@ O aluno sai do encontro sabendo de onde vêm os coeficientes de um potencial e o
 | Material | Notebook `encontro11_potencial_alocacao.ipynb` (28 células, roda em cerca de 15 s, incluindo o download) |
 | Componentes | `PotentialLinearRegression` + `AllocationClueLike` (contínua); `PotentialDLogisticRegression` + `AllocationDClueSLike` (discreta), do `disslucc` 0.5.0; regressão com `statsmodels` |
 | Dados e referência | `csAC` (lab01) e `cs_moju` (lab15, 5.914 células de cerca de 500 m) e a saída do LuccME para a variante `lab15_md10`, do `luccme-goldens` v1.1.0 |
-| Leitura de apoio | Verburg et al. (2002), CLUE-S; livro *Geospatial Modeling with Python*, cap. 26 |
+| Leitura de apoio | Verburg et al. (2002), CLUE-S; Overmars, Verburg e Veldkamp (2007), sobre a especificação do potencial; livro *Geospatial Modeling with Python*, caps. 13 (regressão) e 26 |
 
 **Objetivos**
 
