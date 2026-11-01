@@ -57,3 +57,25 @@ Uma página com:
 | Resultados com validação e incerteza (encontros 12 e 13), não só o mapa | 30% |
 | Limitações: o que o modelo não representa, dito pelo próprio aluno | 15% |
 | Tempo e respostas às perguntas | 10% |
+
+**Formato.** 15 min de apresentação e 5 de perguntas, nos encontros 14 ou 15 (até 8 apresentações por encontro). A escala é definida no encontro 13. Envie os slides até a véspera.
+
+**Estrutura sugerida**
+
+| Parte | Tempo | Conteúdo |
+| --- | --- | --- |
+| Pergunta | 2 min | O que o modelo responde; área, período e resolução |
+| Modelo | 4 min | Paradigma e componentes (demanda, potencial e alocação, ou estado e regra); de onde vem cada parâmetro |
+| Dados | 2 min | Fontes, versões e a grade (mapa do `disscube plot`) |
+| Resultados | 5 min | Mapa simulado e observado lado a lado; quantidade e localização contra a persistência; incerteza ou cenários |
+| Limitações | 2 min | O que o modelo não representa; o que faria com mais tempo |
+
+**Perguntas para se preparar.** As perguntas seguem os temas da disciplina:
+
+- **Verificação:** o programa faz o que o modelo descreve? Algum componente foi comparado com uma referência?
+- **Tolerância:** que tolerância da alocação foi usada, e por quê (encontros 9 e 11)?
+- **Validação:** o modelo supera a persistência? Em que resolução (encontro 13)? O ano validado entrou no ajuste?
+- **Incerteza:** o resultado mudaria com outro valor de parâmetro (encontro 12)?
+- **Reprodutibilidade:** outra pessoa roda o projeto com um comando (encontro 4)?
+
+O relatório é entregue duas semanas depois do encontro 15, para incorporar o que surgir nas perguntas.

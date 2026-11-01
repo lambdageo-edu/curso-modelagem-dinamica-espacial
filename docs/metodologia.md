@@ -2,7 +2,7 @@
 
 A maioria dos encontros tem de 20 a 35 min de exposição e de 45 a 65 min de prática guiada num notebook, que o aluno termina em casa. Três encontros têm formato próprio: o 8 (leitura dirigida de dois estudos de cenários), o 13 (demonstração de validação e oficina de projeto) e os seminários (14 e 15). A progressão segue a dos cursos de modelagem do INPE com o TerraME: modelos pequenos e didáticos primeiro, depois dados reais e LUCC.
 
-- **Material-texto:** capítulos do livro *Geospatial Modeling with Python* (Volume I para Python e ferramentas, Volume II para o ecossistema DisSModel), as notas de aula do encontro 8 e os notebooks da disciplina, neste repositório. Cada roteiro indica a leitura de apoio.
+- **Material-texto:** capítulos do livro *Geospatial Modeling with Python* (Volume I para Python e ferramentas, Volume II para o ecossistema DisSModel), as notas de aula dos encontros 1 e 8 e os notebooks da disciplina, neste repositório. A página [Encontros](encontros/index.md) indica a leitura de apoio de cada encontro.
 - **Pacotes por papel:** `dissmodel-ca` e `dissmodel-sysdyn` como coleções de modelos prontos para estudar e modificar; `dissmodel-abm` como extensão de agentes, só apresentada; `disscube` para os dados; `disslucc` para o LUCC.
 - **Referência:** o TerraME e o LuccME não são instalados nas máquinas. As saídas deles estão publicadas, com hash e DOI, nos repositórios `terrame-goldens` e `luccme-goldens`, gerados na imagem `terrame-docker`; os notebooks comparam com essas saídas. NetLogo e Dinamica EGO aparecem no encontro 1, sem prática além do NetLogo Web.
 - **Dados:** casos pequenos que rodam em segundos (labs do LuccME, exemplos do TerraME, recortes do `disscube-benchmark`); os casos em escala de estado ou país aparecem como resultado já registrado, não executados em aula.
@@ -14,7 +14,7 @@ Como o público não programa, os notebooks de modelagem vêm com o código pron
 - 🔧 troque um número e rode de novo;
 - ✏️ responda à pergunta.
 
-Escrever código do zero fica para o projeto, com apoio. Os roteiros trazem as respostas esperadas e os números que cada notebook deve dar, para o professor conferir antes da aula.
+Escrever código do zero fica para o projeto, com apoio.
 
 ## Ambiente
 
@@ -50,4 +50,4 @@ Os notebooks baixam os dados de versões fixas e conferem o hash de cada arquivo
 | 9, 11, 12, 13 | espaços celulares e saídas de referência do LuccME | `luccme-goldens` v1.1.0 |
 | 10 | camadas do exemplo Amazônia do TerraME; arquivo TOML; espaço celular do TerraME | TerraME no commit 84faddc; `disscube-benchmark` v1.1.0; `luccme-goldens` v1.1.0 |
 
-O "para casa" do encontro 10 lê o MapBiomas pelo Google Cloud Storage, como a Parte 4 do encontro 3. Esses dois trechos não puderam ser testados no ambiente de preparação e precisam ser rodados pelo professor antes da aula.
+O "para casa" do encontro 10 lê o MapBiomas pelo Google Cloud Storage, como a Parte 4 do encontro 3. Se a leitura falhar na sua rede, use o cubo Amazônia do encontro 10 ou um caso pronto do [`disscube-grids`](https://github.com/LambdaGeo/disscube-grids) (BR-163 ou Ilha do Maranhão).

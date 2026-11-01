@@ -1,6 +1,6 @@
 # Bibliografia
 
-A bibliografia está organizada por tema, na ordem em que os temas aparecem nos encontros. Cada roteiro indica, em "Leitura de apoio", o que ler para aquele encontro.
+A bibliografia está organizada por tema, na ordem em que os temas aparecem nos encontros. A página [Encontros](encontros/index.md) indica o que ler para cada encontro.
 
 !!! note "Situação das referências"
     As referências com DOI foram conferidas na fonte ou na página do editor em 1 nov 2026. As marcadas com **(a conferir)** ainda precisam ter volume, páginas ou edição conferidos antes de enviar a proposta à coordenação.
