@@ -20,7 +20,10 @@ Ao final, você deve saber responder:
 1. O que significa dizer que um resultado é *reprodutível*?
 2. Quais informações de uma execução precisam ser guardadas para outra pessoa repeti-la?
 3. Por que dois arquivos com o mesmo conteúdo podem ter "impressões digitais" diferentes?
-4. Como o DisSModel registra essas informações sem que você precise lembrar delas?"""))
+4. Como o DisSModel registra essas informações sem que você precise lembrar delas?
+5. Por que os critérios de aceitação se escrevem **antes** de rodar?
+
+As [notas de aula](https://lambdageo-edu.github.io/curso-modelagem-dinamica-espacial/encontros/04-notas/) deste encontro reúnem o método de conferência usado em toda a disciplina."""))
 
 cells.append(md("""## 0. Preparação
 
@@ -126,6 +129,20 @@ name = "fogo"
 initial_fire_density = 0.005  # fração de células que começam queimando
 end_time = 8                  # número de passos
 seed = 7                      # semente do sorteio inicial"""))
+
+cells.append(md("""**Antes de rodar, os critérios.** Escrevemos agora, antes de ver qualquer resultado, o que uma rodada precisa cumprir para ser aceita. No projeto, este arquivo entra no git **antes** da rodada final, e o commit prova quando foi escrito (as [notas de aula](https://lambdageo-edu.github.io/curso-modelagem-dinamica-espacial/encontros/04-notas/), seção 4, explicam por quê)."""))
+
+cells.append(code("""%%writefile aceitacao.toml
+# Critérios escritos ANTES de rodar o modelo.
+
+[entrada]
+mesma_entrada = true                  # todas as rodadas leram o mesmo arquivo (mesmo hash)
+
+[repeticao]
+mesma_semente_mesmos_valores = true   # mesma semente -> mesmo hash dos valores
+
+[resultado]
+min_celulas_queimadas = 100           # o fogo precisa passar das células onde começou"""))
 
 cells.append(md("""## 3. Rodar duas vezes
 
@@ -260,23 +277,62 @@ cells.append(code("""!pip freeze > requirements.lock
 import platform, sys
 print("Python", sys.version.split()[0], "|", platform.platform())"""))
 
-cells.append(md("""## 9. Para levar ao projeto
+cells.append(md("""## 9. Conferir os critérios sem rodar o modelo
+
+Os registros das rodadas guardam tudo o que os critérios pedem. A função abaixo lê o `aceitacao.toml` e os registros, e diz se cada critério passou. Ela **não roda o modelo**: leva menos de um segundo. É o que se chama de **nível 0** de conferência, auditar o registro."""))
+
+cells.append(code("""import tomllib
+from collections import defaultdict
+
+def conferir(registros, arquivo="aceitacao.toml"):
+    crit = tomllib.load(open(arquivo, "rb"))
+    resultado = {}
+    if crit["entrada"]["mesma_entrada"]:
+        resultado["mesma entrada"] = len({r["source"]["checksum"] for r in registros}) == 1
+    if crit["repeticao"]["mesma_semente_mesmos_valores"]:
+        por_semente = defaultdict(set)
+        for r in registros:
+            por_semente[r["parameters"]["seed"]].add(hash_dos_valores(r["output_path"]))
+        resultado["mesma semente, mesmos valores"] = all(len(v) == 1 for v in por_semente.values())
+    minimo = crit["resultado"]["min_celulas_queimadas"]
+    resultado[f"queimadas >= {minimo}"] = all(r["metrics"]["celulas_queimadas"] >= minimo for r in registros)
+    for nome, ok in resultado.items():
+        print(f"{'OK     ' if ok else 'FALHOU '} {nome}")
+    return all(resultado.values())
+
+conferir(fixas)"""))
+
+cells.append(md("""✏️ **Pergunta 5.** A rodada com semente 8 queimou 443 células, e a de semente 7, 575. Se, depois de ver esses números, você mudasse o mínimo para 500, o que aconteceria com a rodada de semente 8? Por que isso não vale como critério?
+
+Repetir um experimento inteiro pode levar horas. Por isso um projeto bem montado oferece caminhos mais curtos para quem confere, cada um mostrando uma parte da evidência:
+
+| Nível | O que faz | O que mostra |
+|---|---|---|
+| 0. Auditar o registro | confere os critérios a partir dos registros (o que fizemos acima) | que o resultado relatado cumpre o que foi declarado |
+| 1. Teste rápido | roda o modelo num caso pequeno, duas vezes | que o código roda e repete o resultado |
+| 2. Dados reais | roda o caso de verdade em outra máquina | que outra pessoa chega ao mesmo resultado |
+| 3. Rodada completa | tudo, com todos os critérios | o experimento inteiro |
+
+O repositório [`open-lucc-workflow`](https://github.com/LambdaGeo/open-lucc-workflow) faz isso para um modelo do Brasil inteiro: o nível 0 leva segundos, o nível 1 cerca de 15 s e a rodada completa 6 horas e meia. Lá também está o caso do Mac em que os valores foram iguais e os hashes dos arquivos não (seção 3 das notas).
+
+## 10. Para levar ao projeto
 
 Checklist de reprodutibilidade do projeto da disciplina:
 
 - [ ] Parâmetros num arquivo de configuração, não no código.
 - [ ] Semente registrada (e várias sementes, se o modelo for estocástico).
 - [ ] Hash dos dados de entrada.
-- [ ] Registro de cada execução que vai para o relatório.
-- [ ] `requirements.lock` e versão do Python.
-- [ ] Um comando, escrito no README, que repete a execução.
+- [ ] Registro de cada execução que vai para o relatório, e da plataforma (`requirements.lock`, versão do Python, sistema).
+- [ ] Critérios no `aceitacao.toml`, no git **antes** da rodada final; os que falharem são relatados, não removidos.
+- [ ] Níveis 0 e 1 de conferência, com um comando cada no README.
 - [ ] Verificação declarada: hash do arquivo, hash dos valores ou tolerância.
 
 ## Exercícios (entregar até o próximo encontro)
 
 1. Rode o modelo com `initial_fire_density` igual a 0.002, 0.005 e 0.01, com a mesma semente. Faça uma tabela com o identificador, a densidade e as células queimadas, tirada dos registros.
 2. Peça a um colega o `floresta.gpkg` e o `model.toml` dele e rode na sua máquina. Os **valores** batem? E os hashes dos arquivos?
-3. Em duas ou três frases: que informação da sua dissertação você hoje **não** conseguiria recuperar daqui a um ano?"""))
+3. Em duas ou três frases: que informação da sua dissertação você hoje **não** conseguiria recuperar daqui a um ano?
+4. Leia as [notas de aula](https://lambdageo-edu.github.io/curso-modelagem-dinamica-espacial/encontros/04-notas/) e escreva um `aceitacao.toml` com dois ou três critérios para o seu projeto, mesmo que provisórios."""))
 
 nb = nbf.v4.new_notebook()
 nb["cells"] = cells

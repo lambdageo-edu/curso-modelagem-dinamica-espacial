@@ -12,7 +12,7 @@ A nota final combina exercícios práticos (30%), o projeto (50%) e o seminário
 
 Pode ser um modelo LUCC sobre um recorte do Maranhão ou da Amazônia, ou um modelo de autômato celular ou dinâmica de sistemas ligado à dissertação do aluno.
 
-**Calendário.** Esboço no encontro 7 (entregue no 8); grade do DisSCube no 10; regressão do potencial no 11; conferência no 12; validação no 13; apresentação no 14 ou 15; relatório e repositório até duas semanas depois do 15.
+**Calendário.** Esboço no encontro 7 (entregue no 8); grade do DisSCube no 10; regressão do potencial no 11; conferência no 12; critérios de aceitação (`aceitacao.toml`) no git antes da rodada final; validação no 13; apresentação no 14 ou 15; relatório e repositório até duas semanas depois do 15.
 
 **Relatório.** No formato de artigo curto, com a descrição do modelo organizada pelo protocolo ODD (*Overview, Design concepts, Details*; Grimm et al., 2020), que vale também para modelos que não são de agentes: propósito, entidades e variáveis, escalas, processos e ordem, conceitos, inicialização, dados de entrada e submodelos. O relatório pode virar resumo para o SBSR ou o GeoInfo.
 
@@ -25,7 +25,7 @@ Pode ser um modelo LUCC sobre um recorte do Maranhão ou da Amazônia, ou um mod
 | Modelo | 20% | parâmetros sem origem | potencial ajustado e tolerância justificada (não a do lab) | idem, com a descrição ODD completa |
 | Validação | 20% | sem comparação com dado observado | quantidade e localização contra um mapa observado, com a persistência ao lado | idem, em várias resoluções e com um ano que não entrou no ajuste |
 | Incerteza ou cenários | 15% | uma rodada só | varredura de um parâmetro, ou dois cenários comparados | mapa de concordância, ou cenários com a diferença explicada |
-| Reprodutibilidade | 15% | o professor não consegue rodar | um comando no README repete a execução | idem, e o resultado confere com o registro (hash ou tolerância declarada) |
+| Reprodutibilidade | 15% | o professor não consegue rodar | níveis 0 e 1 de conferência, com um comando cada no README; critérios no git antes da rodada final | idem, e o resultado confere com o registro (hash ou tolerância declarada), com os critérios que falharam relatados |
 
 ### Esboço (encontro 7, entregue no encontro 8)
 
@@ -40,12 +40,15 @@ Uma página com:
 
 ### Checklist de reprodutibilidade (do encontro 4)
 
+O método está nas [notas de aula do encontro 4](encontros/04-notas.md).
+
+
 - [ ] Parâmetros num arquivo de configuração, não no código.
 - [ ] Semente registrada (e várias sementes, se o modelo for estocástico).
 - [ ] Hash dos dados de entrada.
-- [ ] Registro de cada execução que vai para o relatório.
-- [ ] `requirements.lock` e versão do Python.
-- [ ] Um comando, escrito no README, que repete a execução.
+- [ ] Registro de cada execução que vai para o relatório, e da plataforma (`requirements.lock`, versão do Python, sistema).
+- [ ] Critérios no `aceitacao.toml`, no git antes da rodada final; os que falharem são relatados, não removidos.
+- [ ] Níveis 0 (auditar o registro) e 1 (teste rápido) de conferência, com um comando cada no README.
 - [ ] Verificação declarada: hash do arquivo, hash dos valores ou tolerância.
 
 ## Seminário
@@ -76,6 +79,6 @@ Uma página com:
 - **Tolerância:** que tolerância da alocação foi usada, e por quê (encontros 9 e 11)?
 - **Validação:** o modelo supera a persistência? Em que resolução (encontro 13)? O ano validado entrou no ajuste?
 - **Incerteza:** o resultado mudaria com outro valor de parâmetro (encontro 12)?
-- **Reprodutibilidade:** outra pessoa roda o projeto com um comando (encontro 4)?
+- **Reprodutibilidade:** outra pessoa roda o projeto com um comando (encontro 4)? Os critérios foram escritos antes da rodada, e algum falhou?
 
 O relatório é entregue duas semanas depois do encontro 15, para incorporar o que surgir nas perguntas.
