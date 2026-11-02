@@ -19,7 +19,7 @@ No encontro 9 os coeficientes do potencial vieram prontos no script do lab01. No
 2. **alocação contínua × discreta**: frações de cada classe na célula, ou uma classe por célula;
 3. **restrições**: proibir a mudança numa parte da área, e para onde ela vai.
 
-Usamos dois labs do LuccME: o lab01 (Acre, frações, já conhecido) e o lab15 (Mojuí dos Campos, no Pará, uma classe por célula).
+Usamos dois labs do LuccME: o lab01 (Acre, frações, já conhecido) e o lab15 (o assentamento PA Moju, ao sul de Santarém, no Pará, uma classe por célula).
 
 🔧 = troque um valor e rode de novo; ✏️ = responda."""))
 
@@ -75,7 +75,7 @@ def baixar(caminho, sha256, pasta=Path("dados_labs"), tentativas=5):
 locais = {Path(c).name: baixar(c, h) for c, h in ARQUIVOS.items()}
 acre = gpd.read_file(locais["csAC.shp"])
 moju = gpd.read_file(locais["cs_moju.shp"])
-print(f"Acre: {len(acre)} células (frações)   Mojuí dos Campos: {len(moju)} células (uma classe por célula)")"""))
+print(f"Acre: {len(acre)} células (frações)   PA Moju: {len(moju)} células (uma classe por célula)")"""))
 
 cells.append(md("""## 1. De onde vêm os coeficientes do potencial
 
@@ -132,7 +132,7 @@ cells.append(md("""✏️ **Pergunta 2.** O que o potencial de uma variável só
 
 No lab01 cada célula tem frações de floresta, desmatado e outros, e a alocação **contínua** muda essas frações aos poucos. Em muitos estudos o dado é um mapa de classes (como o MapBiomas ou o PRODES): cada célula é floresta **ou** desmatada. A alocação **discreta** troca a classe da célula inteira. É o CLUE-S (Verburg et al., 2002), que o LuccME chama de `DClueSLike`.
 
-O lab15 do LuccME usa células de cerca de 500 m em Mojuí dos Campos, junto à BR-163, no Pará, de 1999 a 2004. A demanda é em número de células; o potencial é uma **regressão logística**, que dá a probabilidade de cada célula ser desmatada:
+O lab15 do LuccME usa células de cerca de 500 m no Projeto de Assentamento Moju I e II (PA Moju), um assentamento da reforma agrária ao sul de Santarém, no Pará, na região da BR-163: cerca de 1.480 km², de 1999 a 2004. Os dados vêm de um estudo de mestrado que modelou a região de Santarém com o CLUE-S no TerraME, a partir de mapas Landsat de 1999, 2004 e 2007 com cinco classes de uso (Coelho, 2009); o lab os resume em três: floresta (`f`), desmatado (`d`) e outros (`o`). A demanda é em número de células; o potencial é uma **regressão logística**, que dá a probabilidade de cada célula ser desmatada:
 
 $$P(d) = \\frac{1}{1 + e^{-(\\beta_0 + \\beta_1 x_1 + \\dots)}}$$"""))
 
@@ -154,7 +154,9 @@ DEMANDA_M"""))
 cells.append(md("""Dois elementos novos na alocação discreta:
 
 - a **matriz de transição** diz quais mudanças são permitidas. Aqui, floresta pode virar desmatado, mas desmatado não volta a ser floresta;
-- a **elasticidade** de cada classe (0,6 para o desmatado) é a resistência a mudar: quanto maior, mais a célula tende a ficar como está.
+- a **elasticidade** de cada classe (0,6 para o desmatado) é a resistência a mudar: um valor de 0 a 1 somado ao potencial da classe que a célula já tem. Quanto maior, mais a célula tende a ficar como está.
+
+Cuidado com o nome: no LuccME, "elasticidade" também designa, na alocação **contínua** do lab01, o fator que o laço de ajuste multiplica até a soma bater com a demanda. São duas coisas diferentes com o mesmo nome.
 
 A função `simular_discreto` monta o lab15. O parâmetro `protegida` será usado na Parte 4."""))
 
@@ -230,7 +232,7 @@ ax.set_axis_off()"""))
 
 cells.append(md("""## 3. Contínua × discreta no mesmo lugar
 
-Para comparar as duas alocações na mesma área, ajustamos uma regressão **linear** aos dados de Mojuí dos Campos (como na Parte 1) e rodamos a alocação contínua, com a mesma demanda."""))
+Para comparar as duas alocações na mesma área, ajustamos uma regressão **linear** aos dados do PA Moju (como na Parte 1) e rodamos a alocação contínua, com a mesma demanda."""))
 
 cells.append(code("""Xm = sm.add_constant(moju[VARIAVEIS_M].astype(float))
 linear = {u: sm.OLS(moju[u].astype(float), Xm).fit() for u in ["f", "d"]}

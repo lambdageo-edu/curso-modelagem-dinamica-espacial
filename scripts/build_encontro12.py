@@ -24,7 +24,7 @@ O que vamos fazer:
 5. ler o resultado de uma rodada pela distribuição de muitas;
 6. conferir o andamento do projeto.
 
-Usamos o lab15 do encontro 11 (Mojuí dos Campos, alocação discreta), que roda em décimos de segundo.
+Usamos o lab15 do encontro 11 (o assentamento PA Moju, alocação discreta), que roda em décimos de segundo.
 
 🔧 = troque um valor e rode de novo; ✏️ = responda."""))
 
