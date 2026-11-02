@@ -15,7 +15,7 @@ cells.append(md("""# Encontro 13 — Validação e oficina de projeto
 
 Até aqui comparamos o DisSModel e o DisSLUCC com o TerraME e o LuccME. Isso é **verificação**: o programa faz as contas que o modelo diz? Hoje fazemos a outra pergunta, a **validação**: o modelo se parece com o mundo? Para isso comparamos o mapa simulado com um mapa **observado** do mesmo ano.
 
-A primeira parte é uma demonstração, com o lab15 (Mojuí dos Campos), que traz o desmatamento observado em 2004. A segunda é a oficina: cada um valida o próprio modelo com as mesmas funções.
+A primeira parte é uma demonstração, com o lab15 (o assentamento PA Moju, ao sul de Santarém), que traz o desmatamento observado em 2004. A segunda é a oficina: cada um valida o próprio modelo com as mesmas funções.
 
 1. simulado × observado: acertos, omissões e falsos alarmes;
 2. quantidade e localização (Pontius e Millones, 2011);
@@ -215,7 +215,7 @@ curvas.style.format({"lado do bloco (km)": "{:.1f}", "lab15": "{:.2%}", "persist
 
 cells.append(md("""✏️ **Pergunta 4.** A partir de que tamanho de bloco o lab15 erra menos que a persistência? O que você diria a quem quer usar este modelo para decidir **qual propriedade** fiscalizar? E para decidir **qual região** do município priorizar?
 
-> Atenção: não sabemos se os coeficientes do lab15 foram ajustados com o mapa de 2004 (encontro 11). Se foram, esta validação é otimista: o modelo está sendo comparado com dados que ajudaram a construí-lo. Uma validação honesta usa um mapa que não entrou no ajuste, por exemplo o de 2007 (`d07`), com a demanda estendida.
+> Atenção: não sabemos se os coeficientes do lab15 foram ajustados com o mapa de 2004 (encontro 11). Se foram, esta validação é otimista: o modelo está sendo comparado com dados que ajudaram a construí-lo. Na prática dos modelos do LuccME é comum ajustar a regressão com o mapa do ano final do período, então a possibilidade é real. Uma validação honesta usa um mapa que não entrou no ajuste, por exemplo o de 2007 (`d07`), com a demanda estendida.
 
 ## 5. Para o seu projeto
 
