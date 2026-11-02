@@ -237,7 +237,13 @@ Para um modelo **contínuo** (frações), `decompor` e `erro_por_bloco` funciona
 
 ## Oficina
 
-Use o tempo que resta para rodar o seu modelo e validá-lo. A lista do encontro 12 diz o que precisa estar pronto. Para o seminário (encontros 14 e 15), traga:
+Use o tempo que resta para rodar o seu modelo e validá-lo. A lista do encontro 12 diz o que precisa estar pronto.
+
+**Antes da rodada final**, confira que os critérios estão no git e são anteriores a ela: `git log --oneline -- aceitacao.toml` mostra o commit que os gravou. Depois rode, valide e confira os critérios (encontro 4). Um critério que falha é relatado, não removido nem afrouxado; acrescentar uma métrica depois de ver o resultado é permitido, desde que ela seja apresentada à parte, "para informação" ([notas de aula do encontro 4](https://lambdageo-edu.github.io/curso-modelagem-dinamica-espacial/encontros/04-notas/), seção 4).
+
+Para o seminário (encontros 14 e 15), traga:
+
+- [ ] o resultado dos critérios do `aceitacao.toml`: os que passaram e os que falharam;
 
 - [ ] o mapa simulado e o observado, lado a lado;
 - [ ] a tabela de quantidade e localização, com a persistência ao lado;

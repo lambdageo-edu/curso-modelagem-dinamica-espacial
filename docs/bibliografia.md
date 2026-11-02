@@ -66,9 +66,11 @@ A bibliografia está organizada por tema, na ordem em que os temas aparecem nos 
 - NATIONAL ACADEMIES OF SCIENCES, ENGINEERING, AND MEDICINE. *Reproducibility and Replicability in Science*. Washington: The National Academies Press, 2019. DOI: 10.17226/25303.
 - BAKER, M. 1,500 scientists lift the lid on reproducibility. *Nature*, v. 533, n. 7604, p. 452–454, 2016. DOI: 10.1038/533452a.
 - BARBA, L. A. The hard road to reproducibility. *Science*, v. 354, n. 6308, p. 142, 2016. DOI: 10.1126/science.354.6308.142.
-- SANDVE, G. K.; NEKRUTENKO, A.; TAYLOR, J.; HOVIG, E. Ten simple rules for reproducible computational research. *PLOS Computational Biology*, v. 9, n. 10, e1003285, 2013. **(a conferir)**
+- SANDVE, G. K.; NEKRUTENKO, A.; TAYLOR, J.; HOVIG, E. Ten simple rules for reproducible computational research. *PLOS Computational Biology*, v. 9, n. 10, e1003285, 2013. DOI: 10.1371/journal.pcbi.1003285.
 - WILKINSON, M. D. et al. The FAIR Guiding Principles for scientific data management and stewardship. *Scientific Data*, v. 3, 160018, 2016. DOI: 10.1038/sdata.2016.18.
 - ROUGIER, N. P. et al. Sustainable computational science: the ReScience initiative. *PeerJ Computer Science*, v. 3, e142, 2017. DOI: 10.7717/peerj-cs.142.
+- NOSEK, B. A.; EBERSOLE, C. R.; DEHAVEN, A. C.; MELLOR, D. T. The preregistration revolution. *Proceedings of the National Academy of Sciences*, v. 115, n. 11, p. 2600–2606, 2018. DOI: 10.1073/pnas.1708274114.
+- LIPSITCH, M.; TCHETGEN TCHETGEN, E.; COHEN, T. Negative controls: a tool for detecting confounding and bias in observational studies. *Epidemiology*, v. 21, n. 3, p. 383–388, 2010. DOI: 10.1097/EDE.0b013e3181d61eeb.
 
 ## Software e dados usados nos encontros
 
@@ -84,4 +86,9 @@ Citados pela versão usada, como pede a prática de reprodutibilidade do encontr
 - COSTA, S. S. *LuccME goldens*. Versão 1.1.0. Zenodo, 2026. DOI: 10.5281/zenodo.23161342. Dados e saídas de referência do LuccME (encontros 9, 11 a 13).
 - COSTA, S. S. *DisSCube benchmark*. Versão 1.1.0. Zenodo, 2026. DOI: 10.5281/zenodo.23366475. Arquivo TOML e comparação com o TerraME (encontro 10).
 - COSTA, S. S. *disscube-grids*. Versão 1.1.0. Zenodo, 2026. DOI: 10.5281/zenodo.23502247. Casos prontos de grade (encontro 10).
+- COSTA, S. S. *DisSLUCC benchmark*. Versão 0.2.2. Zenodo, 2026. DOI: 10.5281/zenodo.23224097. Comparação do DisSLUCC com os labs do LuccME (encontros 4, 9 e 11).
+- COSTA, S. S. *terrame-docker*. Versão 0.4.2. Zenodo, 2026. DOI: 10.5281/zenodo.23160784. Imagem fixada do TerraME e do LuccME que gera as referências (encontro 4).
+- COSTA, S. S.; BEZERRA, D. da S.; ALVES, J. M. P. *Open LUCC workflow*. Versão 1.1.0. Zenodo, 2026. DOI: 10.5281/zenodo.23415814. Exemplo de cadeia completa com critérios de aceitação e níveis de conferência (encontro 4).
+- COSTA, S. S.; BEZERRA, D. da S.; ALVES, J. M. P.; OLIVEIRA, H. B.; VALE, M. D.; ZHAO, S. K. S. *rescience-lulcc*. Versão 0.1.0. GitHub, 2026. Disponível em: <https://github.com/LambdaGeo/rescience-lulcc>. Replicação do pacote lulcc em Python, com critérios para modelos estocásticos e controles negativos (encontros 4, 7 e 12).
+- COSTA, S. S. *lulcc-goldens*. Versão 0.1.0. Zenodo, 2026. DOI: 10.5281/zenodo.23866776. Saídas de referência do pacote lulcc, do R.
 - Documentação e tutoriais do TerraME e do LuccME (INPE): <https://github.com/TerraME/terrame>.

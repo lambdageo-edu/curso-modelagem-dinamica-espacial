@@ -24,7 +24,7 @@ Os 15 encontros somam 25 horas de relógio; a conta de 30 horas usa a hora-aula 
 
 ## Ementa
 
-Conceitos de modelagem dinâmica espacial: espaço, tempo, processo e escala. Paradigmas: dinâmica de sistemas, autômatos celulares e agentes. Panorama das ferramentas (TerraME/LuccME, Dinamica EGO, NetLogo, CLUE/CLUE-S, lulcc, Mesa, PySD, PCRaster). Reprodutibilidade de experimentos computacionais. Modelagem em Python com o DisSModel. Construção de grades e cubos de dados espaciais com o DisSCube. Modelos de mudança de uso e cobertura da terra (LUCC) com o DisSLUCC: demanda, potencial e alocação contínua e discreta, restrições e cenários. Verificação contra implementação de referência, calibração do potencial, validação contra mapas observados, incerteza e sensibilidade.
+Conceitos de modelagem dinâmica espacial: espaço, tempo, processo e escala. Paradigmas: dinâmica de sistemas, autômatos celulares e agentes. Panorama das ferramentas (TerraME/LuccME, Dinamica EGO, NetLogo, CLUE/CLUE-S, lulcc, Mesa, PySD, PCRaster). Reprodutibilidade de experimentos computacionais. Modelagem em Python com o DisSModel. Construção de grades e cubos de dados espaciais com o DisSCube. Modelos de mudança de uso e cobertura da terra (LUCC) com o DisSLUCC: demanda, potencial e alocação contínua e discreta, restrições e cenários. Verificação contra implementação de referência, em camadas e com controles negativos; critérios de aceitação escritos antes da execução. Calibração do potencial, validação contra mapas observados, incerteza e sensibilidade.
 
 ## Justificativa
 

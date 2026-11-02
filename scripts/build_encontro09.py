@@ -147,7 +147,7 @@ linhas, colunas = celulas["row"].astype(int).values, celulas["col"].astype(int).
 FORMA = (linhas.max() + 1, colunas.max() + 1)
 
 
-def simular(demanda, max_difference, correcao_celula=False):
+def simular(demanda, max_difference, correcao_celula=False, potencial_d=None):
     \"\"\"Roda o lab01 e devolve (mapas por ano, iterações da alocação por ano).\"\"\"
     grade = RasterBackend(shape=FORMA)
     mascara = np.zeros(FORMA, dtype=np.float32); mascara[linhas, colunas] = 1
@@ -159,7 +159,7 @@ def simular(demanda, max_difference, correcao_celula=False):
     env = Environment(end_time=len(demanda) - 1)     # um passo por ano da tabela
     dem = DemandPreComputedValues(annual_demand=demanda[USOS].values.tolist(), land_use_types=USOS)
     pot = PotentialLinearRegression(backend=grade, demand=dem, land_use_types=USOS, land_use_no_data="outros",
-                                    potential_data=[[POTENCIAL_F, POTENCIAL_D, POTENCIAL_OUTROS]])
+                                    potential_data=[[POTENCIAL_F, potencial_d or POTENCIAL_D, POTENCIAL_OUTROS]])
     alo = AllocationClueLike(
         backend=grade, demand=dem, potential=pot, land_use_types=USOS,
         static={"f": -1, "d": -1, "outros": 1}, complementar_lu="f", cell_area=25.0,
@@ -233,6 +233,45 @@ print(f"maior diferença em d (2014), com e sem a correção: {np.abs(corrigido[
 
 cells.append(md("""Uma diferença de até 4 pontos percentuais numa célula, documentada no `disslucc-benchmark`. Verificar não é só achar igualdade: é saber **onde** e **por que** dois programas diferem.
 
+### Verificação em camadas
+
+O que fizemos é uma camada de uma verificação maior ([notas de aula do encontro 4](https://lambdageo-edu.github.io/curso-modelagem-dinamica-espacial/encontros/04-notas/), seção 6):
+
+| Camada | Pergunta | Onde |
+|---|---|---|
+| Referência | as saídas do LuccME podem ser geradas de novo? | `terrame-docker` (imagem fixada) e `luccme-goldens` (saídas com hash) |
+| Componente espacial | as variáveis da grade são as mesmas do TerraME? | `disscube-benchmark` (encontro 10) |
+| Componente dinâmico | a alocação reproduz o LuccME, ano a ano? | `disslucc-benchmark`: **esta parte** |
+| Cadeia inteira | das fontes abertas aos mapas, com critérios fixados antes | `open-lucc-workflow` |
+
+### O teste consegue falhar?
+
+Escrevemos um critério **antes** de comparar: a maior diferença em `f` e `d`, em todos os anos, é no máximo 10⁻⁵, e o número de iterações por ano é o do TerraME. Depois fazemos **controles negativos**: dois erros de propósito, que o teste deveria reprovar."""))
+
+cells.append(code("""CRITERIO = 1e-5     # maior diferença aceita; escrito antes de comparar
+ITER_TERRAME = {5000: [0, 0, 0, 0, 0, 0, 0], 1643: [0, 0, 8, 26, 18, 17, 17]}   # terrame.log dos goldens
+GOLDEN = {5000: locais["lab01.csv.gz"], 1643: locais["lab01_md1643.csv.gz"]}
+
+extra = (TENDENCIA["d"] - TENDENCIA["d"].iloc[0]) * 0.10           # erro 1: 10% a mais de desmatamento por ano
+DEMANDA_ERRADA = TENDENCIA[USOS].assign(d=TENDENCIA["d"] + extra, f=TENDENCIA["f"] - extra)
+POTENCIAL_ERRADO = RegressionSpec(const=POTENCIAL_D.const * 1.01, betas=POTENCIAL_D.betas)   # erro 2: constante +1%
+
+linhas_controle = []
+for nome, demanda, pot in [("lab01 como está", TENDENCIA, None),
+                           ("demanda 10% maior", DEMANDA_ERRADA, None),
+                           ("constante do potencial 1% maior", TENDENCIA, POTENCIAL_ERRADO)]:
+    for tol in (5000, 1643):
+        m, it = simular(demanda, max_difference=tol, potencial_d=pot)
+        dif = comparar(m, GOLDEN[tol]).to_numpy().max()
+        linhas_controle.append({"caso": nome, "tolerância": tol, "maior diferença": f"{dif:.1e}",
+                                "iterações iguais": it == ITER_TERRAME[tol],
+                                "passa": bool(dif <= CRITERIO and it == ITER_TERRAME[tol])})
+pd.DataFrame(linhas_controle).set_index(["caso", "tolerância"])"""))
+
+cells.append(md("""O modelo correto passa nas duas tolerâncias, e o potencial errado reprova nas duas. A demanda errada é o caso que ensina: com a tolerância do lab original, uma demanda 10% maior **passa**, porque a alocação aceita a primeira tentativa todo ano e a demanda quase não influi no mapa. Só a variante de 1.643 km² reprova esse erro. É por isso que o `disslucc-benchmark` acrescenta a variante: sem ela, a comparação com o LuccME não teria poder para ver um erro na demanda.
+
+✏️ **Pergunta 3.** Se você só tivesse o golden do lab01 original, que erros do seu programa a verificação deixaria passar? Como você descobriria isso?
+
 ## 6. A demanda foi atendida?
 
 O modelo bate com o LuccME. Mas ele faz o que a demanda pede? Somamos a área desmatada do mapa simulado em cada ano:"""))
@@ -248,7 +287,7 @@ conferencia"""))
 
 cells.append(md("""Com a tolerância do lab original, o modelo desmata em 2014 quase 2.900 km² a mais do que a demanda pede: aceita qualquer resultado que fique a menos de 5.000 km² do pedido. O teste de verificação passou, porque o LuccME faz exatamente o mesmo.
 
-✏️ **Pergunta 3.** A verificação deu igualdade com o LuccME e, mesmo assim, o modelo não respeita a demanda. Isso é uma contradição? O que a verificação garante, e o que ela não garante?
+✏️ **Pergunta 4.** A verificação deu igualdade com o LuccME e, mesmo assim, o modelo não respeita a demanda. Isso é uma contradição? O que a verificação garante, e o que ela não garante?
 
 Para os cenários usamos tolerância de 200 km² (menos de 1% da área desmatada), que obriga a alocação a iterar até chegar perto da demanda."""))
 
@@ -291,7 +330,7 @@ mapa(tendencia[2014]["d"] - tendencia[2008]["d"], "ganho de desmatado: tendênci
 mapa(diferenca, "desmatamento evitado pela governança (2014)", eixos[1], cmap="Greens", vmin=0)
 plt.tight_layout()"""))
 
-cells.append(md("""✏️ **Pergunta 4.** Onde está o desmatamento evitado: espalhado pelo estado ou concentrado? Por que ele aparece justamente ali? (Dica: compare com o mapa do potencial.)
+cells.append(md("""✏️ **Pergunta 5.** Onde está o desmatamento evitado: espalhado pelo estado ou concentrado? Por que ele aparece justamente ali? (Dica: compare com o mapa do potencial.)
 
 ## Para casa
 

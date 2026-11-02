@@ -21,7 +21,8 @@ O que vamos fazer:
 2. varrer um coeficiente;
 3. medir a sensibilidade a cada coeficiente;
 4. rodar muitas vezes, com coeficientes sorteados, e fazer um mapa de concordância;
-5. conferir o andamento do projeto.
+5. ler o resultado de uma rodada pela distribuição de muitas;
+6. conferir o andamento do projeto.
 
 Usamos o lab15 do encontro 11 (Mojuí dos Campos, alocação discreta), que roda em décimos de segundo.
 
@@ -190,8 +191,11 @@ def coeficientes_sorteados(semente):
 
 inicio = time.perf_counter()
 vezes = np.zeros(len(moju))
+perto_por_rodada = []                     # quantas células novas ficam perto de um rio, em cada rodada
 for semente in range(RODADAS):
-    vezes += novas_celulas(coeficientes_sorteados(semente))
+    novas = novas_celulas(coeficientes_sorteados(semente))
+    vezes += novas
+    perto_por_rodada.append(int((novas & perto_do_rio).sum()))
 concordancia = vezes / RODADAS
 print(f"{RODADAS} rodadas em {time.perf_counter() - inicio:.1f} s")
 
@@ -216,7 +220,26 @@ cells.append(md("""✏️ **Pergunta 3.** Se você fosse apresentar este resulta
 
 ✏️ **Pergunta 4.** Este mapa de concordância mede a incerteza **dos coeficientes**. Que incertezas da tabela da Parte 1 ele não inclui?
 
-## 6. Conferência do projeto
+## 6. Uma rodada é um ponto de uma distribuição
+
+No encontro 11, o modelo base pôs 174 das 237 células novas perto de um rio. Esse número saiu de **uma** rodada. Onde ele cai entre as rodadas com coeficientes sorteados? É a mesma pergunta que a replicação do pacote lulcc faz com os números publicados no artigo original, que vieram de uma rodada só ([notas de aula do encontro 4](https://lambdageo-edu.github.io/curso-modelagem-dinamica-espacial/encontros/04-notas/), seção 7)."""))
+
+cells.append(code("""valor_base = int((base & perto_do_rio).sum())
+dist = np.array(perto_por_rodada)
+percentil = (dist < valor_base).mean() * 100 + (dist == valor_base).mean() * 50
+print(f"modelo base: {valor_base} células novas perto de rio")
+print(f"{RODADAS} rodadas sorteadas: mínimo {dist.min()}, mediana {np.median(dist):.0f}, máximo {dist.max()}; "
+      f"90% entre {np.percentile(dist, 5):.0f} e {np.percentile(dist, 95):.0f}")
+print(f"o modelo base fica no percentil {percentil:.0f}")
+
+fig, ax = plt.subplots(figsize=(6, 3.2))
+ax.hist(dist, bins=15, color="#90caf9", edgecolor="white")
+ax.axvline(valor_base, color="#b71c1c", lw=2, label=f"modelo base ({valor_base})")
+ax.set(xlabel="células novas a menos de ~500 m de rio", ylabel="rodadas"); ax.legend();"""))
+
+cells.append(md("""✏️ **Pergunta 5.** Se um artigo relatasse só o número do modelo base, o que o leitor deixaria de saber? Como você escreveria esse resultado no relatório do projeto?
+
+## 7. Conferência do projeto
 
 Cada aluno mostra, em 3 minutos, o estado do projeto. Use a lista abaixo; o que estiver faltando é o trabalho até o encontro 13 (oficina).
 
@@ -227,12 +250,13 @@ Cada aluno mostra, em 3 minutos, o estado do projeto. Use a lista abaixo; o que 
 - [ ] **Alocação**: contínua ou discreta, e por quê; a tolerância escolhida (não a do lab!).
 - [ ] **Validação** (encontro 13): qual mapa observado será comparado com o simulado, e de que ano.
 - [ ] **Incerteza**: qual parâmetro você vai varrer.
+- [ ] **Critérios**: o `aceitacao.toml` (encontro 4), com o que a rodada final precisa cumprir, já no git.
 
 ## Para casa
 
 1. Varra a **tolerância** (`max_difference`) do modelo base: 5, 10, 20, 50, 100 e 300. Quantas células novas há em cada caso, e quantas iguais às do modelo base? Compare com a sensibilidade aos coeficientes.
 2. Repita a Parte 5 com `SORTEIO = 0.3`. Quantas células passam a ser incertas?
-3. Complete a lista da Parte 6 para o seu projeto e traga para o encontro 13."""))
+3. Complete a lista da Parte 7 para o seu projeto e traga para o encontro 13."""))
 
 nb = nbf.v4.new_notebook()
 nb["cells"] = cells

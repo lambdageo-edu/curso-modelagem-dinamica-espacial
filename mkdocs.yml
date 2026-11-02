@@ -84,7 +84,9 @@ nav:
       - "1. Fundamentos": encontros/01-notas.md
       - "2. Python I": notebooks/encontro02_python_basico.ipynb
       - "3. Python II: dados espaciais": notebooks/encontro03_python_dados_espaciais.ipynb
-      - "4. Reprodutibilidade e o DisSModel": notebooks/encontro04_reprodutibilidade.ipynb
+      - "4. Reprodutibilidade e o DisSModel":
+          - Notas de aula: encontros/04-notas.md
+          - Notebook: notebooks/encontro04_reprodutibilidade.ipynb
       - "5. Dinâmica de sistemas": notebooks/encontro05_dinamica_sistemas.ipynb
       - "6. Autômatos celulares": notebooks/encontro06_automatos_celulares.ipynb
       - "7. Agentes e acoplamento": notebooks/encontro07_agentes_acoplamento.ipynb

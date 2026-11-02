@@ -1,13 +1,13 @@
 # Encontros
 
-Cada encontro tem um material: notas de aula (encontros 1 e 8) ou um notebook (encontros 2 a 7 e 9 a 13). O notebook aparece aqui já executado; o botão de download baixa o arquivo `.ipynb`, e o selo **Abrir no Colab**, no topo, abre o notebook no Google Colab. A leitura de apoio pode ser feita antes ou depois do encontro; as referências completas estão na [bibliografia](../bibliografia.md).
+Cada encontro tem um material: notas de aula (encontros 1 e 8), um notebook (encontros 2 a 7 e 9 a 13) ou os dois (encontro 4). O notebook aparece aqui já executado; o botão de download baixa o arquivo `.ipynb`, e o selo **Abrir no Colab**, no topo, abre o notebook no Google Colab. A leitura de apoio pode ser feita antes ou depois do encontro; as referências completas estão na [bibliografia](../bibliografia.md).
 
 | Encontro | Tema | Material | Leitura de apoio |
 | --- | --- | --- | --- |
 | 1 | O que é modelagem dinâmica espacial; visão da disciplina | [Notas de aula](01-notas.md); três modelos no NetLogo Web | Livro, cap. 17; Couclelis (2002); Verburg et al. (2004) |
 | 2 | Python I: notebook, variáveis, listas, laços e funções | [Notebook](../notebooks/encontro02_python_basico.ipynb) | Livro, caps. 1 e 2 |
 | 3 | Python II: grades, tabelas, vetor e raster | [Notebook](../notebooks/encontro03_python_dados_espaciais.ipynb) | Livro, caps. 3, 7 e 8 |
-| 4 | Reprodutibilidade e o DisSModel | [Notebook](../notebooks/encontro04_reprodutibilidade.ipynb) | Livro, caps. 22 e 29; NASEM (2019); Sandve et al. (2013) |
+| 4 | Reprodutibilidade e o DisSModel; como conferir um modelo | [Notas de aula](04-notas.md) e [notebook](../notebooks/encontro04_reprodutibilidade.ipynb) | Notas de aula; livro, caps. 22, 29 e 30; NASEM (2019); Sandve et al. (2013) |
 | 5 | Dinâmica de sistemas | [Notebook](../notebooks/encontro05_dinamica_sistemas.ipynb) | Livro, cap. 23; Ford (2009), caps. 1 a 4 |
 | 6 | Autômatos celulares | [Notebook](../notebooks/encontro06_automatos_celulares.ipynb) | Livro, caps. 18 e 24; Gardner (1970) |
 | 7 | Agentes e acoplamento | [Notebook](../notebooks/encontro07_agentes_acoplamento.ipynb) | Livro, cap. 25; Railsback e Grimm (2019), cap. 1; Schelling (1971); Grimm et al. (2020) |

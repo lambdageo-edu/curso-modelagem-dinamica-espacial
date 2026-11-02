@@ -137,11 +137,44 @@ ax.set(xlabel="passo", ylabel="% no grupo de insatisfeitos", xlim=(0, 200)); ax.
 cells.append(code("""for passo in (0, 25, 50, 100):
     print(f"passo {passo:3d}  média TerraME {terrame.loc[passo].mean():5.1f}%   média DisSModel {nosso.loc[passo].mean():5.1f}%")"""))
 
-cells.append(md("""As duas faixas se sobrepõem: o comportamento é o mesmo, embora nenhuma rodada seja igual a outra.
+cells.append(md("""As duas faixas se sobrepõem. Mas "se sobrepõem" é um julgamento a olho. Para decidir sem olhar, escrevemos **antes** um critério, o mesmo usado na replicação do pacote lulcc no repositório [`rescience-lulcc`](https://github.com/LambdaGeo/rescience-lulcc) ([notas de aula do encontro 4](https://lambdageo-edu.github.io/curso-modelagem-dinamica-espacial/encontros/04-notas/), seção 7). Em cada passo escolhido, as duas distribuições passam se:
+
+1. as médias diferem menos de 3 erros-padrão da diferença;
+2. o teste de Kolmogorov–Smirnov de duas amostras não rejeita que sejam iguais (p ≥ 0,01)."""))
+
+cells.append(code("""from scipy import stats
+
+CRITERIO = {"passos": [10, 25, 50, 100], "max_erros_padrao": 3, "ks_p_minimo": 0.01}   # escrito antes de comparar
+
+def comparar_distribuicoes(ref, nova, criterio=CRITERIO):
+    linhas = []
+    for passo in criterio["passos"]:
+        a, b = ref.loc[passo], nova.loc[passo]
+        erro_padrao = np.sqrt(a.var() / len(a) + b.var() / len(b))
+        z = abs(a.mean() - b.mean()) / erro_padrao
+        p = stats.ks_2samp(a, b).pvalue
+        linhas.append({"passo": passo, "média TerraME": round(a.mean(), 2), "média DisSModel": round(b.mean(), 2),
+                       "diferença em erros-padrão": round(z, 2), "p (KS)": round(p, 3),
+                       "passa": bool(z <= criterio["max_erros_padrao"] and p >= criterio["ks_p_minimo"])})
+    return pd.DataFrame(linhas).set_index("passo")
+
+comparar_distribuicoes(terrame, nosso)"""))
+
+cells.append(md("""O comportamento é o mesmo, embora nenhuma rodada seja igual a outra.
+
+**O teste consegue falhar?** Um teste que nunca reprova não informa nada. Fazemos um **controle negativo**: rodamos 50 vezes um modelo errado de propósito, com 8% de células livres em vez de 5%, e aplicamos o mesmo critério."""))
+
+cells.append(code("""LIVRES = 0.08    # 🔧 experimente 0.06
+errado = pd.concat({s: rodar(500, criar=lambda: Schelling(seed=s, free_space=LIVRES),
+                             anotar=lambda m, t: {"u": m.unhappy})[1]["u"]
+                    for s in range(1, 51)}, axis=1)
+comparar_distribuicoes(terrame, errado)"""))
+
+cells.append(md("""✏️ **Pergunta 2.** Com 8% de células livres o critério reprova. Rode com 6%. O que acontece, e o que isso diz sobre o tamanho de diferença que 50 rodadas conseguem ver?
 
 Um detalhe que a comparação revela: o grupo de insatisfeitos chega a **zero**, mas no fim ainda há cerca de 6% de agentes insatisfeitos (a tabela da Parte 1). No original do TerraME, o grupo é montado uma vez e só **remove** quem ficou satisfeito; quem fica insatisfeito depois de uma mudança nunca volta a ser verificado. O porte reproduz esse comportamento de propósito, e o documenta.
 
-✏️ **Pergunta 2.** Corrigir esse comportamento deixaria o modelo "melhor", mas diferente do original. Num trabalho científico, como você decidiria? O que precisaria escrever no método?"""))
+✏️ **Pergunta 3.** Corrigir esse comportamento deixaria o modelo "melhor", mas diferente do original. Num trabalho científico, como você decidiria? O que precisaria escrever no método?"""))
 
 cells.append(md("""## 3. Acoplamento: quanto (dinâmica de sistemas) e onde (autômato celular)
 
@@ -223,7 +256,7 @@ for ax, (taxa, peso) in zip(eixos.flat, [(0.01, 0.0), (0.01, 5.0), (0.03, 0.0), 
     ax.set_xticks([]); ax.set_yticks([])
 plt.tight_layout()"""))
 
-cells.append(md("""✏️ **Pergunta 3.** A taxa mudou o quê no mapa? E o peso dos vizinhos? Um modelo LUCC precisa das duas coisas certas; qual delas você conseguiria checar só com a área desmatada por ano, e qual precisaria de mapas?
+cells.append(md("""✏️ **Pergunta 4.** A taxa mudou o quê no mapa? E o peso dos vizinhos? Um modelo LUCC precisa das duas coisas certas; qual delas você conseguiria checar só com a área desmatada por ano, e qual precisaria de mapas?
 
 ## 4. O projeto final
 
@@ -234,7 +267,7 @@ Até o próximo encontro, cada aluno escreve uma página com:
 3. **Paradigma.** Dinâmica de sistemas, autômato celular, agentes ou acoplamento? Por quê?
 4. **Estado e regra.** O que cada célula (ou agente) guarda e como muda?
 5. **Dados.** Que mapas e séries você precisa (MapBiomas, PRODES, censo...)?
-6. **Como saber se deu certo.** Que resultado observado você compararia com o simulado?
+6. **Como saber se deu certo.** Que resultado observado você compararia com o simulado, e com que critério, escrito antes de rodar?
 
 ## Para casa
 
