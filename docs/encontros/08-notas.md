@@ -70,6 +70,8 @@ Diferenças práticas entre as ferramentas mais usadas no Brasil:
 | Land Change Modeler | Clark Labs | módulo do TerrSet; comercial |
 | DisSLUCC | LambdaGeo/UFMA | Python, sobre o DisSModel; código aberto; comparado com o LuccME |
 
+Há ainda uma diferença no que a regressão explica. Nos modelos **estruturais**, como o CLUE, o LuccME e o DisSLUCC, a regressão explica o **uso** em uma data (a fração desmatada de cada célula em 2008, por exemplo), ou seja, o padrão acumulado das mudanças passadas. Nos modelos de **transição**, como o Dinamica EGO, os fatores explicam a **mudança** de uma classe para outra entre duas datas, e o modelo aloca transições, não usos (Aguiar, 2006). Por isso o lab01 do encontro 9 tem uma regressão por classe de uso, e não por transição.
+
 Ferramentas da mesma família não dão necessariamente o mesmo mapa: comparando quatro programas com os mesmos dados, Mas et al. (2014) encontraram diferenças de método que mudam o resultado, e Mazy e Longaretti (2023) mostraram que as descrições publicadas deixam escolhas de alocação em aberto. É uma das razões pelas quais a disciplina compara cada componente com uma implementação de referência.
 
 ## 5. Demanda, potencial e alocação
@@ -145,6 +147,7 @@ O encontro 13 faz essa validação com um lab do LuccME e o mapa observado, e o 
 
 Estas referências estão também na [bibliografia](../bibliografia.md), com a situação de cada uma.
 
+- AGUIAR, A. P. D. *Modelagem de mudança do uso da terra na Amazônia: explorando a heterogeneidade intra-regional*. 2006. Tese (Doutorado em Computação Aplicada) – Instituto Nacional de Pesquisas Espaciais, São José dos Campos, 2006.
 - AGUIAR, A. P. D. et al. Land use change emission scenarios: anticipating a forest transition process in the Brazilian Amazon. *Global Change Biology*, v. 22, n. 5, p. 1821–1840, 2016. DOI: 10.1111/gcb.13134.
 - GEIST, H. J.; LAMBIN, E. F. Proximate causes and underlying driving forces of tropical deforestation. *BioScience*, v. 52, n. 2, p. 143–150, 2002.
 - MAS, J.-F. et al. Inductive pattern-based land use/cover change models: a comparison of four software packages. *Environmental Modelling & Software*, v. 51, p. 94–111, 2014. DOI: 10.1016/j.envsoft.2013.09.010.
