@@ -79,7 +79,7 @@ cells.append(md("""## 1. De onde vem a incerteza
 | **Dados** | o mapa de 1999 tem erros de classificação; a distância aos rios depende da escala do mapa de rios | trocar a fonte, comparar resoluções (encontro 10) |
 | **Parâmetros** | os coeficientes da logística são estimativas; a tolerância e a elasticidade são escolhas | varrer, medir a sensibilidade, sortear (hoje) |
 | **Estrutura** | regressão logística ou outra; alocação discreta ou contínua (encontro 11) | rodar estruturas diferentes e comparar |
-| **Cenário** | a demanda futura não é conhecida | cenários (encontro 9): não é incerteza a reduzir, é uma pergunta "e se" |
+| **Cenário** | a demanda futura não é conhecida | cenários (encontro 9): é uma incerteza que os dados não reduzem; explora-se com um conjunto de cenários, cada um uma pergunta "e se" |
 
 Hoje mexemos só nos **parâmetros**, e só nos coeficientes do potencial do desmatado. A demanda fica fixa: todas as rodadas desmatam a mesma quantidade, e o que pode mudar é **onde**."""))
 

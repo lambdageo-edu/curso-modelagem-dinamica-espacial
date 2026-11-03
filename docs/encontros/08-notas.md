@@ -42,6 +42,8 @@ Todo modelo escolhe uma **extensão** (a área inteira estudada) e uma **resolu�
 - **Resolução fina** (30 m a 1 km) mostra onde exatamente cada mudança acontece, mas exige dados detalhados e torna a localização exata difícil de acertar.
 - **Resolução grossa** (5 km a 25 km) suaviza a localização e permite trabalhar com frações: uma célula pode ter 40% de floresta e 60% de pastagem.
 
+A escolha entre células com frações (modelo **contínuo**) e células com uma classe só (modelo **discreto**) não depende só da resolução, mas também do processo: se o que interessa é quanto de cada uso há dentro da célula e com que velocidade ele muda (o avanço da pastagem dentro de um município, por exemplo), o contínuo representa isso; se o que interessa é onde cada mancha aparece, o discreto.
+
 Muitos modelos combinam escalas. A demanda é calculada para a região inteira (por exemplo, a área desmatada por ano no estado), e a alocação distribui essa demanda pelas células. Essa separação é a origem da família CLUE (Veldkamp e Fresco, 1996), que Verburg et al. (1999) levaram para a alocação espacial em células e Verburg et al. (2002) adaptaram para células com uma classe só (CLUE-S).
 
 A resolução também afeta a avaliação: um modelo que erra a célula exata pode acertar a quantidade na vizinhança. Por isso a validação compara em mais de uma resolução (seção 7).
@@ -78,18 +80,23 @@ Ferramentas da mesma família não dão necessariamente o mesmo mapa: comparando
 
 A maior parte dos modelos da família CLUE, incluindo o LuccME e o DisSLUCC, divide o problema em três componentes. É a estrutura que o encontro 7 mostrou em miniatura e que o encontro 9 roda com dados.
 
-**Demanda (quanto).** A área de cada classe em cada ano, calculada fora do espaço. Pode vir de uma tendência histórica (a taxa do PRODES nos últimos anos), de um modelo econômico ou de um cenário (seção 6). No DisSLUCC é uma tabela: ano × classe × área.
+**Demanda (quanto).** A área de cada classe em cada ano, calculada fora do espaço. Pode vir de uma tendência histórica (a taxa do PRODES nos últimos anos), de uma cadeia de Markov (as proporções de transição observadas entre dois mapas, aplicadas de novo a cada passo), de um modelo de dinâmica de sistemas ou econômico, ou de um cenário (seção 6). Na calibração, usa-se a demanda observada, para que o erro que sobra seja só de localização. No DisSLUCC é uma tabela: ano × classe × área.
 
-**Potencial (onde é mais provável).** Um número por célula e por classe, que diz o quanto ela é apta a ter aquele uso. No LuccME e no DisSLUCC, o potencial vem de uma regressão sobre os drivers, ajustada com dados de um período passado. Uma regressão com coeficiente negativo para "distância a estradas" diz que, quanto mais longe da estrada, menor a chance de desmatamento.
+**Potencial (onde é mais provável).** Um número por célula e por classe, que diz o quanto ela é apta a ter aquele uso. Pode vir de regras simples (a fração de vizinhos já desmatados, o inverso da distância à estrada) ou, mais comumente, de uma regressão sobre os drivers: linear para frações, logística para classes. Nos modelos **estruturais**, como o CLUE e o LuccME, a regressão explica o uso numa data (o padrão acumulado); nos de **transição**, como o Dinamica EGO, explica a mudança entre duas datas (seção 4). Uma regressão com coeficiente negativo para "distância a estradas" diz que, quanto mais longe da estrada, menor a chance de desmatamento.
 
-**Alocação (onde de fato muda).** Um procedimento iterativo que distribui a demanda pelas células, em ordem de potencial, até que a soma de cada classe bata com a demanda do ano. As variantes:
+**Alocação (onde de fato muda).** Distribui a demanda pelas células, de acordo com o potencial. Há dois mecanismos:
+
+- **ordenação:** para cada uso, escolhem-se as células de maior potencial até completar a demanda (o exemplo do encontro 7; a ordenação simples do LuccME);
+- **iterativo:** para cada célula, escolhe-se o uso de maior potencial; soma-se o resultado, compara-se com a demanda e ajustam-se os potenciais de cada uso, repetindo até a diferença ficar abaixo de uma tolerância (a família CLUE; encontros 9 e 11).
+
+As variantes:
 
 - **contínua:** cada célula guarda frações das classes (40% floresta, 60% pastagem), como no CLUE e no lab01 do LuccME (encontro 9);
 - **discreta:** cada célula tem uma classe só, como no CLUE-S e no lab15 do LuccME (encontro 11);
 - **com restrições:** células em áreas protegidas não mudam, ou mudam menos;
 - **com inércia:** algumas classes resistem a mudar (uma área urbana raramente volta a ser floresta).
 
-A separação tem uma consequência importante: **a demanda decide a quantidade e o potencial decide a localização.** Um modelo pode acertar uma e errar a outra, e por isso as duas são avaliadas separadamente. Como o potencial é especificado (que regressão, que variáveis) também muda o resultado: com a mesma alocação, duas especificações diferentes chegaram a mapas diferentes em 15% das células num estudo nas Filipinas (Overmars et al., 2007).
+A separação tem uma consequência importante: **a demanda decide a quantidade e o potencial decide a localização.** A alocação decide como o potencial vira mapa, e os parâmetros dela (tolerância, elasticidade, limites de mudança por célula) também mudam a localização, às vezes mais que os coeficientes do potencial (encontros 9 e 12). Um modelo pode acertar uma e errar a outra, e por isso as duas são avaliadas separadamente. Como o potencial é especificado (que regressão, que variáveis) também muda o resultado: com a mesma alocação, duas especificações diferentes chegaram a mapas diferentes em 15% das células num estudo nas Filipinas (Overmars et al., 2007).
 
 ## 6. Cenários
 
@@ -110,7 +117,7 @@ O valor de um cenário está na **diferença** entre eles: o que muda, e onde, s
 
 ## 7. Calibração, validação e verificação
 
-**Calibrar** é ajustar o modelo com dados de um período passado: por exemplo, estimar os coeficientes do potencial com os mapas de 2008 e 2016. **Validar** é rodar o modelo calibrado para um período seguinte, que ele não viu (2016 a 2024), e comparar o simulado com o observado. Validar com os mesmos dados da calibração não prova nada.
+**Calibrar** é ajustar o modelo com dados de um período passado: estimar os coeficientes do potencial e, sobretudo, ajustar os parâmetros da alocação (tolerância, elasticidade, limites de mudança por célula), rodando o modelo de 2008 a 2016 e comparando o simulado com o observado. Uma regressão bem ajustada não garante um mapa bom: é a rodada que diz se o modelo capta a mudança. **Validar** é rodar o modelo calibrado para um período seguinte, que ele não viu (2016 a 2024), e comparar o simulado com o observado. Validar com os mesmos dados da calibração não prova nada.
 
 Duas cautelas:
 
