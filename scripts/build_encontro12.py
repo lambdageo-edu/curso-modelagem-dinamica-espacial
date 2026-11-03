@@ -22,7 +22,8 @@ O que vamos fazer:
 3. medir a sensibilidade a cada coeficiente;
 4. rodar muitas vezes, com coeficientes sorteados, e fazer um mapa de concordância;
 5. ler o resultado de uma rodada pela distribuição de muitas;
-6. conferir o andamento do projeto.
+6. ver como os parâmetros da alocação mudam a forma do mapa;
+7. conferir o andamento do projeto.
 
 Usamos o lab15 do encontro 11 (o assentamento PA Moju, alocação discreta), que roda em décimos de segundo.
 
@@ -239,7 +240,80 @@ ax.set(xlabel="células novas a menos de ~500 m de rio", ylabel="rodadas"); ax.l
 
 cells.append(md("""✏️ **Pergunta 5.** Se um artigo relatasse só o número do modelo base, o que o leitor deixaria de saber? Como você escreveria esse resultado no relatório do projeto?
 
-## 7. Conferência do projeto
+## 7. Os parâmetros da alocação: calibrar a forma da mudança
+
+*Se não houver tempo em aula, faça esta parte em casa.*
+
+Até aqui mexemos no potencial. Os parâmetros da **alocação** também mudam o mapa, e nos cursos de LuccME são tratados como o principal instrumento de calibração. Na alocação contínua, dois deles limitam quanto cada célula pode mudar a cada iteração:
+
+- `min_change`: a menor mudança aceita numa célula; mudanças menores são descartadas, o que **concentra** a mudança nas células de potencial mais alto;
+- `max_change`: a maior mudança aceita numa célula; um valor baixo **espalha** a mudança.
+
+A regra prática: se a mudança observada é concentrada e a simulada é espalhada, aumente `min_change`; se a simulada é concentrada demais, diminua `max_change`. O lab15 é discreto e não tem esses limites, então usamos o lab01 (Acre, alocação contínua, encontro 9), que traz o mapa observado de 2014. A demanda é a observada: estamos calibrando, não validando."""))
+
+cells.append(code("""# o espaço celular do Acre, do mesmo repositório
+for nome, h in {"csAC.shp": "c43ca9d839bb3e7b7c503b7e85212ab5a828f6e1710d57297dbf23afa4cbb2b1",
+                "csAC.dbf": "7992ebdc67fd66a59917c26a685a36448bf9c5dc4b885bbb8c9ce5e2d55b9f8e",
+                "csAC.shx": "2eba45b6f20dd3eec8a7e9d401e21a14a0ab49d93edd280af485a58b2426fc98",
+                "csAC.prj": "e908f36376343a9fc35faf56c02ce51c3c9d59b154f617f38992c092f2ee03e9",
+                "csAC.cpg": "6725e7bbcd28f3a8a586fa34bf191fd72dde8b61756932cd3237c17a6f196f1a"}.items():
+    baixar(nome, h)
+acre = gpd.read_file("dados_labs/csAC.shp")
+
+from disslucc import AllocationClueLike, AllocationSpec, PotentialLinearRegression, RegressionSpec
+USOS_AC = ["f", "d", "outros"]
+DEMANDA_AC = [[137878.1691, 19982.62882, 6489.202049], [137622.2199, 20238.57805, 6489.202049],
+              [137366.2707, 20494.52729, 6489.202049], [137110.3214, 20750.47652, 6489.202049],
+              [136824.6853, 21036.11265, 6489.202049], [136539.0492, 21321.74879, 6489.202049],
+              [136253.4130, 21607.38493, 6489.202049]]                     # lab01, 2008 a 2014
+POT_AC = [[RegressionSpec(const=0.7392, betas={"assentamen": -0.2193, "uc_us": 0.1754, "uc_pi": 0.09708, "ti": 0.1207,
+                                               "dist_riobr": 0.0000002388, "fertilidad": -0.1313}),
+           RegressionSpec(const=0.267, betas={"rodovias": -0.0000009922, "assentamen": 0.2294, "uc_us": -0.09867,
+                                              "dist_riobr": -0.0000003216, "fertilidad": 0.1281}),
+           RegressionSpec(const=0.0)]]
+lin_ac, col_ac = acre["row"].astype(int).values, acre["col"].astype(int).values
+FORMA_AC = (lin_ac.max() + 1, col_ac.max() + 1)
+
+
+def ganho_lab01(min_change=0.0, max_change=1.0, tolerancia=200):
+    \"\"\"Roda o lab01 com estes limites de mudança para o desmatado; devolve o ganho de desmatado de 2008 a 2014.\"\"\"
+    grade = RasterBackend(shape=FORMA_AC)
+    m = np.zeros(FORMA_AC, dtype=np.float32); m[lin_ac, col_ac] = 1; grade.set("mask", m)
+    for c in USOS_AC + ["assentamen", "uc_us", "uc_pi", "ti", "dist_riobr", "fertilidad", "rodovias"]:
+        a = np.zeros(FORMA_AC, dtype=np.float32); a[lin_ac, col_ac] = acre[c].astype(float).values; grade.set(c, a)
+    inicio = np.asarray(grade.get("d"), dtype=np.float64)[lin_ac, col_ac].copy()
+    env = Environment(end_time=len(DEMANDA_AC) - 1)
+    dem = DemandPreComputedValues(annual_demand=DEMANDA_AC, land_use_types=USOS_AC)
+    pot = PotentialLinearRegression(backend=grade, demand=dem, land_use_types=USOS_AC, land_use_no_data="outros",
+                                    potential_data=copy.deepcopy(POT_AC))
+    AllocationClueLike(backend=grade, demand=dem, potential=pot, land_use_types=USOS_AC,
+                       static={"f": -1, "d": -1, "outros": 1}, complementar_lu="f", cell_area=25.0,
+                       allocation_data=[AllocationSpec(static=-1, min_value=0, max_value=1, min_change=0, max_change=1),
+                                        AllocationSpec(static=-1, min_value=0, max_value=1,
+                                                       min_change=min_change, max_change=max_change),
+                                        AllocationSpec(static=1, min_value=0, max_value=1, min_change=0, max_change=1)],
+                       max_difference=tolerancia, cell_correction=False)
+    with contextlib.redirect_stdout(io.StringIO()):
+        env.run()
+    return np.asarray(grade.get("d"), dtype=np.float64)[lin_ac, col_ac] - inicio
+
+
+observado = (acre["d2014"] - acre["d"]).to_numpy()
+linhas_cal = [{"caso": "observado (2008 a 2014)", "células com ganho > 0,5 pp": int((observado > 0.005).sum()),
+               "maior ganho numa célula": round(observado.max(), 3), "correlação com o observado": 1.0, "erro absoluto (km²)": 0}]
+for min_change in [0, 0.002, 0.004, 0.008]:     # 🔧 experimente também max_change=0.005
+    g = ganho_lab01(min_change=min_change)
+    linhas_cal.append({"caso": f"min_change = {min_change}", "células com ganho > 0,5 pp": int((g > 0.005).sum()),
+                       "maior ganho numa célula": round(g.max(), 3),
+                       "correlação com o observado": round(np.corrcoef(g, observado)[0, 1], 3),
+                       "erro absoluto (km²)": round(np.abs(g - observado).sum() * 25)})
+pd.DataFrame(linhas_cal).set_index("caso")"""))
+
+cells.append(md("""✏️ **Pergunta 6.** Que valor de `min_change` deixa a **forma** da mudança (quantas células mudam, quanto muda a que mais muda) mais parecida com a observada? Com esse valor, o erro absoluto diminuiu? O que isso diz sobre calibrar a forma e acertar o lugar?
+
+O LuccME tem ainda dois parâmetros no potencial, `MinReg` e `MaxReg`, que descartam valores muito baixos da regressão ou reforçam os altos, com o mesmo propósito. O DisSLUCC 0.5.0 não os tem.
+
+## 8. Conferência do projeto
 
 Cada aluno mostra, em 3 minutos, o estado do projeto. Use a lista abaixo; o que estiver faltando é o trabalho até o encontro 13 (oficina).
 
@@ -256,7 +330,7 @@ Cada aluno mostra, em 3 minutos, o estado do projeto. Use a lista abaixo; o que 
 
 1. Varra a **tolerância** (`max_difference`) do modelo base: 5, 10, 20, 50, 100 e 300. Quantas células novas há em cada caso, e quantas iguais às do modelo base? Compare com a sensibilidade aos coeficientes.
 2. Repita a Parte 5 com `SORTEIO = 0.3`. Quantas células passam a ser incertas?
-3. Complete a lista da Parte 7 para o seu projeto e traga para o encontro 13."""))
+3. Complete a lista da Parte 8 para o seu projeto e traga para o encontro 13."""))
 
 nb = nbf.v4.new_notebook()
 nb["cells"] = cells
