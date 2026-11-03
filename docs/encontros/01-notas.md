@@ -14,7 +14,7 @@ Modelos dinâmicos espaciais costumam servir a três propósitos, com graus de c
 | --- | --- | --- |
 | Entender | Que mecanismo produz este padrão? | Por que o desmatamento avança em "espinha de peixe" ao longo das estradas? |
 | Explorar cenários | O que acontece se...? | E se as unidades de conservação forem respeitadas? |
-| Prever | Como estará em 2040? | Quanto do Cerrado maranhense será soja? (com muita cautela; ver seção 5) |
+| Prever | Como estará em 2040? | Quanto do Cerrado maranhense será soja? (com muita cautela: relações estatísticas valem para horizontes curtos, e a área prefere falar em cenários; ver seção 5 e as notas do encontro 8) |
 
 ## 2. Espaço, tempo, processo e escala
 
