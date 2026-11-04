@@ -34,6 +34,10 @@ No Brasil, o ensino se apoiou por muito tempo no TerraME (Carneiro et al., 2013)
 
 O DisSModel, o DisSCube e o DisSLUCC são desenvolvidos no LambdaGeo, têm versões publicadas com DOI e foram comparados, componente a componente, com o TerraME e o LuccME. Isso permite mostrar ao aluno não só como construir um modelo, mas como conferir que o programa faz o que o modelo descreve e como registrar a execução para que outra pessoa a repita, no sentido de reprodutibilidade das Academias Nacionais dos EUA (NASEM, 2019). As referências estão na [bibliografia](bibliografia.md).
 
+## O TerraME como referência
+
+A disciplina toma como referência o curso de modelagem do INPE com o TerraME, *CST-323/CAP-465* (Pedro R. Andrade, Gilberto Câmara e Francisco Gilney Bezerra; material na [wiki do TerraME](https://github.com/TerraME/terrame/wiki/course)), e os cursos de modelagem de mudança de uso da terra com o LuccME, também do INPE. Deles vêm a progressão dos encontros, a maior parte dos modelos e a estrutura demanda, potencial e alocação. O DisSModel, o DisSCube e o DisSLUCC são propostos como uma alternativa em Python ao ecossistema TerraME (TerraLib, TerraME, `fill` e LuccME): buscam os mesmos conceitos, os mesmos modelos e os mesmos resultados, e cada notebook confere isso contra as saídas do TerraME e do LuccME. A página [O TerraME como referência](referencia-terrame.md) dá os créditos, a correspondência aula a aula e o que ainda não foi portado.
+
 ## Objetivos
 
 **Geral.** Capacitar o aluno a conceber, implementar, executar e verificar modelos dinâmicos espaciais em Python, até um modelo LUCC sobre dados reais.

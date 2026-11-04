@@ -219,6 +219,7 @@ Os modelos do `dissmodel-sysdyn` também rodam num demo no navegador, sem instal
 
 O demo é para ver e experimentar. Para guardar o que você fez, com semente e registro, use o notebook (encontro 4)."""))
 
+cells.insert(1, md("""> **Referência.** Este encontro segue as aulas 3 a 8 (dinâmica de sistemas, retroalimentação, epidemias, caos, predador-presa e Daisyworld) do curso de modelagem do INPE com o TerraME ([CST-323/CAP-465](https://github.com/TerraME/terrame/wiki/course), de Pedro R. Andrade, Gilberto Câmara e Francisco Gilney Bezerra). Os modelos são portes dos pacotes do TerraME para o DisSModel, que é proposto como alternativa em Python ao TerraME; por isso cada um é comparado com a saída do original ([O TerraME como referência](https://lambdageo-edu.github.io/curso-modelagem-dinamica-espacial/referencia-terrame/))."""))
 nb = nbf.v4.new_notebook()
 nb["cells"] = cells
 nb["metadata"]["kernelspec"] = {"name": "python3", "display_name": "Python 3", "language": "python"}

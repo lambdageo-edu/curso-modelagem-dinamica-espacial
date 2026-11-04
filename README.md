@@ -2,6 +2,8 @@
 
 Material da disciplina de pós-graduação **Modelagem Dinâmica Espacial: de autômatos celulares a modelos de mudança de uso da terra** (proposta, LambdaGeo/UFMA). Proposta, cronograma, notas de aula e notebooks, publicados como site MkDocs.
 
+A disciplina segue o curso de modelagem do INPE com o TerraME ([CST-323/CAP-465](https://github.com/TerraME/terrame/wiki/course), de Pedro R. Andrade, Gilberto Câmara e Francisco Gilney Bezerra) e os cursos de LuccME do INPE. O DisSModel, o DisSCube e o DisSLUCC são propostos como alternativa em Python ao ecossistema TerraME, e cada notebook compara os resultados com os do TerraME e do LuccME. Créditos e correspondência aula a aula em `docs/referencia-terrame.md`.
+
 Estado: proposta em elaboração. Notebooks testados nos encontros 2 a 7 e 9 a 13; notas de aula nos encontros 1 e 8, com ficha de leitura no 8. O encontro 1 (NetLogo Web) ainda não foi testado em sala.
 
 ## Conteúdo

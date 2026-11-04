@@ -1,6 +1,6 @@
 # Cronograma
 
-Cinco módulos: fundamentos (1), Python (2–3), reprodutibilidade e paradigmas didáticos (4–7), modelos de mudança da terra no DisSLUCC, com dados e cenários (8–12), e projeto (13–15). No bloco de LUCC o modelo vem antes dos dados: o aluno roda um modelo com dados prontos (9) e só então monta, com o DisSCube, variáveis do tipo das que o potencial usa (10).
+A sequência segue o curso de modelagem do INPE com o TerraME e os cursos de LuccME ([O TerraME como referência](referencia-terrame.md)). Cinco módulos: fundamentos (1), Python (2–3), reprodutibilidade e paradigmas didáticos (4–7), modelos de mudança da terra no DisSLUCC, com dados e cenários (8–12), e projeto (13–15). No bloco de LUCC o modelo vem antes dos dados: o aluno roda um modelo com dados prontos (9) e só então monta, com o DisSCube, variáveis do tipo das que o potencial usa (10).
 
 Três fios atravessam os encontros, sem aula própria:
 
