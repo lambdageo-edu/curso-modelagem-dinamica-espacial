@@ -136,6 +136,8 @@ Em duplas. Abra o NetLogo Web em <https://www.netlogoweb.org/launch> e escolha o
 
 Para fechar, cada dupla diz à turma, em uma frase por modelo, o paradigma e o que mudou ao variar o controle.
 
+Os mesmos três modelos, escritos em Python com o DisSModel, também rodam no navegador, em demos que os encontros 5 a 7 usam para visualizar: [dinâmica de sistemas](https://huggingface.co/spaces/profsergiocosta/dissmodel-sysdyn-demo) (predador-presa, SIR e outros), [autômatos celulares](https://huggingface.co/spaces/profsergiocosta/dissmodel-ca-demo) (incêndio, Jogo da Vida e outros) e [agentes](https://huggingface.co/spaces/profsergiocosta/dissmodel-abm-demo) (Schelling, predador-presa com agentes e outros).
+
 ## 8. Para casa
 
 Escolha um processo ligado à sua pesquisa (o avanço de uma frente de desmatamento, a ocupação de um bairro, a perda de manguezal, a dispersão de uma espécie) e escreva, em três linhas:
