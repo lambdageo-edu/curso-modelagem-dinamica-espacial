@@ -76,6 +76,7 @@ nav:
   - Início: index.md
   - A disciplina:
       - Cronograma: cronograma.md
+      - O TerraME como referência: referencia-terrame.md
       - Metodologia e ambiente: metodologia.md
       - Avaliação e projeto: avaliacao.md
       - Bibliografia: bibliografia.md
