@@ -37,6 +37,8 @@ jupyter lab
 | disscube | 0.6.0 | PyPI | 10 |
 | statsmodels | 0.15.0 | PyPI | 11 |
 
+**Demos no navegador.** Os modelos dos pacotes `dissmodel-sysdyn`, `dissmodel-ca` e `dissmodel-abm` também rodam em demos interativos, sem instalação, usados nos encontros 5 a 7 para visualizar: [dinâmica de sistemas](https://huggingface.co/spaces/profsergiocosta/dissmodel-sysdyn-demo), [autômatos celulares](https://huggingface.co/spaces/profsergiocosta/dissmodel-ca-demo) e [agentes](https://huggingface.co/spaces/profsergiocosta/dissmodel-abm-demo). Servem para ver e experimentar; o registro da execução (encontro 4) fica nos notebooks.
+
 Os notebooks dos encontros 2 a 7 e 9 a 13 têm um selo **Abrir no Colab** no topo, que abre o notebook no Google Colab direto do GitHub; os dos encontros 3 a 7 e 9 a 13 instalam sozinhos o que falta no Colab (`rasterio`; DisSModel, `dissmodel-ca`, `dissmodel-sysdyn`, `dissmodel-abm`, `disslucc`, `disscube` e `statsmodels`).
 
 ## Dados e referências lidos pela internet

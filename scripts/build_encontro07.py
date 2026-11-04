@@ -275,6 +275,16 @@ Até o próximo encontro, cada aluno escreve uma página com:
 2. No acoplamento, faça a taxa de desmatamento cair à metade a partir do ano 15 (uma política). Dica: em `Demanda.execute`, use `self.env.now()` para saber o ano.
 3. Esboço do projeto (seção 4)."""))
 
+cells.append(md("""## Para visualizar no navegador
+
+Os modelos do `dissmodel-abm` também rodam num demo no navegador, sem instalar nada: [dissmodel-abm demo](https://huggingface.co/spaces/profsergiocosta/dissmodel-abm-demo). Escolha o modelo na barra lateral, mude os parâmetros e rode (a interface é em inglês).
+
+- 🔧 **Schelling**: mude `preference` de 1 a 5 e `free_space` de 0,05 a 0,20, e acompanhe a cidade se separar passo a passo, como na Parte 1 e no item 1 do "Para casa". Mude a semente (`Seed`) com os mesmos parâmetros: o resultado muda, mas o padrão não, que é a razão da comparação por distribuição da Parte 2.
+- 🔧 **PredatorPrey**: a versão com agentes (coelhos e lobos que andam, comem e se reproduzem) do predador-presa do encontro 5. Compare com o demo de dinâmica de sistemas: as populações oscilam nos dois, mas aqui uma delas pode desaparecer por acaso.
+- Explore `Disease` (uma epidemia com agentes, parente do SIR do encontro 5) ou `Ants`.
+
+O demo é para ver e experimentar. Para guardar o que você fez, com semente e registro, use o notebook (encontro 4)."""))
+
 nb = nbf.v4.new_notebook()
 nb["cells"] = cells
 nb["metadata"]["kernelspec"] = {"name": "python3", "display_name": "Python 3", "language": "python"}

@@ -263,6 +263,16 @@ cells.append(md("""Abaixo de cerca de 0,59 a floresta está em **fragmentos** de
 2. No Jogo da Vida em raster, comece com 10%, 30% e 50% de células vivas. Quantas sobram no passo 200? Faça uma tabela.
 3. Traga uma frase: num modelo de uso da terra da sua área, qual seria o estado de cada célula, e quem seriam as vizinhas que importam?"""))
 
+cells.append(md("""## Para visualizar no navegador
+
+Os autômatos do `dissmodel-ca` também rodam num demo no navegador, sem instalar nada: [Cellular Automata Explorer](https://huggingface.co/spaces/profsergiocosta/dissmodel-ca-demo). Escolha o modelo na barra lateral, o tamanho da grade e o número de passos, e clique em **Run Simulation** (a interface é em inglês).
+
+- 🔧 **GameOfLife**: compare uma grade de 20 com uma de 100; os padrões que aparecem são os da Parte 3.
+- 🔧 **FireModel**: o parâmetro `empty` é a fração de células vazias, ou seja, 1 − *p* da Parte 6. Com uma grade de 100, compare `empty` de 0,45 (floresta em 55% das células) e de 0,35 (65%), as mesmas densidades da Parte 6. Aqui o fogo começa numa única célula sorteada, como no TerraME, e não na borda esquerda; por isso, com pouca floresta, às vezes quase nada queima. O demo usa sempre a mesma semente: para ver outro sorteio, mude o tamanho da grade.
+- Explore modelos que não vimos em aula, como `Snow`, `Excitable` ou `Wolfram` (autômato de uma dimensão, uma geração por linha). Cada um traz a descrição em "About this model".
+
+O demo é para ver e experimentar. Para guardar o que você fez, com semente e registro, use o notebook (encontro 4)."""))
+
 nb = nbf.v4.new_notebook()
 nb["cells"] = cells
 nb["metadata"]["kernelspec"] = {"name": "python3", "display_name": "Python 3", "language": "python"}

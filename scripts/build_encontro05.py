@@ -209,6 +209,16 @@ cells.append(md("""✏️ **Pergunta 5.** O modelo dá exatamente o mesmo númer
 2. No SIR, troque `duration` (dias de doença) de 2 para 4, com 6 contatos. O que muda no pico? Explique pela retroalimentação.
 3. Escolha um processo da sua pesquisa e desenhe, à mão, seus estoques, fluxos e retroalimentações (diagrama de estoque e fluxo). Traga para o próximo encontro."""))
 
+cells.append(md("""## Para visualizar no navegador
+
+Os modelos do `dissmodel-sysdyn` também rodam num demo no navegador, sem instalar nada: [DisSModel System Dynamics Explorer](https://huggingface.co/spaces/profsergiocosta/dissmodel-sysdyn-demo). Escolha o modelo na barra lateral, mude os parâmetros e clique em **Run Simulation** (a interface é em inglês).
+
+- 🔧 **SIR**: mude `contacts` e `probability` e veja o pico de infectados subir, descer e chegar mais cedo ou mais tarde, como na Parte 3.
+- 🔧 **PredatorPrey**: mude `prey_growth` e `pred_death` e veja as oscilações da Parte 4 mudarem de amplitude e de período.
+- Explore um modelo que não vimos em aula, como `Daisyworld` (um planeta que regula a própria temperatura) ou `Lorenz` (caos). Cada um traz a descrição em "About this model".
+
+O demo é para ver e experimentar. Para guardar o que você fez, com semente e registro, use o notebook (encontro 4)."""))
+
 nb = nbf.v4.new_notebook()
 nb["cells"] = cells
 nb["metadata"]["kernelspec"] = {"name": "python3", "display_name": "Python 3", "language": "python"}
