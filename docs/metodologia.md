@@ -29,12 +29,12 @@ jupyter lab
 
 | Pacote | Versão | Origem | A partir do encontro |
 | --- | --- | --- | --- |
-| dissmodel | 0.6.6 | PyPI | 4 |
+| dissmodel | 0.7.0 | PyPI | 4 |
 | dissmodel-ca | 0.2.0 | GitHub, tag `v0.2.0` | 4 |
 | dissmodel-sysdyn | 0.2.0 | GitHub, tag `v0.2.0` | 5 |
 | dissmodel-abm | 0.2.0 | GitHub, tag `v0.2.0` (ainda não está no PyPI) | 7 |
-| disslucc | 0.5.0 | PyPI | 9 |
-| disscube | 0.6.0 | PyPI | 10 |
+| disslucc | 0.5.1 | PyPI | 9 |
+| disscube | 0.6.1 | PyPI | 10 |
 | statsmodels | 0.15.0 | PyPI | 11 |
 
 **QGIS (opcional).** Quem preferir montar e rodar as grades do DisSCube no mapa, em vez do terminal, pode usar o [plugin DisSCube para QGIS](https://github.com/LambdaGeo/disscube-qgis) (versão 0.1.5, DOI 10.5281/zenodo.24033974; QGIS 3.34 ou mais novo), apresentado no encontro 10. O plugin grava o mesmo arquivo TOML e abre o resultado direto no mapa; para rodar, ele usa um DisSCube instalado num Python à parte.

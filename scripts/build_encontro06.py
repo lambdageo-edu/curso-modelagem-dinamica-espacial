@@ -32,7 +32,7 @@ No Colab, a célula abaixo instala o DisSModel e o pacote de autômatos celulare
 
 cells.append(code("""import sys
 if "google.colab" in sys.modules:
-    %pip install -q "dissmodel==0.6.6" "dissmodel-ca @ git+https://github.com/DisSModel/dissmodel-ca.git@v0.2.0"
+    %pip install -q "dissmodel==0.7.0" "dissmodel-ca @ git+https://github.com/DisSModel/dissmodel-ca.git@v0.2.0"
 
 import contextlib, io, time
 import numpy as np

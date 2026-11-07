@@ -26,7 +26,7 @@ No Colab, a célula abaixo instala o DisSModel e o pacote de agentes (cerca de 1
 
 cells.append(code("""import sys
 if "google.colab" in sys.modules:
-    %pip install -q "dissmodel==0.6.6" "dissmodel-abm @ git+https://github.com/DisSModel/dissmodel-abm.git@v0.2.0"
+    %pip install -q "dissmodel==0.7.0" "dissmodel-abm @ git+https://github.com/DisSModel/dissmodel-abm.git@v0.2.0"
 
 import contextlib, io
 import numpy as np

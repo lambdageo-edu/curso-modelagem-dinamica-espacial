@@ -39,7 +39,7 @@ Há duas maneiras de dizer que dois resultados "são o mesmo", e o trabalho deve
 - **Identidade:** os mesmos bytes ou os mesmos valores. Confere-se com o hash (SHA-256): do arquivo, quando a pergunta é "é este o arquivo arquivado?"; dos valores, quando a pergunta é "são os mesmos dados?".
 - **Equivalência:** valores que diferem menos que uma **tolerância** declarada e justificada. É o que se usa quando o resultado foi calculado de novo, em outra ordem ou em outra máquina, e o último dígito pode mudar.
 
-O hash do arquivo é a verificação mais forte e a mais frágil. No notebook do encontro 4, duas rodadas idênticas gravam GeoPackages com hashes diferentes porque o arquivo guarda a hora em que foi escrito. O `open-lucc-workflow` registra um caso maior: a mesma rodada, repetida em cinco computadores, deu os mesmos hashes nos quatro com processador x86-64 (Linux e Windows com WSL2). No quinto, um Mac com processador ARM, os critérios de aceitação passaram e as áreas finais de cada classe foram iguais, mas os hashes dos arquivos mudaram. A comparação célula a célula mostrou que os valores da saída eram iguais em todas as células; os bytes diferiam porque cada plataforma comprime o GeoTIFF de um jeito. Lição: **para comparar resultados entre plataformas, use o hash dos valores ou uma tolerância, não o hash do arquivo**.
+O hash do arquivo é a verificação mais forte e a mais frágil. No notebook do encontro 4, o mesmo raster gravado com duas compressões tem hashes de arquivo diferentes e os mesmos valores, e o `dissmodel compare` responde `values_identical`. Outros formatos fazem pior: o GeoPackage guarda a hora em que foi escrito, e duas rodadas idênticas dão arquivos diferentes. O `open-lucc-workflow` registra um caso maior: a mesma rodada, repetida em cinco computadores, deu os mesmos hashes nos quatro com processador x86-64 (Linux e Windows com WSL2). No quinto, um Mac com processador ARM, os critérios de aceitação passaram e as áreas finais de cada classe foram iguais, mas os hashes dos arquivos mudaram. A comparação célula a célula mostrou que os valores da saída eram iguais em todas as células; os bytes diferiam porque cada plataforma comprime o GeoTIFF de um jeito. Lição: **para comparar resultados entre plataformas, use o hash dos valores ou uma tolerância, não o hash do arquivo**.
 
 O mesmo vale para a referência. O próprio TerraME, rodado várias vezes na mesma máquina, grava o primeiro lab do LuccME com diferenças a menos de 10⁻¹² entre execuções. Por isso o `disslucc-benchmark` compara com tolerância, e diz qual.
 
@@ -70,7 +70,7 @@ Repetir um experimento inteiro pode levar horas. Quem confere precisa de caminho
 | 2. Reproduzir com os dados reais | monta a grade a partir das fontes abertas e roda o modelo numa resolução | cerca de 40 min | que outra máquina chega ao mesmo resultado |
 | 3. Rodada completa | todas as resoluções e todos os critérios | cerca de 6,5 h | o experimento inteiro |
 
-O nível 1 é também o que a integração contínua roda a cada mudança no código. No projeto da disciplina, pedem-se os níveis 0 e 1, com um comando cada, escritos no README.
+O nível 1 é também o que a integração contínua roda a cada mudança no código. No projeto da disciplina, pedem-se os níveis 0 e 1, com um comando cada, escritos no README. Para uma execução com registro, o DisSModel tem os dois prontos: `dissmodel verify` (nível 0, o arquivo é o do registro) e `dissmodel reproduce` (nível 1, repete a execução e compara).
 
 ## 6. Verificação em camadas
 
@@ -117,7 +117,7 @@ Não é excesso de zelo. Uma análise formal dos modelos da família CLUE e do D
 
 ## 10. Registrar a plataforma
 
-Os resultados dependem do sistema operacional, do processador, da versão do Python e das bibliotecas. O mínimo é um `requirements.lock` (encontro 4). Os dois repositórios vão além e gravam um arquivo com a descrição da máquina a cada rodada: `make platform` no `rescience-lulcc`, `machine.txt` no registro do `open-lucc-workflow`. Foi esse registro que permitiu explicar o caso do Mac da seção 3.
+Os resultados dependem do sistema operacional, do processador, da versão do Python e das bibliotecas. O registro do DisSModel já guarda as versões do Python, das bibliotecas e do GDAL (encontro 4); um `requirements.lock` completa a lista do que está instalado. Os dois repositórios vão além e gravam um arquivo com a descrição da máquina a cada rodada: `make platform` no `rescience-lulcc`, `machine.txt` no registro do `open-lucc-workflow`. Foi esse registro que permitiu explicar o caso do Mac da seção 3.
 
 ## 11. Para o projeto
 

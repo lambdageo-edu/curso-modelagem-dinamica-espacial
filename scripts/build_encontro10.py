@@ -34,7 +34,7 @@ No Colab, a célula abaixo instala o DisSCube e o DisSModel (cerca de 1 minuto).
 
 cells.append(code("""import sys
 if "google.colab" in sys.modules:
-    %pip install -q "disscube[dissmodel]==0.6.0" "dissmodel==0.6.6"
+    %pip install -q "disscube[dissmodel]==0.6.1" "dissmodel==0.7.0"
 
 import contextlib, hashlib, io, json, logging, time, tomllib, urllib.request
 from pathlib import Path
@@ -269,7 +269,7 @@ O que o plugin grava é o mesmo arquivo TOML de texto: ele roda com `disscube ru
 
 ```bash
 python -m venv ~/venvs/disscube
-~/venvs/disscube/bin/pip install "disscube[bdc,netcdf]==0.6.0"
+~/venvs/disscube/bin/pip install "disscube[bdc,netcdf]==0.6.1"
 ```
 
 Quem usa o QGIS instalado pelo Flathub precisa dar uma permissão a mais, explicada no README do plugin. Sem o DisSCube instalado, o plugin ainda monta a grade e grava o TOML, que pode ser rodado depois no notebook. A interface é em inglês.

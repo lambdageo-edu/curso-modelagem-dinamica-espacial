@@ -35,7 +35,7 @@ No Colab, a célula abaixo instala o DisSModel e o DisSLUCC (cerca de 1 minuto).
 
 cells.append(code("""import sys
 if "google.colab" in sys.modules:
-    %pip install -q "dissmodel==0.6.6" "disslucc==0.5.0"
+    %pip install -q "dissmodel==0.7.0" "disslucc==0.5.1"
 
 import contextlib, copy, hashlib, io, time, urllib.request
 from pathlib import Path
