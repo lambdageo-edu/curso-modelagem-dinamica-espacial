@@ -23,7 +23,8 @@ O que vamos fazer:
 2. ler um arquivo TOML pronto e rodá-lo;
 3. olhar o resultado e o registro da execução;
 4. conferir com o TerraME;
-5. entregar a grade a um modelo do DisSModel.
+5. entregar a grade a um modelo do DisSModel;
+6. conhecer o plugin para QGIS, alternativa ao terminal.
 
 🔧 = troque um valor e rode de novo; ✏️ = responda."""))
 
@@ -245,9 +246,41 @@ media.round(3).to_frame("fração média em corte raso")"""))
 
 cells.append(md("""O encontro 11 transforma essa nuvem de pontos em coeficientes: ajusta a regressão que o lab01 já trazia pronta.
 
+## 7. Sem terminal: o plugin DisSCube para QGIS
+
+Até aqui o TOML foi lido, validado e rodado por comandos. Quem prefere trabalhar no mapa tem uma alternativa: o [plugin DisSCube para QGIS](https://github.com/LambdaGeo/disscube-qgis) (versão 0.1.5, experimental). Ele faz as mesmas três coisas dentro do QGIS, e o resultado já abre como camada no mapa, sobre as outras camadas do projeto:
+
+| No terminal ou no notebook | No plugin |
+|---|---|
+| escrever o `[grid]` à mão: projetar o retângulo, arredondar para a célula | aba **Grid**: a área vem da extensão do mapa, de um retângulo desenhado, de uma camada ou das feições selecionadas; o plugin calcula o retângulo e mostra a grade e o número de células |
+| escrever `[[source]]` e `[[derive]]` | aba **Sources and variables**: formulários para cada tipo de fonte e operador, e receitas prontas (classe dominante do MapBiomas, fração de floresta e de pastagem, frações do PRODES, NDVI do BDC, distância às sedes municipais do IBGE) |
+| `disscube validate` e `disscube run` | aba **File and run**: os botões *Validate* e *Run*; o GeoTIFF resultante entra no mapa, e o hash SHA-256 dele vai para o registro |
+| `disscube plot` | o próprio mapa do QGIS, com zoom, sobreposição e tabela de atributos |
+
+O que o plugin grava é o mesmo arquivo TOML de texto: ele roda com `disscube run`, sem o plugin, e é ele que vai para o repositório do projeto. Os cliques não ficam registrados; o arquivo, sim. Por isso o plugin é uma alternativa ao terminal, e não ao TOML.
+
+**A grade do BDC.** O plugin trabalha na projeção do Brazil Data Cube (BDC Albers, EPSG:10857) e, por padrão, alinha as células aos *tiles* de 105,6 km do BDC. Assim, grades de projetos diferentes se sobrepõem célula a célula. Para isso, o tamanho da célula precisa dividir o tile: 528 m, 1.056 m, 2.200 m ou 5.280 m servem; 500 m e 1.000 m, não. O plugin só oferece os tamanhos que servem.
+
+**Instalar** (no seu computador; não funciona no Colab):
+
+1. QGIS 3.34 ou mais novo (o QGIS 4 também serve).
+2. Baixe o `disscube_qgis-<versão>.zip` do repositório e instale em *Complementos* → *Gerenciar e instalar complementos* → *Instalar a partir do ZIP*. O painel abre em *Raster* → *DisSCube*.
+3. Para validar e rodar a partir do painel, o DisSCube precisa estar instalado num Python separado do Python do QGIS. Indique esse Python em *File and run* → *Python with DisSCube*:
+
+```bash
+python -m venv ~/venvs/disscube
+~/venvs/disscube/bin/pip install "disscube[bdc,netcdf]==0.6.0"
+```
+
+Quem usa o QGIS instalado pelo Flathub precisa dar uma permissão a mais, explicada no README do plugin. Sem o DisSCube instalado, o plugin ainda monta a grade e grava o TOML, que pode ser rodado depois no notebook. A interface é em inglês.
+
+**Limites.** A grade é sempre um retângulo (ainda não há máscara por polígono) e sempre em BDC Albers; um arquivo escrito à mão, ao ser salvo de novo pelo plugin, perde os comentários.
+
+✏️ **Pergunta 5.** O plugin e o terminal produzem o mesmo arquivo TOML. Para a reprodutibilidade do seu projeto, o que precisa ir para o repositório: o arquivo, uma descrição dos cliques, ou os dois?
+
 ## Para casa: a grade do seu projeto
 
-1. Copie o modelo abaixo para um arquivo `projeto.toml`, troque o retângulo pela sua área (longitude e latitude: oeste, sul, leste, norte) e escolha o tamanho da célula. Rode `disscube validate projeto.toml` e, se passar, `disscube run projeto.toml --workspace cubo_projeto` (no terminal; num notebook, inclusive no Colab, use a função da Parte 0: `disscube(\"validate\", \"projeto.toml\")`). Ele lê o MapBiomas (coleção 11, 30 m) pela internet; uma área de município, com células de 500 m, leva de segundos a poucos minutos.
+1. Copie o modelo abaixo para um arquivo `projeto.toml`, troque o retângulo pela sua área (longitude e latitude: oeste, sul, leste, norte) e escolha o tamanho da célula. Rode `disscube validate projeto.toml` e, se passar, `disscube run projeto.toml --workspace cubo_projeto` (no terminal; num notebook, inclusive no Colab, use a função da Parte 0: `disscube(\"validate\", \"projeto.toml\")`). Se preferir, monte a grade e as variáveis no QGIS, com o plugin da Parte 7, e salve o TOML no repositório do projeto. Ele lê o MapBiomas (coleção 11, 30 m) pela internet; uma área de município, com células de 500 m, leva de segundos a poucos minutos.
 
 ```toml
 schema = 1

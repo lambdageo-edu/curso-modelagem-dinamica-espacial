@@ -13,7 +13,7 @@ Cada encontro tem um material: notas de aula (encontros 1 e 8), um notebook (enc
 | 7 | Agentes e acoplamento | [Notebook](../notebooks/encontro07_agentes_acoplamento.ipynb) | Livro, cap. 25; Railsback e Grimm (2019), cap. 1; Schelling (1971); Grimm et al. (2020) |
 | 8 | Modelos de mudança de uso e cobertura da terra | [Notas de aula](08-notas.md) e [ficha de leitura](08-ficha.md) | Notas de aula; livro, cap. 26; Verburg et al. (2004); um dos dois artigos da ficha |
 | 9 | Um modelo LUCC com o DisSLUCC: verificação e cenários | [Notebook](../notebooks/encontro09_disslucc.ipynb) | Livro, caps. 26 e 30; Verburg et al. (1999); Aguiar et al. (2012) |
-| 10 | Dados para o modelo: do mapa à grade com o DisSCube | [Notebook](../notebooks/encontro10_disscube.ipynb) | Livro, cap. 28; documentação do DisSCube; Ferreira et al. (2020) |
+| 10 | Dados para o modelo: do mapa à grade com o DisSCube | [Notebook](../notebooks/encontro10_disscube.ipynb) | Livro, cap. 28; documentação do DisSCube e do plugin para QGIS; Ferreira et al. (2020) |
 | 11 | Potencial por regressão; alocação contínua e discreta; restrições | [Notebook](../notebooks/encontro11_potencial_alocacao.ipynb) | Verburg et al. (2002); Overmars, Verburg e Veldkamp (2007); livro, caps. 13 e 26 |
 | 12 | Incerteza e sensibilidade; conferência dos projetos | [Notebook](../notebooks/encontro12_incerteza_sensibilidade.ipynb) | Livro, cap. 32; Saltelli et al. (2008), cap. 1 |
 | 13 | Validação contra o mapa observado; oficina de projeto | [Notebook](../notebooks/encontro13_validacao.ipynb) | Pontius et al. (2008); Pontius e Millones (2011); Pontius, Huffaker e Denman (2004) |
