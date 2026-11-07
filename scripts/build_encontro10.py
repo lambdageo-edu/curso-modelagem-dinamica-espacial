@@ -248,7 +248,7 @@ cells.append(md("""O encontro 11 transforma essa nuvem de pontos em coeficientes
 
 ## 7. Sem terminal: o plugin DisSCube para QGIS
 
-Até aqui o TOML foi lido, validado e rodado por comandos. Quem prefere trabalhar no mapa tem uma alternativa: o [plugin DisSCube para QGIS](https://github.com/LambdaGeo/disscube-qgis) (versão 0.1.5, experimental). Ele faz as mesmas três coisas dentro do QGIS, e o resultado já abre como camada no mapa, sobre as outras camadas do projeto:
+Até aqui o TOML foi lido, validado e rodado por comandos. Quem prefere trabalhar no mapa tem uma alternativa: o [plugin DisSCube para QGIS](https://github.com/LambdaGeo/disscube-qgis) (versão 0.1.5, experimental; DOI 10.5281/zenodo.24033974). Ele faz as mesmas três coisas dentro do QGIS, e o resultado já abre como camada no mapa, sobre as outras camadas do projeto:
 
 | No terminal ou no notebook | No plugin |
 |---|---|
@@ -264,7 +264,7 @@ O que o plugin grava é o mesmo arquivo TOML de texto: ele roda com `disscube ru
 **Instalar** (no seu computador; não funciona no Colab):
 
 1. QGIS 3.34 ou mais novo (o QGIS 4 também serve).
-2. Baixe o `disscube_qgis-<versão>.zip` do repositório e instale em *Complementos* → *Gerenciar e instalar complementos* → *Instalar a partir do ZIP*. O painel abre em *Raster* → *DisSCube*.
+2. Baixe o `disscube_qgis-0.1.5.zip` da [release v0.1.5](https://github.com/LambdaGeo/disscube-qgis/releases/tag/v0.1.5) e instale em *Complementos* → *Gerenciar e instalar complementos* → *Instalar a partir do ZIP*. O painel abre em *Raster* → *DisSCube*.
 3. Para validar e rodar a partir do painel, o DisSCube precisa estar instalado num Python separado do Python do QGIS. Indique esse Python em *File and run* → *Python with DisSCube*:
 
 ```bash
