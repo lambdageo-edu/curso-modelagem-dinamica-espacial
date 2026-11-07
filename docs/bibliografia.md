@@ -89,6 +89,7 @@ Citados pela versão usada, como pede a prática de reprodutibilidade do encontr
 - COSTA, S. S. *LuccME goldens*. Versão 1.1.0. Zenodo, 2026. DOI: 10.5281/zenodo.23161342. Dados e saídas de referência do LuccME (encontros 9, 11 a 13).
 - COSTA, S. S. *DisSCube benchmark*. Versão 1.1.0. Zenodo, 2026. DOI: 10.5281/zenodo.23366475. Arquivo TOML e comparação com o TerraME (encontro 10).
 - COSTA, S. S. *disscube-grids*. Versão 1.1.0. Zenodo, 2026. DOI: 10.5281/zenodo.23502247. Casos prontos de grade (encontro 10).
+- COSTA, S. S. *DisSCube plugin for QGIS: grids and pipeline files for declarative spatial data cubes*. Versão 0.1.5 (experimental). Zenodo, 2026. DOI: 10.5281/zenodo.24033974. Montar e rodar grades do DisSCube no QGIS (encontro 10).
 - COSTA, S. S. *DisSLUCC benchmark*. Versão 0.2.2. Zenodo, 2026. DOI: 10.5281/zenodo.23224097. Comparação do DisSLUCC com os labs do LuccME (encontros 4, 9 e 11).
 - COSTA, S. S. *terrame-docker*. Versão 0.4.2. Zenodo, 2026. DOI: 10.5281/zenodo.23160784. Imagem fixada do TerraME e do LuccME que gera as referências (encontro 4).
 - COSTA, S. S.; BEZERRA, D. da S.; ALVES, J. M. P. *Open LUCC workflow*. Versão 1.1.0. Zenodo, 2026. DOI: 10.5281/zenodo.23415814. Exemplo de cadeia completa com critérios de aceitação e níveis de conferência (encontro 4).
